@@ -1,0 +1,240 @@
+object Form1: TForm1
+  Left = 256
+  Top = 186
+  BorderStyle = bsNone
+  Caption = 'Principal'
+  ClientHeight = 600
+  ClientWidth = 1024
+  Color = clWindow
+  TransparentColor = True
+  TransparentColorValue = clRed
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image321: TImage32
+    Left = 223
+    Top = 23
+    Width = 801
+    Height = 558
+    Align = alClient
+    Bitmap.ResamplerClassName = 'TNearestResampler'
+    BitmapAlign = baCenter
+    Scale = 1.000000000000000000
+    ScaleMode = smStretch
+    TabOrder = 2
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 0
+    Width = 1024
+    Height = 23
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 11107192
+    TabOrder = 0
+    OnMouseDown = Panel3MouseDown
+    object JvPanel2: TJvPanel
+      Left = 0
+      Top = 0
+      Width = 1024
+      Height = 23
+      Align = alTop
+      BevelOuter = bvNone
+      Color = 5966336
+      TabOrder = 0
+      OnMouseDown = Panel3MouseDown
+      object JvBehaviorLabel2: TJvBehaviorLabel
+        Left = 8
+        Top = -2
+        Width = 317
+        Height = 22
+        Caption = 'Sistema Derecho de Construccion'
+        Color = 5966336
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindow
+        Font.Height = -19
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnMouseDown = Panel3MouseDown
+      end
+      object Label1: TLabel
+        Left = 1000
+        Top = 0
+        Width = 24
+        Height = 23
+        Cursor = crHandPoint
+        Hint = 'Sale y Cierra ventana'
+        Align = alRight
+        Caption = 'r'
+        Color = 5966336
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -23
+        Font.Name = 'Marlett'
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        OnClick = lblCloseClick
+        ExplicitLeft = 943
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 23
+    Width = 23
+    Height = 558
+    Align = alLeft
+    BevelOuter = bvNone
+    Color = 8816262
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 1
+    OnMouseMove = Panel1MouseMove
+    object RzLabel1: TRzLabel
+      Left = 1
+      Top = 206
+      Width = 20
+      Height = 173
+      Alignment = taCenter
+      Caption = 'Men'#250' de Opciones'
+      Color = 8816262
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -17
+      Font.Name = 'Verdana'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Angle = 90
+      Rotation = roFlat
+    end
+  end
+  object EmbedPanel: TJvEmbeddedFormPanel
+    Left = 223
+    Top = 23
+    Width = 801
+    Height = 558
+    AlwaysVisible = False
+    OnFormDestroy = EmbedPanelFormDestroy
+    Align = alClient
+    TabOrder = 3
+  end
+  object MenuAccesos: TRzGroupBar
+    Left = 23
+    Top = 23
+    Width = 200
+    Height = 558
+    GradientColorStart = clBtnFace
+    GradientColorStop = clBtnShadow
+    GroupBorderSize = 8
+    Color = clBtnShadow
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 4
+    Visible = False
+    object Contrib: TRzGroup
+      Items = <
+        item
+          Caption = 'Altas y Modificaciones'
+          OnClick = ContribItems0Click
+        end>
+      Opened = True
+      OpenedHeight = 47
+      DividerVisible = False
+      Special = True
+      Caption = 'Contribuyentes '
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+    end
+    object DerConst: TRzGroup
+      Items = <
+        item
+          Caption = 'Alta de Expedientes'
+          OnClick = DerConstItems0Click
+        end
+        item
+          Caption = 'CONFIRMACION / ANULACION'
+          OnClick = DerConstItems1Click
+        end
+        item
+          Caption = 'MODIFICACION Valor Resolucion'
+          OnClick = DerConstItems3Click
+        end>
+      Opened = True
+      OpenedHeight = 87
+      DividerVisible = False
+      Special = True
+      Caption = 'Datos Der. Construccion'
+      ParentColor = False
+    end
+    object RzGroup1: TRzGroup
+      Items = <
+        item
+          Caption = 'Presupuesto DerConstruccion'
+          OnClick = RzGroup1Items0Click
+        end
+        item
+          Caption = 'Consultas'
+        end>
+      Opened = True
+      OpenedHeight = 67
+      DividerVisible = False
+      Special = True
+      Caption = 'PRESUPUESTO'
+      ParentColor = False
+    end
+  end
+  object barra: TStatusBar
+    Left = 0
+    Top = 581
+    Width = 1024
+    Height = 19
+    Panels = <
+      item
+        Width = 250
+      end
+      item
+        Width = 550
+      end
+      item
+        Width = 50
+      end>
+  end
+  object ImageList1: TImageList
+    BlendColor = 16698348
+    BkColor = 16698348
+    Height = 32
+    Width = 32
+    Left = 614
+    Top = 98
+  end
+end

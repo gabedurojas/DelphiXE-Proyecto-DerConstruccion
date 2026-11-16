@@ -1,0 +1,7120 @@
+﻿object EstadoCta_ExptesDerConst: TEstadoCta_ExptesDerConst
+  Left = 222
+  Top = 102
+  Caption = 'IMPRESION DE LIQUIDACIONES de  Exptes.  por Construccion'
+  ClientHeight = 580
+  ClientWidth = 960
+  Color = 14801370
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Barra1: TStatusBar
+    Left = 0
+    Top = 561
+    Width = 960
+    Height = 19
+    Panels = <
+      item
+        Width = 150
+      end
+      item
+        Width = 50
+      end>
+  end
+  object PC1: TPageControl
+    Left = 0
+    Top = 41
+    Width = 960
+    Height = 520
+    ActivePage = TabSheet2
+    Align = alClient
+    Images = ImageList1
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Expedientes Cargados'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object JvgGroupBox3: TJvgGroupBox
+        Left = 0
+        Top = 55
+        Width = 952
+        Height = 436
+        Align = alClient
+        Caption = 'Lista de Expedientes Guardados'
+        TabOrder = 0
+        Border.Inner = bvSpace
+        Border.Outer = bvNone
+        Border.Bold = False
+        CaptionAlignment = fcaCenter
+        CaptionBorder.Inner = bvSpace
+        CaptionBorder.Outer = bvNone
+        CaptionBorder.Bold = False
+        CaptionGradient.Active = False
+        CaptionGradient.Orientation = fgdHorizontal
+        CaptionShift.X = 8
+        CaptionShift.Y = 0
+        Colors.Text = clHighlightText
+        Colors.TextActive = clHighlightText
+        Colors.Caption = clBtnShadow
+        Colors.CaptionActive = clPurple
+        Colors.Client = 14801370
+        Colors.ClientActive = 14801370
+        Gradient.FromColor = clBlack
+        Gradient.ToColor = clGray
+        Gradient.Active = False
+        Gradient.Orientation = fgdHorizontal
+        Options = [fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
+        ExplicitWidth = 951
+        ExplicitHeight = 430
+        FullHeight = 0
+        object JvDBGrid1: TJvDBGrid
+          Left = 2
+          Top = 40
+          Width = 948
+          Height = 357
+          Align = alClient
+          DataSource = DataSource3
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          ParentFont = False
+          ParentShowHint = False
+          PopupMenu = PopupMenu1
+          ReadOnly = True
+          ShowHint = True
+          TabOrder = 0
+          TitleFont.Charset = ANSI_CHARSET
+          TitleFont.Color = clNavy
+          TitleFont.Height = -12
+          TitleFont.Name = 'Arial Narrow'
+          TitleFont.Style = [fsBold]
+          OnCellClick = JvDBGrid1CellClick
+          AlternateRowColor = clWindow
+          SelectColumnsDialogStrings.Caption = 'Select columns'
+          SelectColumnsDialogStrings.OK = '&OK'
+          SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+          EditControls = <>
+          RowsHeight = 18
+          TitleRowHeight = 20
+        end
+        object GroupBox6: TGroupBox
+          Left = 2
+          Top = 397
+          Width = 948
+          Height = 37
+          Align = alBottom
+          Caption = 'Opciones Modificadas'
+          Enabled = False
+          TabOrder = 1
+          ExplicitTop = 391
+          ExplicitWidth = 947
+          object C6: TCheckBox
+            Left = 756
+            Top = 15
+            Width = 139
+            Height = 18
+            Caption = 'Modificaci'#243'n de Datos'
+            TabOrder = 0
+          end
+          object C3: TCheckBox
+            Left = 8
+            Top = 15
+            Width = 138
+            Height = 18
+            Caption = 'Datos Expedientes'
+            TabOrder = 1
+          end
+          object C4: TCheckBox
+            Left = 150
+            Top = 15
+            Width = 139
+            Height = 18
+            Caption = 'Datos Contribuyente'
+            TabOrder = 2
+          end
+          object C5: TCheckBox
+            Left = 299
+            Top = 15
+            Width = 105
+            Height = 18
+            Caption = 'Datos Innueble'
+            TabOrder = 3
+          end
+          object C7: TCheckBox
+            Left = 472
+            Top = 15
+            Width = 126
+            Height = 18
+            Caption = 'Calculos Importes'
+            TabOrder = 4
+          end
+          object C8: TCheckBox
+            Left = 618
+            Top = 15
+            Width = 105
+            Height = 18
+            Caption = 'Comentarios'
+            TabOrder = 5
+          end
+        end
+        object GroupBox10: TGroupBox
+          Left = 2
+          Top = 17
+          Width = 948
+          Height = 23
+          Align = alTop
+          Enabled = False
+          TabOrder = 2
+          ExplicitTop = 18
+          ExplicitWidth = 947
+          object Shape1: TShape
+            Left = 9
+            Top = 0
+            Width = 14
+            Height = 16
+            Brush.Color = clLime
+            Shape = stCircle
+          end
+          object Label76: TLabel
+            Left = 26
+            Top = 2
+            Width = 130
+            Height = 14
+            Caption = 'EXPEDIENTE CONFIRMADO'
+          end
+          object Label77: TLabel
+            Left = 364
+            Top = 2
+            Width = 112
+            Height = 14
+            Caption = 'EXPEDIENTE ANULADO'
+          end
+          object Shape3: TShape
+            Left = 340
+            Top = 0
+            Width = 14
+            Height = 16
+            Brush.Color = clYellow
+            Shape = stCircle
+          end
+          object Label78: TLabel
+            Left = 701
+            Top = 2
+            Width = 106
+            Height = 14
+            Caption = 'EXPEDIENTE NORMAL'
+          end
+          object Shape4: TShape
+            Left = 681
+            Top = 0
+            Width = 14
+            Height = 16
+            Shape = stCircle
+          end
+        end
+      end
+      object JvgGroupBox1: TJvgGroupBox
+        Left = 0
+        Top = 0
+        Width = 952
+        Height = 55
+        Align = alTop
+        Caption = 'Opciones de B'#250'squedas'
+        TabOrder = 1
+        Border.Inner = bvSpace
+        Border.Outer = bvNone
+        Border.Bold = False
+        CaptionAlignment = fcaCenter
+        CaptionBorder.Inner = bvSpace
+        CaptionBorder.Outer = bvNone
+        CaptionBorder.Bold = False
+        CaptionGradient.Active = False
+        CaptionGradient.Orientation = fgdHorizontal
+        CaptionShift.X = 8
+        CaptionShift.Y = 0
+        Colors.Text = clHighlightText
+        Colors.TextActive = clHighlightText
+        Colors.Caption = clBtnShadow
+        Colors.CaptionActive = clPurple
+        Colors.Client = 14801370
+        Colors.ClientActive = 14801370
+        Gradient.FromColor = clBlack
+        Gradient.ToColor = clGray
+        Gradient.Active = False
+        Gradient.Orientation = fgdHorizontal
+        Options = [fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
+        ExplicitWidth = 951
+        DesignSize = (
+          952
+          55)
+        FullHeight = 0
+        object LB1: TLabel
+          Left = 10
+          Top = 31
+          Width = 81
+          Height = 14
+          Caption = 'Letra Expediente'
+        end
+        object Label9: TLabel
+          Left = 221
+          Top = 31
+          Width = 79
+          Height = 14
+          Caption = 'Nro. Expediente:'
+        end
+        object Edit1: TEdit
+          Left = 312
+          Top = 23
+          Width = 187
+          Height = 24
+          CharCase = ecUpperCase
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          MaxLength = 50
+          ParentFont = False
+          TabOrder = 0
+          OnKeyPress = Edit1KeyPress
+        end
+        object BusExpte: TJvBitBtn
+          Left = 580
+          Top = 15
+          Width = 128
+          Height = 33
+          Caption = 'Buscar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          Glyph.Data = {
+            2A070000424D2A070000000000003604000028000000190000001B0000000100
+            080000000000F4020000C40E0000C40E00000001000000000000000000000000
+            80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+            A6000020400000206000002080000020A0000020C0000020E000004000000040
+            20000040400000406000004080000040A0000040C0000040E000006000000060
+            20000060400000606000006080000060A0000060C0000060E000008000000080
+            20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+            200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+            200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+            200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+            20004000400040006000400080004000A0004000C0004000E000402000004020
+            20004020400040206000402080004020A0004020C0004020E000404000004040
+            20004040400040406000404080004040A0004040C0004040E000406000004060
+            20004060400040606000406080004060A0004060C0004060E000408000004080
+            20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+            200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+            200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+            200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+            20008000400080006000800080008000A0008000C0008000E000802000008020
+            20008020400080206000802080008020A0008020C0008020E000804000008040
+            20008040400080406000804080008040A0008040C0008040E000806000008060
+            20008060400080606000806080008060A0008060C0008060E000808000008080
+            20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+            200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+            200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+            200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+            2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+            2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+            2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+            2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+            2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+            2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+            2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00F6F6F6F6F6F6
+            F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6F6F6F6F6F6F6F6
+            F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6F6F6F6F6F6F6F6F6F6F6F6
+            F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6080708F6F6F6F6F6F6F6F6F6F6F6F6
+            F6F6F6F6F6F6F6000000F6F6A5A4ADADF6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6
+            F6F6F6000000FFF75C5CA5A5A508F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F600
+            0000F6F7AEA564AEA5AE07F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6
+            07B66565A665AD07F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F608B7AF65
+            5DA6A5F707F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6BFB7B76665A5A5
+            F7F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6F6BFB7B75D65A5AD07F6F6
+            F60808F6F6F6F6F6F6F6F6000000F6F6F6F6F6BFB7AE6564A5F7F7F7A4A4ACAC
+            F7ED08F6F6F6F6000000F6F6F6F6F6F6BFB7AEA5ADADACF509F6F607F7ACAC08
+            F6F6F6000000F6F6F6F6F6F6F6F6F6ADA4F707FFFFF6FFFFF607A4A407F6F600
+            0000F6F6F6F6F6F6F6F6FFF7EDF6FFFFF6F6FFFFFFFF07A4F7F6F6000000F6F6
+            F6F6F6F6F6F6F6F509FF090909FFFFF6FFFFFFF7A407F6000000F6F6F6F6F6F6
+            F6F60909090909FFFFF6F6FFFFFFFF079B08F6000000F6F6F6F6F6F6F6F60909
+            FF090909FF09FFFFFFFFF6FFA307F6000000F6F6F6F6F6F6F6F6090909090909
+            FFFFFF08FFF6F6FFA407F6000000F6F6F6F6F6F6F6F607FF09FFFF09FF09FF09
+            FFF6F6FFA408F6000000F6F6F6F6F6F6F6F6F607F609090909FF09FFFFFFFF08
+            A308F6000000F6F6F6F6F6F6F6F6F6F5FFFF09FF090909090808FFF7F7F6F600
+            0000F6F6F6F6F6F6F6F6F607F5FFFF0909090909FFFFF5AC08F6F6000000F6F6
+            F6F6F6F6F6F6F6F60708FFFFFF09F6F6FFF5ED08FFF6F6000000F6F6F6F6F6F6
+            F6F6F6FFF6ED07090909F609F5F708FFFFF6F6000000F6F6F6F6F6F6F6F6F6F6
+            F6F6FFF5A3F7F50709F6FFF6F6F6F6000000F6F6F6F6F6F6F6F6F6F6F6F6F6FF
+            FFFFFFFFFFFFF6FFFFF6F6000000}
+          ParentFont = False
+          TabOrder = 1
+          OnClick = BusExpteClick
+        end
+        object SECTOR: TComboBox
+          Left = 102
+          Top = 18
+          Width = 72
+          Height = 28
+          Anchors = [akLeft, akBottom]
+          CharCase = ecUpperCase
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -17
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          MaxLength = 1
+          ParentFont = False
+          TabOrder = 2
+          OnExit = SECTORExit
+          OnKeyPress = SECTORKeyPress
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'DATOS GENERALES'
+      ImageIndex = 2
+      object PageControl1: TPageControl
+        Left = 0
+        Top = 0
+        Width = 952
+        Height = 356
+        ActivePage = TabSheet3
+        Align = alTop
+        Images = ImageList1
+        TabOrder = 0
+        object TabSheet3: TTabSheet
+          Caption = 'Datos EXPEDIENTES'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ImageIndex = 2
+          ParentFont = False
+          object GroupBox1: TGroupBox
+            Left = 0
+            Top = 0
+            Width = 421
+            Height = 68
+            Caption = 'EXPEDIENTE'
+            TabOrder = 0
+            object Label33: TLabel
+              Left = 17
+              Top = 24
+              Width = 33
+              Height = 17
+              Caption = 'Letra'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label34: TLabel
+              Left = 152
+              Top = 24
+              Width = 23
+              Height = 17
+              Caption = 'Nro'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label35: TLabel
+              Left = 291
+              Top = 24
+              Width = 25
+              Height = 17
+              Caption = 'A'#241'o'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object NROE: TEdit
+              Left = 182
+              Top = 17
+              Width = 92
+              Height = 25
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object AÑO: TEdit
+              Left = 328
+              Top = 17
+              Width = 82
+              Height = 25
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 4
+              ParentFont = False
+              TabOrder = 2
+            end
+            object LETRA: TEdit
+              Left = 56
+              Top = 17
+              Width = 74
+              Height = 25
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 1
+              ParentFont = False
+              TabOrder = 0
+            end
+          end
+          object GroupBox2: TGroupBox
+            Left = 443
+            Top = 0
+            Width = 480
+            Height = 68
+            TabOrder = 1
+          end
+          object GroupBox3: TGroupBox
+            Left = 0
+            Top = 82
+            Width = 944
+            Height = 245
+            Align = alBottom
+            TabOrder = 2
+          end
+        end
+      end
+      object Panel1: TPanel
+        Left = 0
+        Top = 346
+        Width = 952
+        Height = 145
+        Align = alBottom
+        Color = 14079702
+        ParentBackground = False
+        TabOrder = 1
+        object GroupBox11: TGroupBox
+          Left = 41
+          Top = 15
+          Width = 684
+          Height = 125
+          TabOrder = 0
+          DesignSize = (
+            684
+            125)
+          object Label80: TLabel
+            Left = 36
+            Top = 27
+            Width = 300
+            Height = 19
+            Caption = 'Deuda Actual del Der. de Construcion:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -17
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label82: TLabel
+            Left = 144
+            Top = 78
+            Width = 203
+            Height = 19
+            Caption = 'Importe de la Liquidacion:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -17
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object importetotal: TRzNumericEdit
+            Left = 379
+            Top = 20
+            Width = 116
+            Height = 27
+            Color = clYellow
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -17
+            Font.Name = 'Arial'
+            Font.Style = [fsBold]
+            FocusColor = clBtnFace
+            MaxLength = 16
+            ParentDoubleBuffered = False
+            ParentFont = False
+            TabOrder = 0
+            OnExit = importetotalExit
+            OnKeyPress = importetotalKeyPress
+            IntegersOnly = False
+            DisplayFormat = '.0;(.0)'
+          end
+          object liquiimporte: TEdit
+            Left = 379
+            Top = 68
+            Width = 116
+            Height = 27
+            Color = clInactiveBorder
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -17
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+            TabOrder = 1
+            OnExit = liquiimporteExit
+            OnKeyPress = liquiimporteKeyPress
+          end
+          object aceptar: TJvBitBtn
+            Left = 528
+            Top = 12
+            Width = 128
+            Height = 50
+            Anchors = [akTop, akRight]
+            Caption = 'ACEPTAR'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Arial'
+            Font.Style = []
+            Glyph.Data = {
+              76010000424D7601000000000000760000002800000020000000100000000100
+              04000000000000010000120B0000120B00001000000000000000000000000000
+              800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333300000000
+              0000333377777777777733330FFFFFFFFFF033337F3FFF3F3FF733330F000F0F
+              00F033337F777373773733330FFFFFFFFFF033337F3FF3FF3FF733330F00F00F
+              00F033337F773773773733330FFFFFFFFFF033337FF3333FF3F7333300FFFF00
+              F0F03333773FF377F7373330FB00F0F0FFF0333733773737F3F7330FB0BF0FB0
+              F0F0337337337337373730FBFBF0FB0FFFF037F333373373333730BFBF0FB0FF
+              FFF037F3337337333FF700FBFBFB0FFF000077F333337FF37777E0BFBFB000FF
+              0FF077FF3337773F7F37EE0BFB0BFB0F0F03777FF3733F737F73EEE0BFBF00FF
+              00337777FFFF77FF7733EEEE0000000003337777777777777333}
+            NumGlyphs = 2
+            ParentFont = False
+            TabOrder = 2
+            OnClick = aceptarClick
+          end
+          object JvBitBtn2: TJvBitBtn
+            Left = 528
+            Top = 69
+            Width = 128
+            Height = 49
+            Anchors = [akTop, akRight]
+            Caption = 'CERRAR'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Arial'
+            Font.Style = []
+            Glyph.Data = {
+              F2060000424DF206000000000000360400002800000019000000190000000100
+              080000000000BC02000000000000000000000001000000000000000000000000
+              C00000C0000000C0C000C0000000C000C000C0C00000C0C0C000C0DCC000F0C8
+              A400000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              0000000000000000000000000000000000000000000000000000000000000000
+              000000000000000000000000000000000000F0FBFF00A4A0A000808080000000
+              FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFF07FFFFFF
+              0707FFFFFF07FFFF070000000000FFFF0707FF0000000707FF0707FFFFFF0707
+              FFFF07FFFF00FEFE060000FFFFFF07000000FFFF07FFFF0707FFFFFF07FFFF07
+              0700FEFE0606000707FFFF00000007FFFF07FFFFFF0707FFFF07FFFFFF00FEFE
+              06060000FF0707005000FFFFFFFFFFFFFFFFFFFF00FF07FFFF00FEFE06060600
+              F807FF000000FFFFFFFFFFFFFFFFFFFF000000000000FEFE06060600F807FF00
+              0000FFFFFFFFFFFFFFFFFFFF00F8F8F8F800FEFE06060600F807FF000000FFFF
+              FFFFFFFFFFFFFFFF00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFFFF
+              FFFFFFFF00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFFFFFFFFFFFF
+              00F8F8F8F800FEFE06000600F807FF000000FFFFFFFFFFFFFFFF000000000000
+              F800FEFE00F80600F807FF000000FFFFFFFFFFFFFF00000000000000F800FEFE
+              00FF0600F807FF000000FFFFFFFFFFFF000000FF00F8F8F8F800FEFE06000600
+              F807FF000000FFFFFFFFFF000000FFFF00F8F8F8F800FEFE06060600F807FF00
+              0000FFFFFFFFFF0000FFFFFF00F8F8F8F800FEFE06060600F807FF000000FFFF
+              FFFFFF0000FF00FF00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFF00
+              00FF00FF00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFF00000000FF
+              00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFFFF000000FF00F8F8F8
+              F800FEFE06060600F807FF000000FFFFFFFF0000000000FF00F8F8F8F8F800FE
+              FE060600F807FF000400FFFFFFFFFFFFFFFFFFFF00F8F8F8F8F8F800FEFE0600
+              F807FF000000FFFFFFFFFFFFFFFFFFFF00F8F8F8F8F8F8F800FE0600F807FF00
+              0000FFFFFFFFFFFFFFFFFFFF00F8F8F8F8F8F8F8F800FE00F807FF000000FFFF
+              FFFFFFFFFFFFFFFF00F8F8F8F8F8F8F8F8F80000F8FFFF000000FFFFFFFFFFFF
+              FFFFFFFF000000000000000000000000FFFFFF000000}
+            ParentFont = False
+            TabOrder = 3
+            OnClick = JvBitBtn2Click
+          end
+        end
+      end
+    end
+    object TabSheet9: TTabSheet
+      Caption = 'TITULAR EXPTE.'
+      ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object PageControl2: TPageControl
+        Left = 0
+        Top = 0
+        Width = 952
+        Height = 491
+        ActivePage = TabSheet5
+        Align = alClient
+        Images = ImageList1
+        TabOrder = 0
+        object TabSheet5: TTabSheet
+          Caption = 'RESPONSABLE DEL TRAMITE'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ImageIndex = 1
+          ParentFont = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
+          object JvgGroupBox4: TJvgGroupBox
+            Left = 0
+            Top = 0
+            Width = 944
+            Height = 51
+            Align = alTop
+            Caption = 'Opciones de B'#250'squedas'
+            TabOrder = 0
+            Visible = False
+            Border.Inner = bvSpace
+            Border.Outer = bvNone
+            Border.Bold = False
+            CaptionAlignment = fcaCenter
+            CaptionBorder.Inner = bvSpace
+            CaptionBorder.Outer = bvNone
+            CaptionBorder.Bold = False
+            CaptionGradient.Active = False
+            CaptionGradient.Orientation = fgdHorizontal
+            CaptionShift.X = 8
+            CaptionShift.Y = 0
+            Colors.Text = clHighlightText
+            Colors.TextActive = clHighlightText
+            Colors.Caption = clBtnShadow
+            Colors.CaptionActive = clPurple
+            Colors.Client = 14801370
+            Colors.ClientActive = 14801370
+            Gradient.FromColor = clBlack
+            Gradient.ToColor = clGray
+            Gradient.Active = False
+            Gradient.Orientation = fgdHorizontal
+            Options = [fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
+            ExplicitWidth = 942
+            FullHeight = 0
+            object Label43: TLabel
+              Left = 10
+              Top = 29
+              Width = 42
+              Height = 14
+              Caption = 'N'#176' D.N.I.:'
+            end
+            object Label44: TLabel
+              Left = 187
+              Top = 29
+              Width = 40
+              Height = 14
+              Caption = 'Nombre:'
+            end
+            object Label45: TLabel
+              Left = 614
+              Top = 28
+              Width = 38
+              Height = 14
+              Caption = 'N'#176' CUIT:'
+            end
+            object BUSCAR: TJvBitBtn
+              Left = 801
+              Top = 11
+              Width = 127
+              Height = 33
+              Caption = 'Buscar'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              Glyph.Data = {
+                2A070000424D2A070000000000003604000028000000190000001B0000000100
+                080000000000F4020000C40E0000C40E00000001000000000000000000000000
+                80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                A6000020400000206000002080000020A0000020C0000020E000004000000040
+                20000040400000406000004080000040A0000040C0000040E000006000000060
+                20000060400000606000006080000060A0000060C0000060E000008000000080
+                20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                20004000400040006000400080004000A0004000C0004000E000402000004020
+                20004020400040206000402080004020A0004020C0004020E000404000004040
+                20004040400040406000404080004040A0004040C0004040E000406000004060
+                20004060400040606000406080004060A0004060C0004060E000408000004080
+                20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                20008000400080006000800080008000A0008000C0008000E000802000008020
+                20008020400080206000802080008020A0008020C0008020E000804000008040
+                20008040400080406000804080008040A0008040C0008040E000806000008060
+                20008060400080606000806080008060A0008060C0008060E000808000008080
+                20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00F6F6F6F6F6F6
+                F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6F6F6F6F6F6F6F6
+                F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6F6F6F6F6F6F6F6F6F6F6F6
+                F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6080708F6F6F6F6F6F6F6F6F6F6F6F6
+                F6F6F6F6F6F6F6000000F6F6A5A4ADADF6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6
+                F6F6F6000000FFF75C5CA5A5A508F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F600
+                0000F6F7AEA564AEA5AE07F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6
+                07B66565A665AD07F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F608B7AF65
+                5DA6A5F707F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6BFB7B76665A5A5
+                F7F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6F6BFB7B75D65A5AD07F6F6
+                F60808F6F6F6F6F6F6F6F6000000F6F6F6F6F6BFB7AE6564A5F7F7F7A4A4ACAC
+                F7ED08F6F6F6F6000000F6F6F6F6F6F6BFB7AEA5ADADACF509F6F607F7ACAC08
+                F6F6F6000000F6F6F6F6F6F6F6F6F6ADA4F707FFFFF6FFFFF607A4A407F6F600
+                0000F6F6F6F6F6F6F6F6FFF7EDF6FFFFF6F6FFFFFFFF07A4F7F6F6000000F6F6
+                F6F6F6F6F6F6F6F509FF090909FFFFF6FFFFFFF7A407F6000000F6F6F6F6F6F6
+                F6F60909090909FFFFF6F6FFFFFFFF079B08F6000000F6F6F6F6F6F6F6F60909
+                FF090909FF09FFFFFFFFF6FFA307F6000000F6F6F6F6F6F6F6F6090909090909
+                FFFFFF08FFF6F6FFA407F6000000F6F6F6F6F6F6F6F607FF09FFFF09FF09FF09
+                FFF6F6FFA408F6000000F6F6F6F6F6F6F6F6F607F609090909FF09FFFFFFFF08
+                A308F6000000F6F6F6F6F6F6F6F6F6F5FFFF09FF090909090808FFF7F7F6F600
+                0000F6F6F6F6F6F6F6F6F607F5FFFF0909090909FFFFF5AC08F6F6000000F6F6
+                F6F6F6F6F6F6F6F60708FFFFFF09F6F6FFF5ED08FFF6F6000000F6F6F6F6F6F6
+                F6F6F6FFF6ED07090909F609F5F708FFFFF6F6000000F6F6F6F6F6F6F6F6F6F6
+                F6F6FFF5A3F7F50709F6FFF6F6F6F6000000F6F6F6F6F6F6F6F6F6F6F6F6F6FF
+                FFFFFFFFFFFFF6FFFFF6F6000000}
+              ParentFont = False
+              TabOrder = 0
+              OnClick = BuscarClick
+            end
+            object ODNI: TEdit
+              Left = 66
+              Top = 18
+              Width = 110
+              Height = 24
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'Arial'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 1
+            end
+            object ONOMB: TEdit
+              Left = 234
+              Top = 18
+              Width = 387
+              Height = 24
+              CharCase = ecUpperCase
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 50
+              ParentFont = False
+              TabOrder = 2
+            end
+            object OCUIT: TEdit
+              Left = 667
+              Top = 18
+              Width = 125
+              Height = 24
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'Arial'
+              Font.Style = []
+              MaxLength = 11
+              ParentFont = False
+              TabOrder = 3
+              Visible = False
+            end
+          end
+          object JvDBGrid2: TJvDBGrid
+            Left = 0
+            Top = 51
+            Width = 944
+            Height = 124
+            Align = alClient
+            DataSource = DataSource1
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Arial'
+            Font.Style = []
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
+            ParentShowHint = False
+            ReadOnly = True
+            ShowHint = True
+            TabOrder = 1
+            TitleFont.Charset = ANSI_CHARSET
+            TitleFont.Color = clNavy
+            TitleFont.Height = -12
+            TitleFont.Name = 'Arial Narrow'
+            TitleFont.Style = [fsBold]
+            AlternateRowColor = clSkyBlue
+            SelectColumnsDialogStrings.Caption = 'Select columns'
+            SelectColumnsDialogStrings.OK = '&OK'
+            SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+            EditControls = <>
+            RowsHeight = 18
+            TitleRowHeight = 20
+          end
+          object GroupBox4: TGroupBox
+            Left = 0
+            Top = 175
+            Width = 944
+            Height = 287
+            Align = alBottom
+            TabOrder = 2
+            ExplicitTop = 166
+            ExplicitWidth = 942
+            object Label2: TLabel
+              Left = 4
+              Top = 126
+              Width = 36
+              Height = 15
+              Caption = 'Barrio:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label3: TLabel
+              Left = 9
+              Top = 159
+              Width = 32
+              Height = 15
+              Caption = 'Calle:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label6: TLabel
+              Left = 2
+              Top = 193
+              Width = 115
+              Height = 15
+              Caption = 'Domicilio Declarado:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              Visible = False
+            end
+            object Label31: TLabel
+              Left = 12
+              Top = 235
+              Width = 34
+              Height = 15
+              Caption = 'Altura:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label32: TLabel
+              Left = 215
+              Top = 234
+              Width = 28
+              Height = 15
+              Caption = 'Piso:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label46: TLabel
+              Left = 383
+              Top = 233
+              Width = 36
+              Height = 15
+              Caption = 'Depto:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label47: TLabel
+              Left = 573
+              Top = 234
+              Width = 52
+              Height = 15
+              Caption = 'Manzana:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label48: TLabel
+              Left = 376
+              Top = 263
+              Width = 45
+              Height = 15
+              Caption = 'Parcela:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label49: TLabel
+              Left = 772
+              Top = 234
+              Width = 31
+              Height = 15
+              Caption = 'Torre:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label50: TLabel
+              Left = 15
+              Top = 263
+              Width = 33
+              Height = 15
+              Caption = 'Casa:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label51: TLabel
+              Left = 204
+              Top = 263
+              Width = 38
+              Height = 15
+              Caption = 'Sector:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label52: TLabel
+              Left = 565
+              Top = 263
+              Width = 60
+              Height = 15
+              Caption = 'Lote Rural:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label16: TLabel
+              Left = 15
+              Top = 18
+              Width = 149
+              Height = 15
+              Caption = 'FIGURA DEL SOLICITANTE'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label17: TLabel
+              Left = 3
+              Top = 87
+              Width = 31
+              Height = 14
+              Caption = 'E-mail:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label18: TLabel
+              Left = 365
+              Top = 87
+              Width = 44
+              Height = 14
+              Caption = 'Telefono:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label12: TLabel
+              Left = 3
+              Top = 52
+              Width = 32
+              Height = 14
+              Caption = 'Titular:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label79: TLabel
+              Left = 642
+              Top = 84
+              Width = 74
+              Height = 14
+              Caption = 'Tipo y Nro Doc.'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label81: TLabel
+              Left = 688
+              Top = 51
+              Width = 27
+              Height = 14
+              Caption = 'CUIM:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object BARRIORESPO: TComboBox
+              Left = 50
+              Top = 116
+              Width = 832
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+            object CALLERESPO: TComboBox
+              Left = 50
+              Top = 152
+              Width = 832
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object DOMRESPO: TEdit
+              Left = 113
+              Top = 185
+              Width = 769
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 150
+              ParentFont = False
+              TabOrder = 2
+              Visible = False
+            end
+            object ALTURARESPO: TEdit
+              Left = 51
+              Top = 225
+              Width = 52
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 5
+              ParentFont = False
+              TabOrder = 3
+              Text = '0'
+            end
+            object PISORESPO: TEdit
+              Left = 247
+              Top = 226
+              Width = 52
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 4
+            end
+            object DEPTORESPO: TEdit
+              Left = 424
+              Top = 226
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 5
+            end
+            object MZRESPO: TEdit
+              Left = 628
+              Top = 226
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 6
+            end
+            object PARRESPO: TEdit
+              Left = 424
+              Top = 256
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 10
+            end
+            object TORRERESPO: TEdit
+              Left = 815
+              Top = 225
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 7
+            end
+            object CASARESPO: TEdit
+              Left = 51
+              Top = 256
+              Width = 52
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 8
+            end
+            object SECTORRESPO: TEdit
+              Left = 247
+              Top = 255
+              Width = 52
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 9
+            end
+            object LRRESPO: TEdit
+              Left = 628
+              Top = 255
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 11
+            end
+            object tpotit: TEdit
+              Left = 174
+              Top = 11
+              Width = 209
+              Height = 21
+              Color = clYellow
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlue
+              Font.Height = -11
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              ReadOnly = True
+              TabOrder = 12
+            end
+            object emailRESPO: TEdit
+              Left = 50
+              Top = 83
+              Width = 278
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 13
+            end
+            object telefonorespo: TEdit
+              Left = 420
+              Top = 81
+              Width = 210
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 14
+            end
+            object titrespo: TEdit
+              Left = 50
+              Top = 47
+              Width = 580
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 15
+            end
+            object dnirespo: TEdit
+              Left = 778
+              Top = 79
+              Width = 104
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 16
+            end
+            object tipodocrespo: TEdit
+              Left = 732
+              Top = 79
+              Width = 42
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 17
+            end
+            object cuimtit: TEdit
+              Left = 731
+              Top = 47
+              Width = 148
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 18
+            end
+          end
+        end
+      end
+    end
+    object TabSheet6: TTabSheet
+      Caption = 'DATOS DEL INMUEBLE'
+      ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object PC4: TPageControl
+        Left = 0
+        Top = 0
+        Width = 952
+        Height = 410
+        ActivePage = TabSheet7
+        Align = alTop
+        Enabled = False
+        Images = ImageList1
+        TabOrder = 0
+        object TabSheet7: TTabSheet
+          Caption = 'Datos Partida'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ImageIndex = 3
+          ParentFont = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
+          object Label10: TLabel
+            Left = 348
+            Top = 73
+            Width = 61
+            Height = 14
+            Caption = 'Denom. Act.:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label15: TLabel
+            Left = 164
+            Top = 75
+            Width = 67
+            Height = 14
+            Caption = 'Sup.Mensura:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label7: TLabel
+            Left = 342
+            Top = 106
+            Width = 66
+            Height = 14
+            Caption = 'Fecha Adjud.:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label8: TLabel
+            Left = 173
+            Top = 106
+            Width = 57
+            Height = 14
+            Caption = 'Fecha Baja:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label11: TLabel
+            Left = 19
+            Top = 106
+            Width = 54
+            Height = 14
+            Caption = 'Fecha Alta:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label37: TLabel
+            Left = 22
+            Top = 75
+            Width = 51
+            Height = 14
+            Caption = 'N'#186' Partida:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label14: TLabel
+            Left = 39
+            Top = 51
+            Width = 32
+            Height = 14
+            Caption = 'Titular:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label1: TLabel
+            Left = 5
+            Top = 15
+            Width = 58
+            Height = 14
+            Caption = 'N'#186'  Partida:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object Label13: TLabel
+            Left = 16
+            Top = 146
+            Width = 108
+            Height = 15
+            Caption = 'Tipo Forma Partida:'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+          end
+          object N2: TEdit
+            Left = 80
+            Top = 71
+            Width = 76
+            Height = 21
+            Color = clInfoBk
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlue
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 2
+          end
+          object N6: TEdit
+            Left = 80
+            Top = 101
+            Width = 76
+            Height = 21
+            Color = clInfoBk
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlue
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 3
+          end
+          object N7: TEdit
+            Left = 238
+            Top = 101
+            Width = 90
+            Height = 21
+            Color = clInfoBk
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlue
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 4
+          end
+          object N8: TEdit
+            Left = 425
+            Top = 101
+            Width = 84
+            Height = 21
+            Color = clInfoBk
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlue
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 5
+          end
+          object N4: TEdit
+            Left = 425
+            Top = 71
+            Width = 202
+            Height = 21
+            CharCase = ecUpperCase
+            Color = clInfoBk
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlue
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 6
+          end
+          object N3: TEdit
+            Left = 237
+            Top = 71
+            Width = 91
+            Height = 21
+            Color = clInfoBk
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlue
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 7
+          end
+          object N9: TEdit
+            Left = 80
+            Top = 42
+            Width = 547
+            Height = 21
+            Color = clYellow
+            Enabled = False
+            ReadOnly = True
+            TabOrder = 8
+          end
+          object OPARTIDA: TMaskEdit
+            Left = 80
+            Top = 10
+            Width = 98
+            Height = 24
+            Hint = 'Ingrese el N'#176' de Partida'
+            Color = clYellow
+            Enabled = False
+            EditMask = '!9999999999;1; '
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            MaxLength = 10
+            ParentFont = False
+            TabOrder = 0
+            Text = '0000000000'
+          end
+          object BuscarP: TButton
+            Left = 198
+            Top = 4
+            Width = 105
+            Height = 32
+            Hint = 'B'#250'squeda del Estado de Cuenta'
+            Caption = 'Buscar'
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Microsoft Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 1
+            WordWrap = True
+            OnClick = BuscarPClick
+          end
+          object GroupBox5: TGroupBox
+            Left = 0
+            Top = 167
+            Width = 942
+            Height = 212
+            Align = alBottom
+            Caption = 'DOMICILIO'
+            TabOrder = 9
+            object Label30: TLabel
+              Left = 45
+              Top = 24
+              Width = 36
+              Height = 15
+              Caption = 'Barrio:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label53: TLabel
+              Left = 50
+              Top = 54
+              Width = 32
+              Height = 15
+              Caption = 'Calle:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label54: TLabel
+              Left = 4
+              Top = 84
+              Width = 81
+              Height = 15
+              Caption = 'Otro Domicilio:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label55: TLabel
+              Left = 45
+              Top = 118
+              Width = 34
+              Height = 15
+              Caption = 'Altura:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label56: TLabel
+              Left = 180
+              Top = 118
+              Width = 28
+              Height = 15
+              Caption = 'Piso:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label57: TLabel
+              Left = 309
+              Top = 118
+              Width = 36
+              Height = 15
+              Caption = 'Depto:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label58: TLabel
+              Left = 450
+              Top = 118
+              Width = 52
+              Height = 15
+              Caption = 'Manzana:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label59: TLabel
+              Left = 302
+              Top = 152
+              Width = 45
+              Height = 15
+              Caption = 'Parcela:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label60: TLabel
+              Left = 649
+              Top = 118
+              Width = 31
+              Height = 15
+              Caption = 'Torre:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label61: TLabel
+              Left = 48
+              Top = 151
+              Width = 33
+              Height = 15
+              Caption = 'Casa:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label62: TLabel
+              Left = 168
+              Top = 152
+              Width = 38
+              Height = 15
+              Caption = 'Sector:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label64: TLabel
+              Left = 443
+              Top = 152
+              Width = 60
+              Height = 15
+              Caption = 'Lote Rural:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label65: TLabel
+              Left = 5
+              Top = 185
+              Width = 85
+              Height = 15
+              Caption = 'Domicilio Obra:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object BARRIOINMU: TComboBox
+              Left = 84
+              Top = 16
+              Width = 543
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+            object CALLEINMU: TComboBox
+              Left = 84
+              Top = 46
+              Width = 543
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object DOMIINMU: TEdit
+              Left = 84
+              Top = 79
+              Width = 654
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 150
+              ParentFont = False
+              TabOrder = 2
+            end
+            object ALTURAINMU: TEdit
+              Left = 84
+              Top = 111
+              Width = 53
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 5
+              ParentFont = False
+              TabOrder = 3
+              Text = '0'
+            end
+            object PISOINMU: TEdit
+              Left = 215
+              Top = 111
+              Width = 53
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 4
+            end
+            object DEPTOINMU: TEdit
+              Left = 347
+              Top = 111
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 5
+            end
+            object MZINMU: TEdit
+              Left = 503
+              Top = 110
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 6
+            end
+            object PARINMU: TEdit
+              Left = 347
+              Top = 145
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 10
+            end
+            object TORREINMU: TEdit
+              Left = 686
+              Top = 109
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 7
+            end
+            object CASAINMU: TEdit
+              Left = 84
+              Top = 143
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 8
+            end
+            object SECTORINMU: TEdit
+              Left = 215
+              Top = 145
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 9
+            end
+            object LRINMU: TEdit
+              Left = 503
+              Top = 143
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 11
+            end
+            object DOMOBRA: TEdit
+              Left = 84
+              Top = 177
+              Width = 732
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 250
+              ParentFont = False
+              TabOrder = 12
+            end
+          end
+          object tpopartida: TEdit
+            Left = 126
+            Top = 138
+            Width = 209
+            Height = 21
+            Color = clYellow
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlue
+            Font.Height = -11
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 10
+          end
+        end
+      end
+    end
+    object TabSheet10: TTabSheet
+      Caption = 'DATOS PROFESIONAL'
+      ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object PageControl3: TPageControl
+        Left = 0
+        Top = 0
+        Width = 952
+        Height = 491
+        ActivePage = TabSheet11
+        Align = alClient
+        Images = ImageList1
+        TabOrder = 0
+        object TabSheet11: TTabSheet
+          Caption = 'PROFESIONAL ACTUANTE'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = []
+          ImageIndex = 1
+          ParentFont = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
+          object JvgGroupBox2: TJvgGroupBox
+            Left = 0
+            Top = 0
+            Width = 944
+            Height = 64
+            Align = alTop
+            Caption = 'Opciones de B'#250'squedas'
+            TabOrder = 0
+            Visible = False
+            Border.Inner = bvSpace
+            Border.Outer = bvNone
+            Border.Bold = False
+            CaptionAlignment = fcaCenter
+            CaptionBorder.Inner = bvSpace
+            CaptionBorder.Outer = bvNone
+            CaptionBorder.Bold = False
+            CaptionGradient.Active = False
+            CaptionGradient.Orientation = fgdHorizontal
+            CaptionShift.X = 8
+            CaptionShift.Y = 0
+            Colors.Text = clHighlightText
+            Colors.TextActive = clHighlightText
+            Colors.Caption = clBtnShadow
+            Colors.CaptionActive = clPurple
+            Colors.Client = 14801370
+            Colors.ClientActive = 14801370
+            Gradient.FromColor = clBlack
+            Gradient.ToColor = clGray
+            Gradient.Active = False
+            Gradient.Orientation = fgdHorizontal
+            Options = [fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
+            ExplicitWidth = 942
+            FullHeight = 0
+            object Label19: TLabel
+              Left = 31
+              Top = 33
+              Width = 42
+              Height = 14
+              Caption = 'N'#176' D.N.I.:'
+            end
+            object Label20: TLabel
+              Left = 235
+              Top = 31
+              Width = 40
+              Height = 14
+              Caption = 'Nombre:'
+            end
+            object BUSCARPROF: TJvBitBtn
+              Left = 802
+              Top = 17
+              Width = 127
+              Height = 34
+              Caption = 'Buscar'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              Glyph.Data = {
+                2A070000424D2A070000000000003604000028000000190000001B0000000100
+                080000000000F4020000C40E0000C40E00000001000000000000000000000000
+                80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+                A6000020400000206000002080000020A0000020C0000020E000004000000040
+                20000040400000406000004080000040A0000040C0000040E000006000000060
+                20000060400000606000006080000060A0000060C0000060E000008000000080
+                20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+                200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+                200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+                200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+                20004000400040006000400080004000A0004000C0004000E000402000004020
+                20004020400040206000402080004020A0004020C0004020E000404000004040
+                20004040400040406000404080004040A0004040C0004040E000406000004060
+                20004060400040606000406080004060A0004060C0004060E000408000004080
+                20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+                200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+                200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+                200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+                20008000400080006000800080008000A0008000C0008000E000802000008020
+                20008020400080206000802080008020A0008020C0008020E000804000008040
+                20008040400080406000804080008040A0008040C0008040E000806000008060
+                20008060400080606000806080008060A0008060C0008060E000808000008080
+                20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+                200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+                200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+                200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+                2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+                2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+                2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+                2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+                2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+                2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+                2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+                FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00F6F6F6F6F6F6
+                F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6F6F6F6F6F6F6F6
+                F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6F6F6F6F6F6F6F6F6F6F6F6
+                F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6080708F6F6F6F6F6F6F6F6F6F6F6F6
+                F6F6F6F6F6F6F6000000F6F6A5A4ADADF6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6
+                F6F6F6000000FFF75C5CA5A5A508F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F600
+                0000F6F7AEA564AEA5AE07F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6
+                07B66565A665AD07F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F608B7AF65
+                5DA6A5F707F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6BFB7B76665A5A5
+                F7F6F6F6F6F6F6F6F6F6F6F6F6F6F6000000F6F6F6F6BFB7B75D65A5AD07F6F6
+                F60808F6F6F6F6F6F6F6F6000000F6F6F6F6F6BFB7AE6564A5F7F7F7A4A4ACAC
+                F7ED08F6F6F6F6000000F6F6F6F6F6F6BFB7AEA5ADADACF509F6F607F7ACAC08
+                F6F6F6000000F6F6F6F6F6F6F6F6F6ADA4F707FFFFF6FFFFF607A4A407F6F600
+                0000F6F6F6F6F6F6F6F6FFF7EDF6FFFFF6F6FFFFFFFF07A4F7F6F6000000F6F6
+                F6F6F6F6F6F6F6F509FF090909FFFFF6FFFFFFF7A407F6000000F6F6F6F6F6F6
+                F6F60909090909FFFFF6F6FFFFFFFF079B08F6000000F6F6F6F6F6F6F6F60909
+                FF090909FF09FFFFFFFFF6FFA307F6000000F6F6F6F6F6F6F6F6090909090909
+                FFFFFF08FFF6F6FFA407F6000000F6F6F6F6F6F6F6F607FF09FFFF09FF09FF09
+                FFF6F6FFA408F6000000F6F6F6F6F6F6F6F6F607F609090909FF09FFFFFFFF08
+                A308F6000000F6F6F6F6F6F6F6F6F6F5FFFF09FF090909090808FFF7F7F6F600
+                0000F6F6F6F6F6F6F6F6F607F5FFFF0909090909FFFFF5AC08F6F6000000F6F6
+                F6F6F6F6F6F6F6F60708FFFFFF09F6F6FFF5ED08FFF6F6000000F6F6F6F6F6F6
+                F6F6F6FFF6ED07090909F609F5F708FFFFF6F6000000F6F6F6F6F6F6F6F6F6F6
+                F6F6FFF5A3F7F50709F6FFF6F6F6F6000000F6F6F6F6F6F6F6F6F6F6F6F6F6FF
+                FFFFFFFFFFFFF6FFFFF6F6000000}
+              ParentFont = False
+              TabOrder = 0
+            end
+            object odnip: TEdit
+              Left = 96
+              Top = 23
+              Width = 110
+              Height = 24
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'Arial'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 1
+            end
+            object ONOMBP: TEdit
+              Left = 291
+              Top = 25
+              Width = 387
+              Height = 24
+              CharCase = ecUpperCase
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 50
+              ParentFont = False
+              TabOrder = 2
+            end
+          end
+          object JvDBGrid3: TJvDBGrid
+            Left = 0
+            Top = 64
+            Width = 944
+            Height = 126
+            Align = alClient
+            DataSource = DataSource4
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Arial'
+            Font.Style = []
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+            ParentFont = False
+            ParentShowHint = False
+            ReadOnly = True
+            ShowHint = True
+            TabOrder = 1
+            TitleFont.Charset = ANSI_CHARSET
+            TitleFont.Color = clNavy
+            TitleFont.Height = -12
+            TitleFont.Name = 'Arial Narrow'
+            TitleFont.Style = [fsBold]
+            AlternateRowColor = clSkyBlue
+            SelectColumnsDialogStrings.Caption = 'Select columns'
+            SelectColumnsDialogStrings.OK = '&OK'
+            SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+            EditControls = <>
+            RowsHeight = 18
+            TitleRowHeight = 20
+          end
+          object GroupBox9: TGroupBox
+            Left = 0
+            Top = 190
+            Width = 944
+            Height = 272
+            Align = alBottom
+            Caption = 'DOMICILIO'
+            TabOrder = 2
+            ExplicitTop = 181
+            ExplicitWidth = 942
+            object Label21: TLabel
+              Left = 70
+              Top = 95
+              Width = 36
+              Height = 15
+              Caption = 'Barrio:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label22: TLabel
+              Left = 74
+              Top = 132
+              Width = 32
+              Height = 15
+              Caption = 'Calle:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label23: TLabel
+              Left = 0
+              Top = 163
+              Width = 115
+              Height = 15
+              Caption = 'Domicilio Declarado:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              Visible = False
+            end
+            object Label24: TLabel
+              Left = 43
+              Top = 200
+              Width = 34
+              Height = 15
+              Caption = 'Altura:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label25: TLabel
+              Left = 213
+              Top = 205
+              Width = 28
+              Height = 15
+              Caption = 'Piso:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label26: TLabel
+              Left = 353
+              Top = 200
+              Width = 36
+              Height = 15
+              Caption = 'Depto:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label27: TLabel
+              Left = 571
+              Top = 200
+              Width = 52
+              Height = 15
+              Caption = 'Manzana:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label28: TLabel
+              Left = 346
+              Top = 232
+              Width = 45
+              Height = 15
+              Caption = 'Parcela:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label29: TLabel
+              Left = 770
+              Top = 200
+              Width = 31
+              Height = 15
+              Caption = 'Torre:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label63: TLabel
+              Left = 46
+              Top = 230
+              Width = 33
+              Height = 15
+              Caption = 'Casa:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label67: TLabel
+              Left = 201
+              Top = 232
+              Width = 38
+              Height = 15
+              Caption = 'Sector:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label72: TLabel
+              Left = 563
+              Top = 232
+              Width = 60
+              Height = 15
+              Caption = 'Lote Rural:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label74: TLabel
+              Left = 69
+              Top = 58
+              Width = 31
+              Height = 14
+              Caption = 'E-mail:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label75: TLabel
+              Left = 433
+              Top = 62
+              Width = 44
+              Height = 14
+              Caption = 'Telefono:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label73: TLabel
+              Left = 53
+              Top = 28
+              Width = 46
+              Height = 14
+              Caption = 'Matricula:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -11
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object barriop: TComboBox
+              Left = 109
+              Top = 88
+              Width = 635
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 3
+            end
+            object callep: TComboBox
+              Left = 109
+              Top = 122
+              Width = 635
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 4
+            end
+            object domp: TEdit
+              Left = 109
+              Top = 157
+              Width = 801
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 150
+              ParentFont = False
+              TabOrder = 5
+              Visible = False
+            end
+            object alturap: TEdit
+              Left = 82
+              Top = 191
+              Width = 53
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 5
+              ParentFont = False
+              TabOrder = 6
+              Text = '0'
+            end
+            object pisop: TEdit
+              Left = 244
+              Top = 193
+              Width = 53
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 7
+            end
+            object deptop: TEdit
+              Left = 394
+              Top = 192
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 8
+            end
+            object mzp: TEdit
+              Left = 626
+              Top = 193
+              Width = 52
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 9
+            end
+            object parp: TEdit
+              Left = 394
+              Top = 225
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 13
+            end
+            object torrep: TEdit
+              Left = 802
+              Top = 192
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 10
+              ParentFont = False
+              TabOrder = 10
+            end
+            object casap: TEdit
+              Left = 82
+              Top = 226
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 11
+            end
+            object sectorp: TEdit
+              Left = 244
+              Top = 225
+              Width = 53
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 12
+            end
+            object lrp: TEdit
+              Left = 626
+              Top = 226
+              Width = 52
+              Height = 21
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 3
+              ParentFont = False
+              TabOrder = 14
+            end
+            object emailp: TEdit
+              Left = 109
+              Top = 52
+              Width = 279
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+            end
+            object telefonop: TEdit
+              Left = 488
+              Top = 52
+              Width = 256
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 2
+            end
+            object matricula: TEdit
+              Left = 109
+              Top = 17
+              Width = 279
+              Height = 21
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -12
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+            end
+          end
+        end
+      end
+    end
+    object TabSheet8: TTabSheet
+      Caption = 'CALCULO IMPORTE EXPTE'
+      ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object JvgGroupBox6: TJvgGroupBox
+        Left = 0
+        Top = 0
+        Width = 952
+        Height = 491
+        Align = alClient
+        Caption = 'Configuracion del Importe del Expediente'
+        TabOrder = 0
+        Border.Inner = bvSpace
+        Border.Outer = bvNone
+        Border.Bold = False
+        CaptionAlignment = fcaCenter
+        CaptionBorder.Inner = bvSpace
+        CaptionBorder.Outer = bvNone
+        CaptionBorder.Bold = False
+        CaptionGradient.Active = False
+        CaptionGradient.Orientation = fgdHorizontal
+        CaptionShift.X = 8
+        CaptionShift.Y = 0
+        Colors.Text = clHighlightText
+        Colors.TextActive = clHighlightText
+        Colors.Caption = clBtnShadow
+        Colors.CaptionActive = clPurple
+        Colors.Client = 14801370
+        Colors.ClientActive = 14801370
+        Gradient.FromColor = clBlack
+        Gradient.ToColor = clGray
+        Gradient.Active = False
+        Gradient.Orientation = fgdHorizontal
+        Options = [fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
+        ExplicitWidth = 951
+        ExplicitHeight = 485
+        FullHeight = 0
+        object JvgGroupBox7: TJvgGroupBox
+          Left = 2
+          Top = 337
+          Width = 948
+          Height = 152
+          Align = alBottom
+          Caption = 'Comentarios'
+          TabOrder = 0
+          Enabled = False
+          Border.Inner = bvSpace
+          Border.Outer = bvNone
+          Border.Bold = False
+          CaptionAlignment = fcaCenter
+          CaptionBorder.Inner = bvSpace
+          CaptionBorder.Outer = bvNone
+          CaptionBorder.Bold = False
+          CaptionGradient.Active = False
+          CaptionGradient.Orientation = fgdHorizontal
+          CaptionShift.X = 8
+          CaptionShift.Y = 0
+          Colors.Text = clHighlightText
+          Colors.TextActive = clHighlightText
+          Colors.Caption = clBtnShadow
+          Colors.CaptionActive = clPurple
+          Colors.Client = clMedGray
+          Colors.ClientActive = 14801370
+          Gradient.FromColor = clBlack
+          Gradient.ToColor = clGray
+          Gradient.Active = False
+          Gradient.Orientation = fgdHorizontal
+          Options = [fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
+          Transparent = True
+          ExplicitTop = 330
+          ExplicitWidth = 947
+          FullHeight = 0
+          object COMENTARIOS: TMemo
+            Left = 2
+            Top = 17
+            Width = 942
+            Height = 134
+            Align = alClient
+            Enabled = False
+            TabOrder = 0
+            OnChange = COMENTARIOSChange
+          end
+        end
+        object JvgGroupBox0: TJvgGroupBox
+          Left = 2
+          Top = 17
+          Width = 948
+          Height = 320
+          Align = alClient
+          Caption = '..'
+          TabOrder = 1
+          Enabled = False
+          Border.Inner = bvSpace
+          Border.Outer = bvNone
+          Border.Bold = False
+          CaptionAlignment = fcaCenter
+          CaptionBorder.Inner = bvSpace
+          CaptionBorder.Outer = bvNone
+          CaptionBorder.Bold = False
+          CaptionGradient.Active = False
+          CaptionGradient.Orientation = fgdHorizontal
+          CaptionShift.X = 8
+          CaptionShift.Y = 0
+          Colors.Text = clHighlightText
+          Colors.TextActive = clHighlightText
+          Colors.Caption = clBtnShadow
+          Colors.CaptionActive = clPurple
+          Colors.Client = clBtnFace
+          Colors.ClientActive = clBtnFace
+          Gradient.FromColor = clBlack
+          Gradient.ToColor = clGray
+          Gradient.Active = False
+          Gradient.Orientation = fgdHorizontal
+          Options = [fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
+          ExplicitTop = 18
+          ExplicitWidth = 947
+          ExplicitHeight = 312
+          FullHeight = 0
+          object Label68: TLabel
+            Left = 709
+            Top = 228
+            Width = 73
+            Height = 24
+            Caption = 'TOTAL:'
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -20
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+          end
+          object grilla2: TJvStringGrid
+            Left = 1
+            Top = 50
+            Width = 942
+            Height = 154
+            Hint = 'Despliegue opciones de men'#250' con el bot'#243'n derecho del Mouse'
+            Color = clWhite
+            ColCount = 6
+            DefaultColWidth = 55
+            DefaultRowHeight = 20
+            Enabled = False
+            FixedColor = clMedGray
+            FixedCols = 2
+            RowCount = 2
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -17
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing]
+            ParentFont = False
+            ParentShowHint = False
+            ScrollBars = ssHorizontal
+            ShowHint = True
+            TabOrder = 0
+            Alignment = taLeftJustify
+            FixedFont.Charset = DEFAULT_CHARSET
+            FixedFont.Color = clWindowText
+            FixedFont.Height = -11
+            FixedFont.Name = 'Arial'
+            FixedFont.Style = [fsBold]
+            ColWidths = (
+              50
+              150
+              118
+              144
+              152
+              191)
+            RowHeights = (
+              20
+              18)
+          end
+          object TOTAL: TEdit
+            Left = 793
+            Top = 221
+            Width = 143
+            Height = 32
+            Color = clYellow
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clRed
+            Font.Height = -20
+            Font.Name = 'MS Sans Serif'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ReadOnly = True
+            TabOrder = 4
+          end
+          object EXEPCION: TCheckBox
+            Left = 8
+            Top = 228
+            Width = 150
+            Height = 19
+            Caption = 'Via Exepcion'
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -17
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 1
+          end
+          object CARGAMANUAL: TCheckBox
+            Left = 225
+            Top = 227
+            Width = 147
+            Height = 22
+            Caption = 'Carga Manual'
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -17
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 2
+          end
+          object ORDENANZA: TCheckBox
+            Left = 425
+            Top = 228
+            Width = 211
+            Height = 19
+            Caption = 'Ordenanza 4913 Art. 2'
+            Enabled = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -17
+            Font.Name = 'MS Sans Serif'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 3
+          end
+          object GroupBox7: TGroupBox
+            Left = 2
+            Top = 263
+            Width = 944
+            Height = 55
+            Align = alBottom
+            Caption = 'Datos Adjuntos'
+            Enabled = False
+            TabOrder = 5
+            ExplicitTop = 254
+            ExplicitWidth = 942
+            object Label71: TLabel
+              Left = 543
+              Top = 22
+              Width = 68
+              Height = 17
+              Caption = 'Final Obra'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label70: TLabel
+              Left = 280
+              Top = 22
+              Width = 89
+              Height = 17
+              Caption = 'Resoluciones'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object Label69: TLabel
+              Left = 101
+              Top = 22
+              Width = 45
+              Height = 17
+              Caption = 'Planos'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object PLANO: TEdit
+              Left = 155
+              Top = 14
+              Width = 74
+              Height = 24
+              CharCase = ecUpperCase
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 1
+              ParentFont = False
+              TabOrder = 0
+              Text = '0'
+            end
+            object RESOLUCION: TEdit
+              Left = 376
+              Top = 14
+              Width = 91
+              Height = 24
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 1
+              ParentFont = False
+              TabOrder = 1
+              Text = '0'
+            end
+            object FINALOBRA: TEdit
+              Left = 617
+              Top = 16
+              Width = 82
+              Height = 24
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              MaxLength = 1
+              ParentFont = False
+              TabOrder = 2
+              Text = '0'
+            end
+          end
+          object GroupBox8: TGroupBox
+            Left = 2
+            Top = 17
+            Width = 944
+            Height = 40
+            Align = alTop
+            Enabled = False
+            TabOrder = 6
+            ExplicitTop = 18
+            ExplicitWidth = 942
+            object Label5: TLabel
+              Left = 30
+              Top = 15
+              Width = 160
+              Height = 17
+              Caption = 'Existente Documentado:'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+            end
+            object ExisDoc: TEdit
+              Left = 193
+              Top = 6
+              Width = 93
+              Height = 24
+              Color = clInfoBk
+              Enabled = False
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'MS Sans Serif'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+              Text = '0'
+              OnChange = ExisDocChange
+            end
+          end
+        end
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'ERRORES'
+      ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object E1: TRichEdit
+        Left = 0
+        Top = 0
+        Width = 952
+        Height = 491
+        Align = alClient
+        Color = clYellow
+        Enabled = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -20
+        Font.Name = 'MS Sans Serif'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 0
+    Width = 960
+    Height = 41
+    ButtonHeight = 35
+    Caption = 'ToolBar1'
+    Color = clGradientInactiveCaption
+    EdgeBorders = [ebLeft, ebTop, ebBottom]
+    EdgeInner = esLowered
+    ParentColor = False
+    TabOrder = 2
+    DesignSize = (
+      958
+      37)
+    object ToolButton1: TToolButton
+      Left = 0
+      Top = 0
+      Width = 589
+      Caption = 'ToolButton1'
+      ImageIndex = 2
+      Style = tbsSeparator
+    end
+    object ToolButton2: TToolButton
+      Left = 589
+      Top = 0
+      Width = 8
+      Caption = 'ToolButton2'
+      ImageIndex = 0
+      Style = tbsSeparator
+    end
+    object IMPLIQUI: TJvBitBtn
+      Left = 597
+      Top = 0
+      Width = 133
+      Height = 35
+      Caption = 'Imprimir Liquidacion'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00300000000000
+        0003377777777777777308888888888888807F33333333333337088888888888
+        88807FFFFFFFFFFFFFF7000000000000000077777777777777770F8F8F8F8F8F
+        8F807F333333333333F708F8F8F8F8F8F9F07F333333333337370F8F8F8F8F8F
+        8F807FFFFFFFFFFFFFF7000000000000000077777777777777773330FFFFFFFF
+        03333337F3FFFF3F7F333330F0000F0F03333337F77773737F333330FFFFFFFF
+        03333337F3FF3FFF7F333330F00F000003333337F773777773333330FFFF0FF0
+        33333337F3F37F3733333330F08F0F0333333337F7337F7333333330FFFF0033
+        33333337FFFF7733333333300000033333333337777773333333}
+      NumGlyphs = 2
+      TabOrder = 1
+      OnClick = IMPLIQUIClick
+    end
+    object ToolButton4: TToolButton
+      Left = 730
+      Top = 0
+      Width = 8
+      Caption = 'ToolButton4'
+      ImageIndex = 2
+      Style = tbsSeparator
+    end
+    object ToolButton6: TToolButton
+      Left = 738
+      Top = 0
+      Width = 8
+      Caption = 'ToolButton6'
+      ImageIndex = 3
+      Style = tbsSeparator
+    end
+    object SALE: TJvBitBtn
+      Left = 746
+      Top = 0
+      Width = 75
+      Height = 35
+      Anchors = [akTop, akRight]
+      Caption = 'Salir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      Glyph.Data = {
+        F2060000424DF206000000000000360400002800000019000000190000000100
+        080000000000BC02000000000000000000000001000000000000000000000000
+        C00000C0000000C0C000C0000000C000C000C0C00000C0C0C000C0DCC000F0C8
+        A400000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000F0FBFF00A4A0A000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FFFF07FFFFFF
+        0707FFFFFF07FFFF070000000000FFFF0707FF0000000707FF0707FFFFFF0707
+        FFFF07FFFF00FEFE060000FFFFFF07000000FFFF07FFFF0707FFFFFF07FFFF07
+        0700FEFE0606000707FFFF00000007FFFF07FFFFFF0707FFFF07FFFFFF00FEFE
+        06060000FF0707005000FFFFFFFFFFFFFFFFFFFF00FF07FFFF00FEFE06060600
+        F807FF000000FFFFFFFFFFFFFFFFFFFF000000000000FEFE06060600F807FF00
+        0000FFFFFFFFFFFFFFFFFFFF00F8F8F8F800FEFE06060600F807FF000000FFFF
+        FFFFFFFFFFFFFFFF00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFFFF
+        FFFFFFFF00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFFFFFFFFFFFF
+        00F8F8F8F800FEFE06000600F807FF000000FFFFFFFFFFFFFFFF000000000000
+        F800FEFE00F80600F807FF000000FFFFFFFFFFFFFF00000000000000F800FEFE
+        00FF0600F807FF000000FFFFFFFFFFFF000000FF00F8F8F8F800FEFE06000600
+        F807FF000000FFFFFFFFFF000000FFFF00F8F8F8F800FEFE06060600F807FF00
+        0000FFFFFFFFFF0000FFFFFF00F8F8F8F800FEFE06060600F807FF000000FFFF
+        FFFFFF0000FF00FF00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFF00
+        00FF00FF00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFF00000000FF
+        00F8F8F8F800FEFE06060600F807FF000000FFFFFFFFFFFF000000FF00F8F8F8
+        F800FEFE06060600F807FF000000FFFFFFFF0000000000FF00F8F8F8F8F800FE
+        FE060600F807FF000400FFFFFFFFFFFFFFFFFFFF00F8F8F8F8F8F800FEFE0600
+        F807FF000000FFFFFFFFFFFFFFFFFFFF00F8F8F8F8F8F8F800FE0600F807FF00
+        0000FFFFFFFFFFFFFFFFFFFF00F8F8F8F8F8F8F8F800FE00F807FF000000FFFF
+        FFFFFFFFFFFFFFFF00F8F8F8F8F8F8F8F8F80000F8FFFF000000FFFFFFFFFFFF
+        FFFFFFFF000000000000000000000000FFFFFF000000}
+      ParentFont = False
+      TabOrder = 0
+      OnClick = SALEClick
+    end
+  end
+  object DataSource1: TDataSource
+    Left = 44
+  end
+  object ImageList1: TImageList
+    Left = 808
+    Top = 3
+    Bitmap = {
+      494C01010700C800000110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      0000000000003600000028000000400000002000000001002000000000000020
+      000000000000000000000000000000000000000000004A37AE003E30B4004230
+      AD004A25860049268B002026D5002427D2003A34C4002A2DD2003B35C5005325
+      77004741C700262CD7007776DD00FFFFFF0000000000E8E8E8178282987DF2F2
+      F20D00000000000000000000000000000000000000000000000000000000FEFE
+      FE01B7B7B848B8B8B94700000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF007975D7005B1B56006F16
+      28004636B100282DD500A09ADC003B38CA003937CC002C31D700F7F8FD00716B
+      D200691937003736CD00554EC800AFB0EF00E3E3E31C1616BFE97272E8FF2F2F
+      AED0ECECEC130000000000000000000000000000000000000000FDFDFD029C9C
+      A4630909DAFF0909D6FFABABAE54FEFEFE0100000000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FEFEFE003B35C4004129
+      A0003335D200A19DDF00FFFFFF003E3AC9003937CC002C31D700F7F8FD00D8D9
+      F700452EA300611948004145D7004749D7001111BFEE0000D0FF8282FAFF0B0B
+      D8FF1D1DB9E2E5E5E51A000000000000000000000000FBFBFB048484997B0000
+      D6FF7171EAFF2D2DE1FF0000CAFFE6E6E61900000000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000C0C0C000C0C0C000C0C0C000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00C5C1E6003B3A
+      CC006060D800EFEFFC00FFFFFF003E3AC9003937CC002C31D700D9DBF8004044
+      DB0045259100681735003F40D4004241D0000000C6FF3B3BFFFF5050FFFF8080
+      FEFF1212D4FF0F0FC3F0DBDBDB2400000000F7F7F708676793980000D1FF7C7C
+      EFFF7777FFFF6262FFFF2626E0FFE1E1E11E0000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00E1E2FA00BABC
+      F300FFFFFF00FDFDFE00CFD1F7003D39C9003937CC00292ED6004041D2004436
+      B6006F1628005F184A004041D3004A4CD8001E1EFFFF3030FFFF4242FFFF5454
+      FFFF7575FFFF1616CFFF0505C8FAC8C8C837484897B70000CBFF7D7DF4FF7474
+      FFFF6464FFFF5353FFFF4141FFFFF4F4F40B00000000FFFFFF00C0C0C000FFFF
+      FF00C0C0C000FFFFFF00C0C0C000FFFFFF00C0C0C000FFFFFF00C0C0C000FFFF
+      FF00C0C0C000FFFFFF00C0C0C000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000CDC7C900FFFFFF00FFFFFF00FFFF
+      FF006A68D8002B30D7003034D6002327D3003631C4003031CE0042299F006F16
+      28006F162800352CBD00272DD800EFEFF900FEFEFE012525FEFB3333FFFF4242
+      FFFF5151FFFF6464FFFF1515C9FF0000C4FF0101C4FF6E6EF8FF6767FFFF5D5D
+      FFFF5050FFFF4141FFFFCBCBD9370000000000000000C0C0C000FFFFFF00C0C0
+      C000FFFFFF00C0C0C000FFFFFF00C0C0C000FFFFFF00C0C0C000FFFFFF00C0C0
+      C000FFFFFF000000FF00FFFFFF00000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000007161650080717500ADB0F1004C49
+      CF003939D0003C37C500503195004B1C7600611844006F1628006F1628006B16
+      2F003F2EB0004A4EDC009193E800E4E5FA0000000000000000002D2DFBF13030
+      FFFF3C3CFFFF4747FFFF5050FFFF0D0DC4FF5454FCFF5454FFFF4E4EFFFF4646
+      FFFF3B3BFFFFE4E4E81B000000000000000000000000FFFFFF00C0C0C000FFFF
+      FF00C0C0C000FFFFFF00C0C0C000FFFFFF00C0C0C000FFFFFF00C0C0C000FFFF
+      FF00C0C0C000FFFFFF00C0C0C000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000BCB4B600FDFCFC00FDFCFC00543F
+      AB0066173A006F1628006C162E00661739004A1C77002825C5004B3FBC004D4D
+      D300E8E9F900F5F5FD00F3F3FD00FFFFFF000000000000000000000000003F3F
+      EDDD6767FFFF6D6DFFFF7171FFFF6868FFFF7575FFFF7474FFFF5959FFFF2F2F
+      FFFFF6F6F6090000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF004441CB006D16
+      2C006F16280052217300292BCF00302DC7003C38C8002329D800E5E6FA00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000000000000000000000E5E5
+      E51A1919E9FE6F6FFFFF7272FFFF7474FFFF7474FFFF7474FFFF5151FEFFBEBE
+      BE41000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00C7C9F500543AA1006F16
+      2800602F77004343D200A8A5E2003E3AC8003937CB002D31D600F4F4FD00454B
+      DF006C6DDE00FFFFFF00FFFFFF00FFFFFF000000000000000000E4E4E41B1313
+      96EC0000A2FF3939FFFF7777FFFF7878FFFF7878FFFF7272FFFF0202BAFF0000
+      A0FFC3C3C33C0000000000000000000000000000000000000000000000000000
+      0000FFFFFF0000000000000000000000000000000000FFFFFF0000000000FFFF
+      FF00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00CACBF600533AA3006916
+      33003F3DCD002E32D500FDFDFD003E3AC8003937CB002D31D6006167E4003835
+      CB003E3ED2008A8CE800FFFFFF00FFFFFF0000000000E2E2E21D0F0F8FF00000
+      99FF3838FFFF8383FFFF8383FFFF8383FFFF8383FFFF8383FFFF7676FFFF0000
+      B2FF000096FFC3C3C33C00000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00EEEEFC004B44C7006F16
+      2800473DBD006059CB003E42DA003D39C8003937CB00292DD5002329D700551C
+      63003738D100393AD300FFFFFF00FFFFFF00E7E7E7180F0F87F000008FFF4545
+      FFFF9191FFFF9191FFFF9191FFFF3737FBF19191FFFF9191FFFF9191FFFF8282
+      FFFF0000ABFF00008DFFC7C7C738000000000000000000000000000000000000
+      0000FFFFFF000000000000000000FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FCFAFA003830
+      C000611744003333CE00282DD7002A2BCD003733C700292CD200621F50006B16
+      2E00512882003236D5004549DA00FFFFFF008585A27A00008EFF4E4EFFFF9F9F
+      FFFF9F9FFFFF9F9FFFFF4545EEDE000000008282CC7E9F9FFFFF9F9FFFFF9F9F
+      FFFF8F8FFFFF0000AAFF1A1A8FE5000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00C1C3
+      F3004C4AD1004B39AF003B2BAF00442391003425B0002E28C200413AC5004946
+      CE005C56CC003C3ED5007072E100FFFFFF007D7D9F825555FFFFAEAEFFFFAEAE
+      FFFFAEAEFFFF4949EDDD0000000000000000000000008282CC7EAEAEFFFFAEAE
+      FFFFAEAEFFFF9C9CFFFF0B0BAAF4000000000000000000000000000000000000
+      0000FFFFFF0000000000C0C0C000FFFFFF0000000000FFFFFF00000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00DCDDF900B6B9F3003E3AC9003333CE001F26D900BEC0F400FFFF
+      FF00FFFFFF00F7F8FD00F4F4FD00FFFFFF00E1E1E51EB2B2FFFFBCBCFFFFBCBC
+      FFFF4646EDDD00000000000000000000000000000000000000008383CC7EBCBC
+      FFFFBCBCFFFFBCBCFFFF8D8DCE72000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF00FFFFFF00FFFFFF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FDFDFE004B4CD7004546D6006A70E600E7E8FB00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000E5E5E91AB8B8FFFF4F4F
+      EAD5000000000000000000000000000000000000000000000000000000008383
+      CC7ECACAFFFFA2A2CE5D00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000002020
+      2000404040004040400020202000000000000000000000000000000000004040
+      4000404040004040400000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000005555550055555500000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000005050
+      5000505050005050500090909000000000000000000000000000202020005050
+      5000505050008080800040404000000000000000000000000000000000000000
+      00000000000000CCFF0000CCFF000066FF000066FF0055555500555555005555
+      55000000000000000000000000000000000000000000BF000000BF000000BF00
+      0000BF000000BF000000BF000000BF000000BF000000BF000000BF000000BF00
+      0000BF0000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000080
+      8000000000000000000000000000000000000000000000000000000000006060
+      60006F6F6F00000000009090900000000000000000000000000000000000DFDF
+      DF00000000005050500040404000000000000000000000000000000000000000
+      00000000000000CCFF0000CCFF000066FF000066FF0055555500555555005555
+      55005555550055555500000000000000000000000000BF000000808080008080
+      8000808080008080800080808000808080008080800080808000808080008080
+      8000BF0000000000000000000000000000000000000000808000008080000080
+      8000008080000080800000808000008080000080800000808000008080000080
+      8000008080000080800000808000000000000000000000000000000000006060
+      60006F6F6F00000000009090900040404000404040004040400000000000DFDF
+      DF00000000005050500060606000000000000000000000000000000000000000
+      00000000000000CCFF0000CCFF000066FF000066FF0055555500555555005555
+      55005555550000000000000000000000000000000000BF000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000BF0000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000202020003030
+      3000303030000000000050505000505050008080800050505000000000006F6F
+      6F000000000050505000A0A0A000606060000000000000000000000000000000
+      00000000000000CCFF0000CCFF000066FF000066FF0055555500555555000000
+      00000000000000000000000000000000000000000000BF000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000BF0000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000030303000303030000000
+      00006F6F6F00000000000000000000000000202020006F6F6F00000000000000
+      0000000000003030300080808000909090000000000000000000000000000000
+      00000000000000CCFF0000CCFF0000CCFF000033CC0000000000000000000000
+      00000000000000000000000000000000000000000000BF000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C00000000000000000000000000000000000003F3F009FDFDF006F6F6F000000
+      0000606060000000000000000000C0C0C0000000000060606000000000000000
+      000000000000306F6F0050505000909090000000000000000000000000000000
+      00000000000000CCFF0000CCFF0000CCFF000066FF0000000000000000000000
+      00000000000000000000000000000000000000000000BF000000000000000000
+      00000000000000000000000000000000000000000000000000000000000000FF
+      FF00808080000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000C0C0
+      C000000000000000000000000000000000003F7F7F007FFFFF007FFFFF003F3F
+      3F00303030000000000000000000606060000000000030303000000000000000
+      0000000000007FBFBF0050505000909090000000000000000000000000000000
+      000000CCFF0000CCFF0000CCFF0000CCFF000066FF0000000000000000000000
+      00000000000000000000000000000000000000000000BF000000000000000000
+      00000000000000000000000000000000000000000000000000000000000000FF
+      FF00000000000000000000000000000000000000000000000000000000000000
+      000000000000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000C0C0
+      C000000000000000000000000000000000003F7F7F007FFFFF007FFFFF007FFF
+      FF003F7F7F003030300000000000000000003F7F7F0030303000000000000000
+      00007FFFFF007FFFFF0050505000909090000000000000000000000000000000
+      000000CCFF0000CCFF0000CCFF0000CCFF000066FF0000000000000000000000
+      00000000000000000000000000000000000000000000BF000000BF000000BF00
+      0000BF000000BF000000BF000000BF000000BF000000BF000000BF0000000000
+      000000FFFF008080800000000000000000000000000000000000000000000000
+      000000000000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000C0C0
+      C000000000000000000000000000000000003F7F7F007FFFFF007FFFFF007FFF
+      FF007FFFFF0030303000303030003F7F7F007FFFFF0030303000303030003F7F
+      7F007FFFFF007FFFFF0050505000909090000000000000000000000000000000
+      000000CCFF0000CCFF0000CCFF00FFFFFF000066FF0000000000000000000000
+      00000000000000000000000000000000000000000000BF000000FFFFFF00BF00
+      0000BF000000FFFFFF00BF000000BF000000FFFFFF00BF000000BF0000000000
+      000000FFFF000000000000000000000000000000000000000000000000000000
+      000000000000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000C0C0
+      C000000000000000000000000000000000003F7F7F007FFFFF007FFFFF007FFF
+      FF007FFFFF0030303000303030003F7F7F007FFFFF0030303000303030003F7F
+      7F007FFFFF007FFFFF0050505000909090000000000000000000000000000000
+      000000CCFF00FFFFFF000066FF000066FF000066FF0000000000000000000000
+      00000000000000000000000000000000000000000000BF000000BF000000BF00
+      0000BF000000BF000000BF000000BF000000BF000000BF000000BF000000BF00
+      00000000000000FFFF0080808000000000000000000000000000000000000000
+      000000000000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000FFFF0000C0C0
+      C000000000000000000000000000000000003F7F7F007FFFFF007FFFFF007FFF
+      FF007FFFFF007FFFFF007FFFFF007FFFFF007FFFFF007FFFFF007FFFFF007FFF
+      FF007FFFFF007FFFFF0050505000909090000000000000000000000000000000
+      0000000000000000000055555500555555000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000FFFF0080808000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000C0C0
+      C000000000000000000000000000000000003F7F7F007FFFFF007FFFFF007FFF
+      FF007FFFFF007FFFFF007FFFFF007FFFFF007FFFFF007FFFFF007FFFFF007FFF
+      FF007FFFFF007FFFFF0040404000202020000000000000000000000000000000
+      000000000000A4A0A000DDDDDD00999999000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000BF00BF000000000000000000000000000000
+      0000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+      C000000000000000000000000000000000003F7F7F007FFFFF007FFFFF007FFF
+      FF007FFFFF007FFFFF007FFFFF007FFFFF007FFFFF007FFFFF007FFFFF007FFF
+      FF007FFFFF00205F5F0020202000000000000000000000000000000000000000
+      000000000000DDDDDD00FFFFFF00A4A0A0000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000BF00BF00BF00BF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000003F3F00007F7F00007F7F
+      00007F7F00007F7F00007F7F0000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000011111100444444000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000007F7F00007F7F
+      00007F7F00007F7F00003F3F0000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000424D3E000000000000003E000000
+      2800000040000000200000000100010000000000000100000000000000000000
+      000000000000000000000000FFFFFF0080008FE380010000000007C000000000
+      0000038000000000000001000000000000000000000000000000000100000000
+      0000C003000000000000E007000000000000E00FE00700000000C007E0070000
+      00008003E007000000000001E007000000000101E00F000000000381E01F0000
+      000007C1E03F000000008FE3E07F0000E1E3FC3FFFFF0000C1C1F00F80070000
+      C1C1F00380070000C001F007BFD70000C000F01FA487F81F8000F07FBFC7E00F
+      0000F03FA483E00F0000F03FBFCBE00F0000F03F8001E00F0000F03F8005E00F
+      0000F03F8000E00F0000F0FFFFF0E00F0000F87FFFF8E00F0001F87FFFF8FFFF
+      0007FCFFFFFCFFFF81FFFFFFFFFFFFFF00000000000000000000000000000000
+      000000000000}
+  end
+  object DataSource2: TDataSource
+    Left = 106
+    Top = 65534
+  end
+  object FormularioEmb: TJvEmbeddedFormLink
+    Left = 640
+    Top = 4
+  end
+  object DataSource3: TDataSource
+    Left = 166
+  end
+  object PopupMenu1: TPopupMenu
+    Images = ImageList1
+    Left = 684
+    Top = 3
+    object ImprimirFormulario1: TMenuItem
+      Caption = 'Imprimir Formulario'
+      ImageIndex = 6
+    end
+  end
+  object frxReport1: TfrxReport
+    Version = '6.9.15'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 42511.403196574100000000
+    ReportOptions.LastChange = 43735.494391608790000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      ''
+      'begin'
+      ''
+      'end.')
+    Left = 732
+    Top = 4
+    Datasets = <>
+    Variables = <
+      item
+        Name = ' New Category1'
+        Value = Null
+      end
+      item
+        Name = 'NombreRespo'
+        Value = #39'BRA'#209'A JUAN ANGEL'#39
+      end
+      item
+        Name = 'CuimRespo'
+        Value = #39'20-24525019-4'#39
+      end
+      item
+        Name = 'DomicilioRespo'
+        Value = #39'DESCONOCIDO'#39
+      end
+      item
+        Name = 'NombreTit'
+        Value = #39'CACERES JUAN ALBERTO'#39
+      end
+      item
+        Name = 'CuimTit'
+        Value = #39#39
+      end
+      item
+        Name = 'DomicilioTit'
+        Value = #39'DESCONOCIDO'#39
+      end
+      item
+        Name = 'CuotaDe'
+        Value = #39'1 de 10'#39
+      end
+      item
+        Name = 'Anio'
+        Value = '2016'
+      end
+      item
+        Name = 'NroPlan'
+        Value = '123466'
+      end
+      item
+        Name = 'NroCuota'
+        Value = '1'
+      end
+      item
+        Name = 'FechaIni'
+        Value = #39'01/01/2016'#39
+      end
+      item
+        Name = 'CantObj'
+        Value = '20'
+      end
+      item
+        Name = 'Objetos'
+        Value = 
+          #39'JVS001, NBV003, OPS985/1111201 - 21121, 54512, 5452/1111601 - 2' +
+          '1121, 54515, 5452/1120501'#39
+      end
+      item
+        Name = 'DetalleRecibo'
+        Value = #39'MULTIPLES PERIODOS - VERIFICAR DOCUMENTACION PLAN'#39
+      end
+      item
+        Name = 'NroCobro'
+        Value = #39'2016-004'#39
+      end
+      item
+        Name = 'NroLiquidacion'
+        Value = '36232635'
+      end
+      item
+        Name = 'PrimerV'
+        Value = #39'21/05/2016'#39
+      end
+      item
+        Name = 'Importe1'
+        Value = '33525.65'
+      end
+      item
+        Name = 'SegundoV'
+        Value = #39'21/05/2016'#39
+      end
+      item
+        Name = 'Importe2'
+        Value = '33525.65'
+      end
+      item
+        Name = 'CodBar'
+        Value = #39'9270001148316257201630015853104000011483162572'#39
+      end
+      item
+        Name = 'NroCodBar'
+        Value = #39'9270004704004090200400134046230000047040040907'#39
+      end
+      item
+        Name = 'NroUsuario'
+        Value = '120'
+      end
+      item
+        Name = 'TituloDesc'
+        Value = #39'PLAN DE FACILIDADES DE PAGO'#39
+      end
+      item
+        Name = 'DenomCatas'
+        Value = #39#39
+      end
+      item
+        Name = 'IdExpte'
+        Value = #39#39
+      end>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      MirrorMode = []
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 1028.032306460000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Shape16: TfrxShapeView
+          AllowVectorExport = True
+          Top = 790.921770000000000000
+          Width = 718.110700000000000000
+          Height = 238.110236220000000000
+          Frame.Typ = []
+        end
+        object Shape11: TfrxShapeView
+          AllowVectorExport = True
+          Left = 0.220470000000000000
+          Top = 554.811380000000000000
+          Width = 718.110700000000000000
+          Height = 238.110236220000000000
+          Frame.Typ = []
+        end
+        object Shape6: TfrxShapeView
+          AllowVectorExport = True
+          Top = 313.700843540000000000
+          Width = 718.110700000000000000
+          Height = 238.110236220000000000
+          Frame.Typ = []
+        end
+        object Shape2: TfrxShapeView
+          AllowVectorExport = True
+          Top = 2.000000000000000000
+          Width = 718.110700000000000000
+          Height = 313.700787400000000000
+          Frame.Typ = []
+        end
+        object Logo1: TfrxPictureView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 4.779530000000000000
+          Width = 52.913420000000000000
+          Height = 52.913420000000000000
+          Frame.Typ = []
+          HightQuality = False
+          Transparent = False
+          TransparentColor = clWhite
+        end
+        object Shape5: TfrxShapeView
+          AllowVectorExport = True
+          Left = 589.606680000000000000
+          Top = 237.330860000000000000
+          Width = 124.724402130000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+        end
+        object Shape4: TfrxShapeView
+          AllowVectorExport = True
+          Left = 456.063286670000000000
+          Top = 237.330860000000000000
+          Width = 124.724409450000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+        end
+        object Memo28: TfrxMemoView
+          AllowVectorExport = True
+          Left = 454.543600000000000000
+          Top = 239.330860000000000000
+          Width = 52.913420000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Primer Vto:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 60.472480000000000000
+          Top = 3.779530000000000000
+          Width = 238.110231340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Municipalidad de la Ciudad de Formosa')
+          ParentFont = False
+        end
+        object Memo2: TfrxMemoView
+          AllowVectorExport = True
+          Left = 60.472480000000000000
+          Top = 18.897650000000000000
+          Width = 238.110231340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Agencia de Recaudaci'#243'n')
+          ParentFont = False
+        end
+        object Memo3: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 34.015770000000000000
+          Width = 64.251851340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Orden.N'#176':')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 442.205010000000000000
+          Top = 34.015770000000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '6938/16')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo6: TfrxMemoView
+          AllowVectorExport = True
+          Left = 634.961040000000000000
+          Top = 34.015770000000000000
+          Width = 34.015611340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'A'#209'O:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo7: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 7.559060000000000000
+          Width = 332.598481340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[TituloDesc]')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          AllowVectorExport = True
+          Left = 30.236240000000000000
+          Top = 68.031540000000000000
+          Width = 79.369971340000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Resp. de Pago:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo9: TfrxMemoView
+          AllowVectorExport = True
+          Left = 600.945270000000000000
+          Top = 66.031540000000000000
+          Width = 34.015611340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Cuim:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo10: TfrxMemoView
+          AllowVectorExport = True
+          Top = 85.149660000000000000
+          Width = 109.606211340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Domicilio Resp. Pago:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo11: TfrxMemoView
+          AllowVectorExport = True
+          Left = 26.456710000000000000
+          Top = 106.047310000000000000
+          Width = 83.149501340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Titular:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo12: TfrxMemoView
+          AllowVectorExport = True
+          Left = 600.945270000000000000
+          Top = 104.937007870000000000
+          Width = 34.015611340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Cuim:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo13: TfrxMemoView
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 125.944960000000000000
+          Width = 86.929031340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Domicilio Titular:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Line2: TfrxLineView
+          AllowVectorExport = True
+          Left = 192.756030000000000000
+          Top = 148.842610000000000000
+          Width = 510.236550000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo14: TfrxMemoView
+          AllowVectorExport = True
+          Left = 49.133890000000000000
+          Top = 140.283550000000000000
+          Width = 139.842451340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Datos de la Liquidaci'#243'n')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo15: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 153.960730000000000000
+          Width = 64.251851340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'N'#176' Partida:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo16: TfrxMemoView
+          AllowVectorExport = True
+          Left = 382.622140000000000000
+          Top = 150.960730000000000000
+          Width = 94.488091340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Tipo Construcci'#243'n:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo17: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 172.858380000000000000
+          Width = 79.369971340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Destino Obra :')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo19: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 189.078850000000000000
+          Width = 98.267621340000000000
+          Height = 15.118110240000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Emp Constructora:')
+          ParentFont = False
+        end
+        object Line3: TfrxLineView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 148.622140000000000000
+          Width = 30.236240000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line4: TfrxLineView
+          AllowVectorExport = True
+          Top = 207.874150000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo20: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 247.448980000000000000
+          Width = 71.810911340000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Lugares de Pago:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo21: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 262.567100000000000000
+          Width = 230.551171340000000000
+          Height = 30.236230240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haBlock
+          Memo.UTF8W = (
+            
+              'Oficinas de Pago F'#225'cil y BAPRO, Banco Formosa S.A., Agencia de R' +
+              'ecaudaci'#243'n, Direcci'#243'n de Tr'#225'nsito, 1er. Piso Paseo de Compras,Ex' +
+              '-Estaci'#243'n del Ferrocarril')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo22: TfrxMemoView
+          AllowVectorExport = True
+          Top = 209.653680000000000000
+          Width = 83.149660000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Detalle del Recibo:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo23: TfrxMemoView
+          AllowVectorExport = True
+          Left = 340.157700000000000000
+          Top = 272.126160000000000000
+          Width = 52.913420000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Nro Cobro:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo24: TfrxMemoView
+          AllowVectorExport = True
+          Left = 495.118430000000000000
+          Top = 272.126160000000000000
+          Width = 71.811070000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Liquidaci'#243'n N'#176':')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo25: TfrxMemoView
+          AllowVectorExport = True
+          Left = 113.385900000000000000
+          Top = 298.582870000000000000
+          Width = 381.732530000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              '(Liquidaci'#243'n no v'#225'lido como Comprobante de Pago sin su correspon' +
+              'diente ticket/recibo o sello de pago)')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo26: TfrxMemoView
+          AllowVectorExport = True
+          Left = 548.031850000000000000
+          Top = 298.582870000000000000
+          Width = 147.401670000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Tal'#243'n para el Contribuyente - Usu:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo27: TfrxMemoView
+          AllowVectorExport = True
+          Left = 590.606680000000000000
+          Top = 239.330860000000000000
+          Width = 37.795300000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Importe:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object NombreRespo: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 68.031540000000000000
+          Width = 483.779840000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NombreRespo]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object CuimRespo: TfrxMemoView
+          AllowVectorExport = True
+          Left = 634.961040000000000000
+          Top = 66.811070000000000000
+          Width = 79.370130000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[CuimRespo]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo31: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 85.149660000000000000
+          Width = 604.724800000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DomicilioRespo]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo32: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 106.047310000000000000
+          Width = 483.779840000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NombreTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo33: TfrxMemoView
+          AllowVectorExport = True
+          Left = 634.961040000000000000
+          Top = 104.826840000000000000
+          Width = 79.370130000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[CuimTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo34: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 125.944960000000000000
+          Width = 604.724800000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DomicilioTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object CuotaDe: TfrxMemoView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 60.472480000000000000
+          Width = 64.252010000000000000
+          Height = 18.897650000000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[CuotaDe]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Anio: TfrxMemoView
+          AllowVectorExport = True
+          Left = 668.976810000000000000
+          Top = 34.015770000000000000
+          Width = 45.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Anio]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object NroPlan: TfrxMemoView
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Top = 152.960730000000000000
+          Width = 68.031540000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[NroPlan]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo35: TfrxMemoView
+          AllowVectorExport = True
+          Left = 477.787570000000000000
+          Top = 150.960730000000000000
+          Width = 238.110390000000000000
+          Height = 30.236230240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroCuota]')
+          ParentFont = False
+        end
+        object Memo36: TfrxMemoView
+          AllowVectorExport = True
+          Left = 86.929190000000000000
+          Top = 172.858380000000000000
+          Width = 291.023810000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[FechaIni]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Objetos: TfrxMemoView
+          AllowVectorExport = True
+          Left = 102.826840000000000000
+          Top = 188.858380000000000000
+          Width = 275.905690000000000000
+          Height = 15.118120000000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Objetos]')
+          ParentFont = False
+        end
+        object DetalleRecibo: TfrxMemoView
+          AllowVectorExport = True
+          Left = 83.149660000000000000
+          Top = 208.874150000000000000
+          Width = 631.181510000000000000
+          Height = 26.456710000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haBlock
+          Memo.UTF8W = (
+            '[DetalleRecibo]')
+          ParentFont = False
+        end
+        object PrimerV: TfrxMemoView
+          AllowVectorExport = True
+          Left = 512.016080000000000000
+          Top = 237.330860000000000000
+          Width = 68.031540000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[PrimerV]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo38: TfrxMemoView
+          AllowVectorExport = True
+          Left = 631.181510000000000000
+          Top = 236.330860000000000000
+          Width = 83.149660000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          DisplayFormat.FormatStr = '%2.2f'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Importe1]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object NroCobro: TfrxMemoView
+          AllowVectorExport = True
+          Left = 393.071120000000000000
+          Top = 272.126160000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroCobro]')
+          ParentFont = False
+        end
+        object NroCobro1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 566.929500000000000000
+          Top = 272.126160000000000000
+          Width = 98.267780000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroLiquidacion]')
+          ParentFont = False
+        end
+        object NroUsuario: TfrxMemoView
+          AllowVectorExport = True
+          Left = 695.433520000000000000
+          Top = 298.582870000000000000
+          Width = 18.897650000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroUsuario]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Logo2: TfrxPictureView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 317.480520000000000000
+          Width = 41.574830000000000000
+          Height = 49.133890000000000000
+          Frame.Typ = []
+          HightQuality = False
+          Transparent = False
+          TransparentColor = clWhite
+        end
+        object Memo41: TfrxMemoView
+          AllowVectorExport = True
+          Left = 50.354360000000000000
+          Top = 317.480520000000000000
+          Width = 238.110231340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Municipalidad de la Ciudad de Formosa')
+          ParentFont = False
+        end
+        object Memo42: TfrxMemoView
+          AllowVectorExport = True
+          Left = 50.354360000000000000
+          Top = 332.598640000000000000
+          Width = 238.110231340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Agencia de Recaudaci'#243'n')
+          ParentFont = False
+        end
+        object Memo43: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 336.378170000000000000
+          Width = 64.251851340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Orden.N'#176':')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo45: TfrxMemoView
+          AllowVectorExport = True
+          Left = 442.205010000000000000
+          Top = 336.378170000000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '6938/16')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo46: TfrxMemoView
+          AllowVectorExport = True
+          Left = 634.961040000000000000
+          Top = 336.378170000000000000
+          Width = 34.015611340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'A'#209'O:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo47: TfrxMemoView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 355.275820000000000000
+          Width = 64.252010000000000000
+          Height = 18.897650000000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[CuotaDe]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo48: TfrxMemoView
+          AllowVectorExport = True
+          Left = 668.976810000000000000
+          Top = 336.378170000000000000
+          Width = 45.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Anio]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo49: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 317.480520000000000000
+          Width = 332.598481340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[TituloDesc]')
+          ParentFont = False
+        end
+        object Memo50: TfrxMemoView
+          AllowVectorExport = True
+          Left = 26.456710000000000000
+          Top = 366.834880000000000000
+          Width = 83.149501340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Titular:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo51: TfrxMemoView
+          AllowVectorExport = True
+          Left = 600.945270000000000000
+          Top = 366.724577870000000000
+          Width = 34.015611340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Cuim:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo52: TfrxMemoView
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 381.953000000000000000
+          Width = 86.929031340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Domicilio Titular:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Line1: TfrxLineView
+          AllowVectorExport = True
+          Left = 192.756030000000000000
+          Top = 403.071120000000000000
+          Width = 514.016080000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo53: TfrxMemoView
+          AllowVectorExport = True
+          Left = 49.133890000000000000
+          Top = 395.512060000000000000
+          Width = 139.842451340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Datos de la Liquidaci'#243'n')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo54: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 409.189240000000000000
+          Width = 64.251851340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'N'#176' Partida:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Line5: TfrxLineView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 403.850650000000000000
+          Width = 30.236240000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo59: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 366.834880000000000000
+          Width = 483.779840000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NombreTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo60: TfrxMemoView
+          AllowVectorExport = True
+          Left = 634.961040000000000000
+          Top = 366.614410000000000000
+          Width = 79.370130000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[CuimTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo61: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 381.953000000000000000
+          Width = 604.724800000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DomicilioTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo62: TfrxMemoView
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Top = 409.189240000000000000
+          Width = 68.031540000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[NroPlan]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo63: TfrxMemoView
+          AllowVectorExport = True
+          Left = 477.008040000000000000
+          Top = 406.189240000000000000
+          Width = 226.771800000000000000
+          Height = 26.456700240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroCuota]')
+          ParentFont = False
+        end
+        object Memo64: TfrxMemoView
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Top = 425.307360000000000000
+          Width = 306.141930000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[FechaIni]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo66: TfrxMemoView
+          AllowVectorExport = True
+          Left = 102.826840000000000000
+          Top = 441.086890000000000000
+          Width = 275.905690000000000000
+          Height = 15.118120000000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Objetos]')
+          ParentFont = False
+        end
+        object Line6: TfrxLineView
+          AllowVectorExport = True
+          Top = 457.323130000000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo67: TfrxMemoView
+          AllowVectorExport = True
+          Top = 457.323130000000000000
+          Width = 83.149660000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Detalle del Recibo:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo68: TfrxMemoView
+          AllowVectorExport = True
+          Left = 83.149660000000000000
+          Top = 457.323130000000000000
+          Width = 631.181510000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haBlock
+          Memo.UTF8W = (
+            '[DetalleRecibo]')
+          ParentFont = False
+        end
+        object Shape7: TfrxShapeView
+          AllowVectorExport = True
+          Left = 589.606680000000000000
+          Top = 479.220780000000000000
+          Width = 124.724402130000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+        end
+        object Shape8: TfrxShapeView
+          AllowVectorExport = True
+          Left = 456.063286670000000000
+          Top = 479.220780000000000000
+          Width = 124.724409450000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+        end
+        object Memo69: TfrxMemoView
+          AllowVectorExport = True
+          Left = 456.543600000000000000
+          Top = 481.220780000000000000
+          Width = 52.913420000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Primer Vto:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo70: TfrxMemoView
+          AllowVectorExport = True
+          Left = 389.291590000000000000
+          Top = 506.457020000000000000
+          Width = 52.913420000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Nro Cobro:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo71: TfrxMemoView
+          AllowVectorExport = True
+          Left = 544.252320000000000000
+          Top = 506.457020000000000000
+          Width = 71.811070000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Liquidaci'#243'n N'#176':')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo72: TfrxMemoView
+          AllowVectorExport = True
+          Left = 113.385900000000000000
+          Top = 536.693260000000000000
+          Width = 377.953000000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              '(Liquidaci'#243'n no v'#225'lido como Comprobante de Pago sin su correspon' +
+              'diente ticket/recibo o sello de pago)')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo73: TfrxMemoView
+          AllowVectorExport = True
+          Left = 548.031850000000000000
+          Top = 536.693260000000000000
+          Width = 147.401670000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Tal'#243'n para el Area de Control - Usu:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo74: TfrxMemoView
+          AllowVectorExport = True
+          Left = 590.606680000000000000
+          Top = 481.220780000000000000
+          Width = 37.795300000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Importe:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo77: TfrxMemoView
+          AllowVectorExport = True
+          Left = 512.016080000000000000
+          Top = 479.220780000000000000
+          Width = 68.031540000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[PrimerV]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo78: TfrxMemoView
+          AllowVectorExport = True
+          Left = 627.401980000000000000
+          Top = 479.220780000000000000
+          Width = 86.929190000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          DisplayFormat.FormatStr = '%2.2f'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Importe1]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo81: TfrxMemoView
+          AllowVectorExport = True
+          Left = 442.205010000000000000
+          Top = 506.457020000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroCobro]')
+          ParentFont = False
+        end
+        object Memo82: TfrxMemoView
+          AllowVectorExport = True
+          Left = 616.063390000000000000
+          Top = 506.457020000000000000
+          Width = 98.267780000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroLiquidacion]')
+          ParentFont = False
+        end
+        object Memo83: TfrxMemoView
+          AllowVectorExport = True
+          Left = 695.433520000000000000
+          Top = 536.693260000000000000
+          Width = 18.897650000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroUsuario]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Logo3: TfrxPictureView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 556.591056460000000000
+          Width = 41.574830000000000000
+          Height = 49.133890000000000000
+          Frame.Typ = []
+          HightQuality = False
+          Transparent = False
+          TransparentColor = clWhite
+        end
+        object Memo84: TfrxMemoView
+          AllowVectorExport = True
+          Left = 49.133890000000000000
+          Top = 556.591056460000000000
+          Width = 238.110231340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Municipalidad de la Ciudad de Formosa')
+          ParentFont = False
+        end
+        object Memo85: TfrxMemoView
+          AllowVectorExport = True
+          Left = 49.133890000000000000
+          Top = 571.709176460000000000
+          Width = 238.110231340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Agencia de Recaudaci'#243'n')
+          ParentFont = False
+        end
+        object Memo86: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 575.488706460000000000
+          Width = 64.251851340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Orden.N'#176':')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo88: TfrxMemoView
+          AllowVectorExport = True
+          Left = 442.205010000000000000
+          Top = 575.488706460000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '6938/16')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo89: TfrxMemoView
+          AllowVectorExport = True
+          Left = 634.961040000000000000
+          Top = 574.488706460000000000
+          Width = 34.015611340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'A'#209'O:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo90: TfrxMemoView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 594.386356460000000000
+          Width = 64.252010000000000000
+          Height = 18.897650000000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[CuotaDe]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo91: TfrxMemoView
+          AllowVectorExport = True
+          Left = 668.976810000000000000
+          Top = 574.488706460000000000
+          Width = 45.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Anio]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo92: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 556.591056460000000000
+          Width = 332.598481340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[TituloDesc]')
+          ParentFont = False
+        end
+        object Memo93: TfrxMemoView
+          AllowVectorExport = True
+          Left = 26.456710000000000000
+          Top = 604.945416460000000000
+          Width = 83.149501340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Titular:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo94: TfrxMemoView
+          AllowVectorExport = True
+          Left = 600.945270000000000000
+          Top = 604.835114330000000000
+          Width = 34.015611340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Cuim:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo95: TfrxMemoView
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 620.063536460000000000
+          Width = 86.929031340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Domicilio Titular:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Line7: TfrxLineView
+          AllowVectorExport = True
+          Left = 192.756030000000000000
+          Top = 642.181656460000000000
+          Width = 510.236550000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo96: TfrxMemoView
+          AllowVectorExport = True
+          Left = 52.913420000000000000
+          Top = 633.622596460000000000
+          Width = 136.062921340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Datos de la Liquidaci'#243'n')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo97: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 647.299776460000000000
+          Width = 60.472321340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'N'#176' Partida:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Line8: TfrxLineView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 641.961186460000000000
+          Width = 30.236240000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo102: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 604.945416460000000000
+          Width = 483.779840000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NombreTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo103: TfrxMemoView
+          AllowVectorExport = True
+          Left = 634.961040000000000000
+          Top = 604.724946460000000000
+          Width = 79.370130000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[CuimTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo104: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 620.063536460000000000
+          Width = 604.724800000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DomicilioTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo105: TfrxMemoView
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Top = 647.299776460000000000
+          Width = 68.031540000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[NroPlan]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo106: TfrxMemoView
+          AllowVectorExport = True
+          Left = 477.118430000000000000
+          Top = 644.520246460000000000
+          Width = 234.330860000000000000
+          Height = 26.456700240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroCuota]')
+          ParentFont = False
+        end
+        object Memo107: TfrxMemoView
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Top = 662.976956460000000000
+          Width = 306.141930000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[FechaIni]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo109: TfrxMemoView
+          AllowVectorExport = True
+          Left = 98.267780000000000000
+          Top = 680.315546460000000000
+          Width = 279.685220000000000000
+          Height = 15.118120000000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Objetos]')
+          ParentFont = False
+        end
+        object Line9: TfrxLineView
+          AllowVectorExport = True
+          Top = 695.433666460000000000
+          Width = 718.110700000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo110: TfrxMemoView
+          AllowVectorExport = True
+          Top = 695.433666460000000000
+          Width = 83.149660000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Detalle del Recibo:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo111: TfrxMemoView
+          AllowVectorExport = True
+          Left = 83.149660000000000000
+          Top = 695.433666460000000000
+          Width = 631.181510000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haBlock
+          Memo.UTF8W = (
+            '[DetalleRecibo]')
+          ParentFont = False
+        end
+        object Shape12: TfrxShapeView
+          AllowVectorExport = True
+          Left = 589.606680000000000000
+          Top = 717.331316460000000000
+          Width = 124.724402130000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+        end
+        object Shape13: TfrxShapeView
+          AllowVectorExport = True
+          Left = 456.063286670000000000
+          Top = 717.331316460000000000
+          Width = 124.724409450000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+        end
+        object Memo112: TfrxMemoView
+          AllowVectorExport = True
+          Left = 454.543600000000000000
+          Top = 719.331316460000000000
+          Width = 52.913420000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Primer Vto:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo113: TfrxMemoView
+          AllowVectorExport = True
+          Left = 389.291590000000000000
+          Top = 744.567556460000000000
+          Width = 52.913420000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Nro Cobro:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo114: TfrxMemoView
+          AllowVectorExport = True
+          Left = 544.252320000000000000
+          Top = 744.567556460000000000
+          Width = 71.811070000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Liquidaci'#243'n N'#176':')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo115: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 774.803796460000000000
+          Width = 377.953000000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              '(Liquidaci'#243'n no v'#225'lido como Comprobante de Pago sin su correspon' +
+              'diente ticket/recibo o sello de pago)')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo116: TfrxMemoView
+          AllowVectorExport = True
+          Left = 548.031850000000000000
+          Top = 774.803796460000000000
+          Width = 147.401670000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Tal'#243'n para Archivo Municipal - Usu:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo117: TfrxMemoView
+          AllowVectorExport = True
+          Left = 590.606680000000000000
+          Top = 719.331316460000000000
+          Width = 37.795300000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Importe:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo120: TfrxMemoView
+          AllowVectorExport = True
+          Left = 512.016080000000000000
+          Top = 717.331316460000000000
+          Width = 68.031540000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[PrimerV]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo121: TfrxMemoView
+          AllowVectorExport = True
+          Left = 627.401980000000000000
+          Top = 717.331316460000000000
+          Width = 86.929190000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          DisplayFormat.FormatStr = '%2.2f'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Importe1]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo124: TfrxMemoView
+          AllowVectorExport = True
+          Left = 442.205010000000000000
+          Top = 744.567556460000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroCobro]')
+          ParentFont = False
+        end
+        object Memo125: TfrxMemoView
+          AllowVectorExport = True
+          Left = 616.063390000000000000
+          Top = 744.567556460000000000
+          Width = 98.267780000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroLiquidacion]')
+          ParentFont = False
+        end
+        object Memo126: TfrxMemoView
+          AllowVectorExport = True
+          Left = 695.433520000000000000
+          Top = 774.803796460000000000
+          Width = 18.897650000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroUsuario]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Logo4: TfrxPictureView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 796.701446460000000000
+          Width = 41.574830000000000000
+          Height = 49.133890000000000000
+          Frame.Typ = []
+          HightQuality = False
+          Transparent = False
+          TransparentColor = clWhite
+        end
+        object Memo129: TfrxMemoView
+          AllowVectorExport = True
+          Left = 49.133890000000000000
+          Top = 795.701446460000000000
+          Width = 238.110231340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Municipalidad de la Ciudad de Formosa')
+          ParentFont = False
+        end
+        object Memo130: TfrxMemoView
+          AllowVectorExport = True
+          Left = 49.133890000000000000
+          Top = 810.819566460000000000
+          Width = 238.110231340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Agencia de Recaudaci'#243'n')
+          ParentFont = False
+        end
+        object Memo131: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 816.599096460000000000
+          Width = 64.251851340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Orden.N'#176':')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo132: TfrxMemoView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 816.599096460000000000
+          Width = 128.503861340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'CUOTA: ANTICIPO')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo133: TfrxMemoView
+          AllowVectorExport = True
+          Left = 442.205010000000000000
+          Top = 816.599096460000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '6938/16')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo134: TfrxMemoView
+          AllowVectorExport = True
+          Left = 634.961040000000000000
+          Top = 816.599096460000000000
+          Width = 34.015611340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'A'#209'O:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo135: TfrxMemoView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 835.496746460000000000
+          Width = 64.252010000000000000
+          Height = 18.897650000000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[CuotaDe]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo136: TfrxMemoView
+          AllowVectorExport = True
+          Left = 668.976810000000000000
+          Top = 816.599096460000000000
+          Width = 45.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Anio]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo137: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 797.701446460000000000
+          Width = 332.598481340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[TituloDesc]')
+          ParentFont = False
+        end
+        object Memo138: TfrxMemoView
+          AllowVectorExport = True
+          Left = 26.456710000000000000
+          Top = 843.055806460000000000
+          Width = 83.149501340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Titular:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo139: TfrxMemoView
+          AllowVectorExport = True
+          Left = 600.945270000000000000
+          Top = 842.945504330000000000
+          Width = 34.015611340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Cuim:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo140: TfrxMemoView
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 858.173926460000000000
+          Width = 86.929031340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Domicilio Titular:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Line10: TfrxLineView
+          AllowVectorExport = True
+          Left = 192.756030000000000000
+          Top = 880.292046460000000000
+          Width = 510.236550000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo141: TfrxMemoView
+          AllowVectorExport = True
+          Left = 52.913420000000000000
+          Top = 871.732986460000000000
+          Width = 136.062921340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Datos de la Liquidaci'#243'n')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo142: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 885.410166460000000000
+          Width = 60.472321340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'N'#176' Partida:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Line11: TfrxLineView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 880.071576460000000000
+          Width = 30.236240000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo147: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 843.055806460000000000
+          Width = 483.779840000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NombreTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo148: TfrxMemoView
+          AllowVectorExport = True
+          Left = 634.961040000000000000
+          Top = 842.835336460000000000
+          Width = 79.370130000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[CuimTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo149: TfrxMemoView
+          AllowVectorExport = True
+          Left = 109.606370000000000000
+          Top = 858.173926460000000000
+          Width = 604.724800000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DomicilioTit]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo150: TfrxMemoView
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Top = 885.410166460000000000
+          Width = 68.031540000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[NroPlan]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo151: TfrxMemoView
+          AllowVectorExport = True
+          Left = 476.559370000000000000
+          Top = 882.410166460000000000
+          Width = 234.330860000000000000
+          Height = 26.456700240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroCuota]')
+          ParentFont = False
+        end
+        object Memo152: TfrxMemoView
+          AllowVectorExport = True
+          Left = 71.811070000000000000
+          Top = 901.528286460000000000
+          Width = 306.141930000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[FechaIni]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo154: TfrxMemoView
+          AllowVectorExport = True
+          Left = 102.047310000000000000
+          Top = 919.425936460000000000
+          Width = 275.905690000000000000
+          Height = 11.338590000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Objetos]')
+          ParentFont = False
+        end
+        object Line12: TfrxLineView
+          AllowVectorExport = True
+          Top = 933.544056460000000000
+          Width = 714.331170000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo155: TfrxMemoView
+          AllowVectorExport = True
+          Top = 933.544056460000000000
+          Width = 83.149660000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Detalle del Recibo:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo156: TfrxMemoView
+          AllowVectorExport = True
+          Left = 83.149660000000000000
+          Top = 933.544056460000000000
+          Width = 631.181510000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haBlock
+          Memo.UTF8W = (
+            '[DetalleRecibo]')
+          ParentFont = False
+        end
+        object Shape17: TfrxShapeView
+          AllowVectorExport = True
+          Left = 589.606680000000000000
+          Top = 957.441706460000000000
+          Width = 124.724402130000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+        end
+        object Shape18: TfrxShapeView
+          AllowVectorExport = True
+          Left = 452.063286670000000000
+          Top = 957.441706460000000000
+          Width = 124.724409450000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+        end
+        object Memo157: TfrxMemoView
+          AllowVectorExport = True
+          Left = 453.543600000000000000
+          Top = 958.441706460000000000
+          Width = 52.913420000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Primer Vto:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo158: TfrxMemoView
+          AllowVectorExport = True
+          Left = 389.291590000000000000
+          Top = 982.677946460000000000
+          Width = 52.913420000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Nro Cobro:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo159: TfrxMemoView
+          AllowVectorExport = True
+          Left = 544.252320000000000000
+          Top = 982.677946460000000000
+          Width = 71.811070000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Liquidaci'#243'n N'#176':')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo160: TfrxMemoView
+          AllowVectorExport = True
+          Left = 113.385900000000000000
+          Top = 1012.914186460000000000
+          Width = 377.953000000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              '(Liquidaci'#243'n no v'#225'lido como Comprobante de Pago sin su correspon' +
+              'diente ticket/recibo o sello de pago)')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo161: TfrxMemoView
+          AllowVectorExport = True
+          Left = 548.031850000000000000
+          Top = 1012.914186460000000000
+          Width = 147.401670000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Tal'#243'n para el Ente Recaudador - Usu:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo162: TfrxMemoView
+          AllowVectorExport = True
+          Left = 589.606680000000000000
+          Top = 957.441706460000000000
+          Width = 37.795300000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -9
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Importe:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo165: TfrxMemoView
+          AllowVectorExport = True
+          Left = 508.016080000000000000
+          Top = 957.441706460000000000
+          Width = 68.031540000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[PrimerV]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo166: TfrxMemoView
+          AllowVectorExport = True
+          Left = 627.401980000000000000
+          Top = 957.441706460000000000
+          Width = 86.929190000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          DisplayFormat.FormatStr = '%2.2f'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Importe1]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo169: TfrxMemoView
+          AllowVectorExport = True
+          Left = 442.205010000000000000
+          Top = 982.677946460000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroCobro]')
+          ParentFont = False
+        end
+        object Memo170: TfrxMemoView
+          AllowVectorExport = True
+          Left = 616.063390000000000000
+          Top = 982.677946460000000000
+          Width = 98.267780000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroLiquidacion]')
+          ParentFont = False
+        end
+        object Memo171: TfrxMemoView
+          AllowVectorExport = True
+          Left = 695.433520000000000000
+          Top = 1012.914186460000000000
+          Width = 18.897650000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -8
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[NroUsuario]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object BarCode3: TfrxBarCodeView
+          AllowVectorExport = True
+          Left = 26.456710000000000000
+          Top = 959.221090000000000000
+          Width = 288.000000000000000000
+          Height = 52.913420000000000000
+          BarType = bcCode128C
+          Expression = '<NroCodBar>'
+          Frame.Typ = []
+          Rotation = 0
+          TestLine = False
+          Text = '9270001148316257201630015853104000011483162572'
+          WideBarRatio = 2.000000000000000000
+          Zoom = 1.000000000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          ColorBar = clBlack
+        end
+        object BarCode2: TfrxBarCodeView
+          AllowVectorExport = True
+          Left = 26.456710000000000000
+          Top = 721.890230000000000000
+          Width = 288.000000000000000000
+          Height = 52.913420000000000000
+          BarType = bcCode128C
+          Expression = '<NroCodBar>'
+          Frame.Typ = []
+          Rotation = 0
+          TestLine = False
+          Text = '9270001148316257201630015853104000011483162572'
+          WideBarRatio = 2.000000000000000000
+          Zoom = 1.000000000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          ColorBar = clBlack
+        end
+        object BarCode1: TfrxBarCodeView
+          AllowVectorExport = True
+          Left = 26.456710000000000000
+          Top = 483.779840000000000000
+          Width = 288.000000000000000000
+          Height = 52.913420000000000000
+          BarType = bcCode128C
+          Expression = '<NroCodBar>'
+          Frame.Typ = []
+          Rotation = 0
+          TestLine = False
+          Text = '9270001148316257201630015853104000011483162572'
+          WideBarRatio = 2.000000000000000000
+          Zoom = 1.000000000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          ColorBar = clBlack
+        end
+        object Memo18: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 425.086890000000000000
+          Width = 79.369971340000000000
+          Height = 15.118110240000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Destino Obra :')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo29: TfrxMemoView
+          AllowVectorExport = True
+          Left = 4.220470000000000000
+          Top = 663.197280000000000000
+          Width = 75.590441340000000000
+          Height = 15.118110240000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Destino Obra :')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo30: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 901.528140000000000000
+          Width = 79.369971340000000000
+          Height = 15.118110240000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Destino Obra :')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo37: TfrxMemoView
+          AllowVectorExport = True
+          Left = 381.842610000000000000
+          Top = 406.189240000000000000
+          Width = 94.488091340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Tipo Construcci'#243'n:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo39: TfrxMemoView
+          AllowVectorExport = True
+          Left = 381.732530000000000000
+          Top = 645.299630000000000000
+          Width = 94.488091340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Tipo Construcci'#243'n:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo40: TfrxMemoView
+          AllowVectorExport = True
+          Left = 381.732530000000000000
+          Top = 882.410020000000000000
+          Width = 94.488091340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Tipo Construcci'#243'n:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo55: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 440.307360000000000000
+          Width = 98.267621340000000000
+          Height = 15.118110240000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Emp Constructora:')
+          ParentFont = False
+        end
+        object Memo56: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.000000000000000000
+          Top = 679.315400000000000000
+          Width = 98.267621340000000000
+          Height = 15.118110240000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Emp Constructora:')
+          ParentFont = False
+        end
+        object Memo57: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 918.425790000000000000
+          Width = 98.267621340000000000
+          Height = 15.118110240000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Emp Constructora:')
+          ParentFont = False
+        end
+        object DenomCatas: TfrxMemoView
+          AllowVectorExport = True
+          Left = 143.622140000000000000
+          Top = 647.299630000000000000
+          Width = 234.330860000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DenomCatas]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo58: TfrxMemoView
+          AllowVectorExport = True
+          Left = 143.622140000000000000
+          Top = 885.410020000000000000
+          Width = 234.330860000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DenomCatas]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo65: TfrxMemoView
+          AllowVectorExport = True
+          Left = 143.622140000000000000
+          Top = 409.189240000000000000
+          Width = 234.330860000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DenomCatas]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo75: TfrxMemoView
+          AllowVectorExport = True
+          Left = 143.622140000000000000
+          Top = 153.181200000000000000
+          Width = 234.330860000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DenomCatas]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo76: TfrxMemoView
+          AllowVectorExport = True
+          Left = 381.732530000000000000
+          Top = 188.976500000000000000
+          Width = 94.488091340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Id. Expte.:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo79: TfrxMemoView
+          AllowVectorExport = True
+          Left = 381.732530000000000000
+          Top = 438.425480000000000000
+          Width = 94.488091340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Id. Expte.:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo80: TfrxMemoView
+          AllowVectorExport = True
+          Left = 381.732530000000000000
+          Top = 676.535870000000000000
+          Width = 94.488091340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Id. Expte.:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo98: TfrxMemoView
+          AllowVectorExport = True
+          Left = 381.732530000000000000
+          Top = 915.425790000000000000
+          Width = 94.488091340000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Id. Expte.:')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object IdExpte: TfrxMemoView
+          AllowVectorExport = True
+          Left = 477.000310000000000000
+          Top = 189.196970000000000000
+          Width = 79.370130000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[IdExpte]')
+          ParentFont = False
+        end
+        object Memo99: TfrxMemoView
+          AllowVectorExport = True
+          Left = 476.220780000000000000
+          Top = 438.425480000000000000
+          Width = 79.370130000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[IdExpte]')
+          ParentFont = False
+        end
+        object Memo100: TfrxMemoView
+          AllowVectorExport = True
+          Left = 476.220780000000000000
+          Top = 676.535870000000000000
+          Width = 79.370130000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[IdExpte]')
+          ParentFont = False
+        end
+        object Memo101: TfrxMemoView
+          AllowVectorExport = True
+          Left = 476.220780000000000000
+          Top = 914.646260000000000000
+          Width = 79.370130000000000000
+          Height = 15.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[IdExpte]')
+          ParentFont = False
+        end
+        object Memo108: TfrxMemoView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 574.488560000000000000
+          Width = 128.503861340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'CUOTA: ANTICIPO')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo87: TfrxMemoView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 336.378170000000000000
+          Width = 128.503861340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'CUOTA: ANTICIPO')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo44: TfrxMemoView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 34.015770000000000000
+          Width = 128.503861340000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'CUOTA: ANTICIPO')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+    end
+  end
+  object DataSource4: TDataSource
+    Left = 238
+    Top = 3
+  end
+end

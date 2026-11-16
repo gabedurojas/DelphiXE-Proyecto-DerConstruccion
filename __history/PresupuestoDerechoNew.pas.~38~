@@ -1,0 +1,1372 @@
+unit PresupuestoDerechoNew;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, JvExButtons,
+  JvBitBtn, Vcl.ComCtrls, Vcl.ToolWin,ADODB,Objetos, Vcl.Grids, JvExGrids,
+  JvStringGrid, JvExComCtrls, JvComCtrls, JvComponentBase, JvEmbeddedForms,
+  Vcl.ImgList,System.Math,frxClass, frxDBSet,frxBarcode,StrUtils, Data.DB,
+  Vcl.ExtCtrls, Vcl.DBGrids, JvExDBGrids, JvDBGrid, JvgGroupBox, Vcl.Mask,
+  Vcl.Menus, JvgPage, JvSimLogic;
+
+type THackStringGrid = class(TJvStringGrid);
+type
+  TDerechoPresupuestoNuevo = class(TForm)
+    ToolBar1: TToolBar;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    JvBitBtn1: TJvBitBtn;
+    PorNoPresup: TGroupBox;
+    Label1: TLabel;
+    TipoConst: TComboBox;
+    Memo1: TMemo;
+    PC1: TJvPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    GroupBox2: TGroupBox;
+    GrillaEntidad: TJvStringGrid;
+    FormularioEmb: TJvEmbeddedFormLink;
+    ImageList1: TImageList;
+    TabSheet3: TTabSheet;
+    GroupBox3: TGroupBox;
+    TotLiqui: TEdit;
+    GroupBox4: TGroupBox;
+    Label2: TLabel;
+    ENTIDAD: TComboBox;
+    cargaliqui: TJvBitBtn;
+    Label3: TLabel;
+    grillaImportes: TJvStringGrid;
+    frxReport1: TfrxReport;
+    TabSheet4: TTabSheet;
+    GroupBox5: TGroupBox;
+    JvgGroupBox2: TJvgGroupBox;
+    Label18: TLabel;
+    Label19: TLabel;
+    BUSCARPROF: TJvBitBtn;
+    ODNIP: TEdit;
+    ONOMBP: TEdit;
+    JvDBGrid3: TJvDBGrid;
+    Panel1: TPanel;
+    DataSource1: TDataSource;
+    Label4: TLabel;
+    OPARTIDA: TMaskEdit;
+    BuscarP: TButton;
+    N9: TEdit;
+    Label14: TLabel;
+    Label37: TLabel;
+    N2: TEdit;
+    Label15: TLabel;
+    N3: TEdit;
+    Label10: TLabel;
+    N4: TEdit;
+    N8: TEdit;
+    Label7: TLabel;
+    N7: TEdit;
+    Label8: TLabel;
+    N6: TEdit;
+    Label11: TLabel;
+    OCUIT: TEdit;
+    GroupBox6: TGroupBox;
+    Edit3: TEdit;
+    agrega: TJvBitBtn;
+    GroupBox9: TGroupBox;
+    Edit5: TEdit;
+    PC2: TJvgPageControl;
+    TabSheet5: TTabSheet;
+    TabSheet6: TTabSheet;
+    Label69: TLabel;
+    SC: TEdit;
+    Label70: TLabel;
+    SSC: TEdit;
+    GroupBox1: TGroupBox;
+    TS: TEdit;
+    GroupBox8: TGroupBox;
+    Edit4: TEdit;
+    GrillaCalculo: TJvStringGrid;
+    Label6: TLabel;
+    scdoc: TEdit;
+    sscdoc: TEdit;
+    Label9: TLabel;
+    GroupBox10: TGroupBox;
+    tsdoc: TEdit;
+    GroupBox11: TGroupBox;
+    Edit4doc: TEdit;
+    GrillaCalculodoc: TJvStringGrid;
+    GroupBox7: TGroupBox;
+    Edit2: TEdit;
+    GroupBox12: TGroupBox;
+    Edit6: TEdit;
+    Label83: TLabel;
+    anticipos: TComboBox;
+    Label84: TLabel;
+    Edit7: TEdit;
+    cb: TCheckBox;
+    cbdoc: TCheckBox;
+    presu: TEdit;
+    presudoc: TEdit;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Edit8: TEdit;
+    Edit9: TEdit;
+    impliqui: TJvBitBtn;
+    losdatos: TJvBitBtn;
+    Edit1: TEdit;
+    Edit10: TEdit;
+    Label5: TLabel;
+    Label22: TLabel;
+    JvSIMConnector1: TJvSIMConnector;
+    ToolButton3: TToolButton;
+    JvBitBtn2: TJvBitBtn;
+    Edit4Sem: TEdit;
+    Edit4docSem: TEdit;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure CargaCombos(nro:byte);
+    procedure Consultas(nro:byte);
+    procedure ControlaSelec(nro:byte);
+    procedure TipoConstExit(Sender: TObject);
+    procedure TipoConstKeyPress(Sender: TObject; var Key: Char);
+    procedure SSCExit(Sender: TObject);
+    procedure TSChange(Sender: TObject);
+    procedure SCKeyPress(Sender: TObject; var Key: Char);
+    procedure SSCKeyPress(Sender: TObject; var Key: Char);
+    procedure SCExit(Sender: TObject);
+    procedure SCChange(Sender: TObject);
+    procedure GrillaCalculoClick(Sender: TObject);
+    procedure ENTIDADExit(Sender: TObject);
+    procedure ENTIDADKeyPress(Sender: TObject; var Key: Char);
+    procedure agregaClick(Sender: TObject);
+    procedure GrillaEntidadClick(Sender: TObject);
+    procedure TipoConstChange(Sender: TObject);
+    procedure cargaliquiClick(Sender: TObject);
+    procedure losdatosClick(Sender: TObject);
+    procedure TotLiquiChange(Sender: TObject);
+    procedure ImprimeRecibo();
+    procedure impliquiClick(Sender: TObject);
+    procedure ODNIPKeyPress(Sender: TObject; var Key: Char);
+    procedure ONOMBPKeyPress(Sender: TObject; var Key: Char);
+    procedure BUSCARPROFClick(Sender: TObject);
+    procedure JvDBGrid3CellClick(Column: TColumn);
+    procedure OPARTIDAEnter(Sender: TObject);
+    procedure OPARTIDAExit(Sender: TObject);
+    procedure OPARTIDAKeyPress(Sender: TObject; var Key: Char);
+    procedure BuscarPClick(Sender: TObject);
+    procedure BorrarCalculo1Click(Sender: TObject);
+    procedure scdocExit(Sender: TObject);
+    procedure scdocKeyPress(Sender: TObject; var Key: Char);
+    procedure scdocChange(Sender: TObject);
+    procedure sscdocExit(Sender: TObject);
+    procedure sscdocKeyPress(Sender: TObject; var Key: Char);
+    procedure tsdocChange(Sender: TObject);
+    procedure anticiposKeyPress(Sender: TObject; var Key: Char);
+    procedure anticiposExit(Sender: TObject);
+    procedure SSCChange(Sender: TObject);
+    procedure sscdocChange(Sender: TObject);
+    procedure presuChange(Sender: TObject);
+    procedure presuExit(Sender: TObject);
+    procedure presuKeyPress(Sender: TObject; var Key: Char);
+    procedure cbdocClick(Sender: TObject);
+    procedure cbClick(Sender: TObject);
+    procedure presudocChange(Sender: TObject);
+    procedure presudocExit(Sender: TObject);
+    procedure presudocKeyPress(Sender: TObject; var Key: Char);
+    procedure JvDBGrid3DblClick(Sender: TObject);
+    procedure JvBitBtn2Click(Sender: TObject);
+    procedure JvBitBtn1Click(Sender: TObject);
+  private
+      gh:boolean;
+      Recibo:TRecibo;
+      Com1:TADOCommand;
+      descri,tipodescri:string;
+      eltotal:real;
+      cants,cantis,cant:integer;
+      alicuota,valor,FechaAct,idcontribp,cuimp,eltituP,eldomicilio:string;
+      DataSet1,DataSet2,OBRAS,PROFESIONAL:TADODataSet;
+    { Private declarations }
+  public
+
+    { Public declarations }
+  end;
+
+var
+  DerechoPresupuestoNuevo: TDerechoPresupuestoNuevo;
+
+implementation
+
+uses Unidad, modulo;
+
+{$R *.dfm}
+
+procedure TDerechoPresupuestoNuevo.FormCreate(Sender: TObject);
+begin
+ gh:=false;
+ DataSet1:=TADODataSet.Create(Self);
+ DataSet2:=TADODataSet.Create(Self);
+ PROFESIONAL:=TADODataSet.Create(Self);
+ Modulo2.ObjConexion:=nil;
+end;
+
+procedure TDerechoPresupuestoNuevo.FormActivate(Sender: TObject);
+begin
+ if not (gh) then begin
+  gh:=true;
+  FechaAct:=LeftStr(Fec_System(),10);
+  pc2.Pages[0].Caption :='Obra Nueva';
+  pc2.Pages[1].TabVisible:=false;
+  CargaCombos(1);
+  CargaCombos(2);
+  CargaCombos(3);
+  PC1.ActivePage :=PC1.Pages[0];
+  grillacalculo.Cells[0,0]:='Id';                 grillacalculo.Cells[1,0]:='Descripcion';
+  grillacalculo.Cells[2,0]:='Alicuota';           grillacalculo.Cells[3,0]:='Selecc.';
+
+  grillacalculodoc.Cells[0,0]:='Id';              grillacalculodoc.Cells[1,0]:='Descripcion';
+  grillacalculodoc.Cells[2,0]:='Alicuota';        grillacalculodoc.Cells[3,0]:='Selecc.';
+
+  GrillaEntidad.Cells[0,0]:='Id';                 GrillaEntidad.Cells[1,0]:='Descripcion';
+  GrillaEntidad.Cells[2,0]:='Valor';              GrillaEntidad.Cells[3,0]:='Selecc.';
+
+  GrillaImportes.Cells[0,0]:='Descripcion';       GrillaImportes.Cells[1,0]:='MetrosCuadrados';
+  GrillaImportes.Cells[2,0]:='Valor';             GrillaImportes.Cells[3,0]:='Alicuota';
+  GrillaImportes.Cells[4,0]:='';                  GrillaImportes.Cells[5,0]:='Importes';
+  opartida.Enabled :=false;
+  cargaliqui.Enabled :=false;
+  presu.Visible :=false;
+  presudoc.Visible :=false;
+  label12.Visible :=false;
+  label13.Visible :=false;
+  label16.Visible :=false;
+  label17.Visible :=false;
+  impliqui.Enabled :=false;
+  idcontribP:='';
+  losdatos.Enabled :=false;
+  impliqui.Enabled :=false;
+  tipoconst.SetFocus;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FreeAndNil(DataSet1);
+  FreeAndNil(DataSet2);
+  freeAndNil(PROFESIONAL);
+  FreeAndNil(Self);
+end;
+
+procedure TDerechoPresupuestoNuevo.GrillaCalculoClick(Sender: TObject);
+begin
+ if (trim(GrillaCalculo.Cells[3,GrillaCalculo.Row])='') then GrillaCalculo.Cells[3,GrillaCalculo.Row]:='x'
+  else GrillaCalculo.Cells[3,GrillaCalculo.Row]:='';
+ ControlaSelec(2);
+ ControlaSelec(4);
+ agrega.Enabled :=true;
+end;
+
+procedure TDerechoPresupuestoNuevo.agregaClick(Sender: TObject);
+var eldato, nueva, adoc:real;
+    a,p,u:integer;
+begin
+ if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '5' then begin
+  if trim(EDIT4DOC.Text ) = '0' then begin
+   messagedlg('Atencion.. No Existe ningun Importe Calculado para la Liquidación!',mtWarning,[mbok],0);
+   PC1.ActivePage :=PC1.Pages[2];
+   scdoc.SetFocus;
+  end
+  else begin
+   PC1.ActivePage :=PC1.Pages[2];
+   odnip.SetFocus;
+  end;
+ end
+ ELSE BEGIN
+  if trim(EDIT4.Text ) = '0' then begin
+   messagedlg('Atencion.. No Existe ningun Importe Calculado para la Liquidación!',mtWarning,[mbok],0);
+   PC1.ActivePage :=PC1.Pages[1];
+   sc.SetFocus;
+  end
+  else begin
+   PC1.ActivePage :=PC1.Pages[2];
+   odnip.SetFocus;
+  end;
+ END;
+end;
+
+procedure TDerechoPresupuestoNuevo.anticiposExit(Sender: TObject);
+begin
+ if anticipos.ItemIndex < 0 then begin
+  messagedlg('Error!! Seleccione un tipo de Detalle de Pago válido',mterror,[mbok],0);
+  anticipos.SetFocus;
+ end
+ else begin
+  Consultas(10);
+  impliqui.Enabled :=true;
+  impliqui.SetFocus;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.anticiposKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  impliqui.Enabled :=true;
+  impliqui.SetFocus;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.BorrarCalculo1Click(Sender: TObject);
+var p,u:integer;
+begin
+  for p:=0 to grillaimportes.ColCount-1 do
+    for u:=1 to grillaimportes.RowCount-1 do grillaimportes.Cells[p,u]:='';
+  grillaimportes.RowCount:=2;
+  totliqui.Text :='0';
+  PC1.ActivePage:=PC1.Pages[1];
+end;
+
+procedure TDerechoPresupuestoNuevo.BuscarPClick(Sender: TObject);
+var t,j,p:integer;
+r,bloqueo:boolean;
+txt:string;
+TxtW:widestring;
+begin
+  N2.text:='...';
+  N3.text:='...';N4.text:='...';N6.text:='...';
+  N7.text:='...';N8.text:='...';N9.text:='...';
+
+  DataSet1.ConnectionString:=modulo2.Sistema.ConectUsu;
+  DataSet1.CommandText:='SELECT PARTIDA,rtrim(ltrim(NOMRAZ)) + '' ('' + rtrim(ltrim(tipotitular)) + '')'' ,'
+  + 'BARRIO,CALLE,PUERTA,RESPOPAG,' //5
+  + 'FECHA_ALTA,CUOTA_TASA,CUOTA_INMO1,CUOTA_INMO2,CUOTA_INMO3,CUOTA_INMO4,CUOTA_INMO5,'  //12
+  + 'VAL_TOTAL,NOMENC,NRO_DOC,CUIM,'//16
+  + 'MANZANA,SECTOR,PARCELA,TORRE,PISO,DEPTO,CASA,sup_mens,'  //24
+  + 'anio,fecha_baja,fecha_adj,Habilitada FROM DatosPartidasActualesBis (' + trim(OPARTIDA.Text) + ') order by nomraz;';
+  DataSet1.Open;
+  if DataSet1.RecordCount = 0 then begin
+   messagedlg('No Existe el N° de Partida Ingresado',mterror,[mbok],0);
+   DataSet1.Close;
+   OPARTIDA.SetFocus;
+  end
+  else begin
+   if DataSet1.Fields[28].AsBoolean then begin
+    DataSet1.RecNo:=DataSet1.RecordCount;
+    N9.Text:= trim(DataSet1.Fields[1].AsString);
+    n2.Text:= trim(DataSet1.Fields[0].AsString);
+    n3.Text:= trim(DataSet1.Fields[24].AsString);
+    n4.Text:= trim(DataSet1.Fields[14].AsString);
+    n6.Text:= trim(DataSet1.Fields[6].AsString);
+    n7.Text:= trim(DataSet1.Fields[26].AsString);
+    n8.Text:= trim(DataSet1.Fields[27].AsString);
+    losdatos.Enabled :=true;
+    losdatos.SetFocus;
+   end
+   else begin
+    messagedlg('Partida NO HABILITADA O NO PUBLICA!!... Posible Espacio VERDE...',mterror,[mbok],0);
+    r:=false;
+   end;
+  end;
+  DataSet1.Close;
+end;
+
+procedure TDerechoPresupuestoNuevo.BUSCARPROFClick(Sender: TObject);
+begin
+ if (trim(odnip.Text)='') and  (trim(onombp.Text)='')  then begin
+  messagedlg('Error!! No Hay ningun dato para realizar la busqueda del Contribiyente..',mtWarning,[mbok],0);
+  PC2.ActivePage :=PC2.Pages[2];
+  odnip.Clear;
+  odnip.SetFocus;
+ end
+ else Consultas(3);
+end;
+
+procedure TDerechoPresupuestoNuevo.CargaCombos(nro:byte);
+begin
+ if nro=1 then Modulo2.CargaCombo(TipoConst,'SELECT Detalle,Id FROM TiposConstrucciones where id in (1,2,5)',modulo2.Sistema.ConectDerConst,false);
+ if nro=2 then Modulo2.CargaCombo(Entidad,'SELECT Entidades,Id FROM TarifasDerConstEntidades order by orden ',modulo2.Sistema.ConectDerConst,false);
+ if nro=3 then Modulo2.CargaCombo(anticipos,'SELECT Descripcion,IdAnticipo FROM TarifasAnticipoDerConst order by 2',modulo2.Sistema.ConectDerConst,false);
+end;
+
+procedure TDerechoPresupuestoNuevo.ControlaSelec(nro:byte);
+var t,y,gf:integer;
+begin
+ cant:=0;
+ cants:=0;
+ cantis:=0;
+ eltotal:=0;
+ if nro=1 then begin
+  for gf:=1 to grillaentidad.RowCount-1 do begin
+   if (grillaentidad.Cells[3,gf] = 'x') then begin
+    cants:=cants+1;
+   end;
+  end;
+  if cants > 1 then begin
+   messagedlg('Error!! No Se Puede seleccionar mas de un importe..',mtWarning,[mbok],0);
+   PC1.ActivePage :=PC1.Pages[0];
+   GRILLAENTIDAD.SetFocus;
+  end
+  ELSE BEGIN
+   for gf:=1 to grillaentidad.RowCount-1 do begin
+    if (grillaentidad.Cells[3,gf] = 'x') then begin
+     edit3.Text:=trim(grillaentidad.Cells[2,gf]) ;
+    end;
+   end;
+   PC1.ActivePage :=PC1.Pages[1];
+   sc.SetFocus;
+  END;
+ end;
+ if nro = 2 then begin
+  for t:=1 to grillacalculo.RowCount-1 do begin
+   if (grillacalculo.Cells[3,t] = 'x') then begin
+    cant:=cant+1;
+   end;
+  end;
+  if cant > 1 then begin
+   messagedlg('Error!! No Se Puede seleccionar mas de un importe..',mtWarning,[mbok],0);
+  end;
+ end;
+ if nro = 3 then begin
+  for y:=1 to grillaentidad.RowCount-1 do begin
+   if (grillaentidad.Cells[3,y] = 'x') then begin
+    valor:=trim(grillaentidad.Cells[2,y]);
+   end;
+  end;
+ end;
+ if nro = 4 then begin
+  for y:=1 to grillacalculo.RowCount-1 do begin
+   if (grillacalculo.Cells[3,y] = 'x') then begin
+    alicuota:=trim(grillacalculo.Cells[2,y]);
+   end;
+  end;
+ end;
+ if nro = 5 then begin   // sumamos los importes de cada tramite
+  for y:=1 to GrillaImportes.RowCount-1 do begin
+    eltotal:=eltotal + strtofloat(GrillaImportes.Cells[5,y]);
+  end;
+  totliqui.Text :=floattostr(Roundto(eltotal,-2));
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.Consultas(nro:byte);
+var t,y,gf,a,p,u:integer;
+    eltotal:real;
+    txt,dni,lapar,dnip:string;
+    CLIENTE:TADODataSet;
+    Comando:widestring;
+    Cnx2:TADOConnection;
+begin
+Modulo2.ObjConexion:=TADOConnection.Create(nil);
+Modulo2.ObjConexion.LoginPrompt:=false;
+if nro = 0 then begin
+  DataSet1.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  DataSet1.CommandText:='SELECT descripcion FROM TiposConstrucciones where (id = '+ TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 +') ';
+  DataSet1.Open;
+  memo1.Text :=  trim(DataSet1.Fields[0].AsString);
+  DataSet1.Close;
+  DataSet1.Connection:=nil;
+end;
+if nro = 1 then begin
+ for p:=0 to grillacalculo.ColCount-1 do
+  for u:=1 to grillacalculo.RowCount-1 do grillacalculo.Cells[p,u]:='';
+   grillacalculo.RowCount:=2;
+  DataSet2.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  DataSet1.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '5' then begin
+   DataSet1.CommandText:='SELECT ID,Descripcion,alicuota,selec FROM SeleccionTipoObra (2,'+ trim(tsdoc.Text) +')';
+   DataSet1.Open;
+   for t:=1 to DataSet1.RecordCount do begin
+    grillacalculodoc.RowCount:=t+1;
+    DataSet1.RecNo:=t;
+    grillacalculodoc.Cells[0,t]:=DataSet1.Fields[0].AsString;
+    grillacalculodoc.Cells[1,t]:=DataSet1.Fields[1].AsString;
+    grillacalculodoc.Cells[2,t]:=DataSet1.Fields[2].AsString;
+    grillacalculodoc.Cells[3,t]:=DataSet1.Fields[3].AsString;
+   end;
+
+   DataSet2.CommandText:='SELECT ID,Descripcion,alicuota,selec FROM SeleccionTipoObra (1 ,'+ trim(ts.Text) +')';
+   DataSet2.Open;
+   for t:=1 to DataSet2.RecordCount do begin
+    grillacalculo.RowCount:=t+1;
+    DataSet2.RecNo:=t;
+    grillacalculo.Cells[0,t]:=DataSet2.Fields[0].AsString;
+    grillacalculo.Cells[1,t]:=DataSet2.Fields[1].AsString;
+    grillacalculo.Cells[2,t]:=DataSet2.Fields[2].AsString;
+    grillacalculo.Cells[3,t]:=DataSet2.Fields[3].AsString;
+   end;
+  end
+  else begin
+   DataSet2.CommandText:='SELECT ID,Descripcion,alicuota,selec FROM SeleccionTipoObra ( '
+   + TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 +' , '+ trim(ts.Text) +')';
+   DataSet2.Open;
+   for t:=1 to DataSet2.RecordCount do begin
+    grillacalculo.RowCount:=t+1;
+    DataSet2.RecNo:=t;
+    grillacalculo.Cells[0,t]:=DataSet2.Fields[0].AsString;
+    grillacalculo.Cells[1,t]:=DataSet2.Fields[1].AsString;
+    grillacalculo.Cells[2,t]:=DataSet2.Fields[2].AsString;
+    grillacalculo.Cells[3,t]:=DataSet2.Fields[3].AsString;
+   end;
+  end;
+ DataSet1.Close;
+ DataSet1.Connection:=nil;
+
+ DataSet2.Close;
+ DataSet2.Connection:=nil;
+end;
+if nro = 2 then begin
+ DataSet2.ConnectionString:=modulo2.Sistema.ConectDerConst;
+ DataSet2.CommandText:='SELECT IdTarifa,Descripcion,Tarifa,'''' as Selec  FROM TarifasDerConstEntidadesDetalle  '
+ +' where idderconstentidad= ' + TComboClase(Entidad.Items.Objects[Entidad.ItemIndex]).Param1 +' and activo=1 order by 1';
+ DataSet2.Open;
+ for t:=1 to DataSet2.RecordCount do begin
+  GrillaEntidad.RowCount:=t+1;
+  DataSet2.RecNo:=t;
+  GrillaEntidad.Cells[0,t]:=DataSet2.Fields[0].AsString;
+  GrillaEntidad.Cells[1,t]:=DataSet2.Fields[1].AsString;
+  GrillaEntidad.Cells[2,t]:=DataSet2.Fields[2].AsString;
+  GrillaEntidad.Cells[3,t]:=DataSet2.Fields[3].AsString;
+ end;
+ DataSet2.Close;
+ DataSet2.Connection:=nil;
+end;
+if nro = 3 then begin // buscamos un contrib
+ if trim(ONOMBp.Text) = '' then txt:='NULL'
+  else txt:=chr(39) + trim(ONOMBp.Text) + chr(39);
+ if trim(ODNIp.Text) = '' then txt:=txt + ' , NULL'
+  else txt:=txt + ' , ' + chr(39) + trim(ODNIp.Text) + chr(39);
+ if trim(OCUIT.Text) = '' then txt:=txt + ' , NULL'
+  else txt:=txt + ' , ' + chr(39) + trim(OCUIT.Text) + chr(39);
+ PROFESIONAL.Close;
+ Modulo2.ObjConexion.ConnectionString:=modulo2.Sistema.ConectSeg;
+ PROFESIONAL.Connection:=modulo2.ObjConexion;
+ DataSource1.DataSet :=PROFESIONAL;
+ PROFESIONAL.CommandText:='EXEC SPP_ContribuyentesDerConst 0, ' + txt;
+ PROFESIONAL.Open;
+ if PROFESIONAL.IsEmpty then BEGIN
+  messagedlg('Contribuyente Inexistente...' + chr(13) + 'Debe darlo de  Alta?',mtWarning,[mbok,mbCancel],0);
+  PC1.ActivePage:=PC1.Pages[3];
+  odnip.SetFocus;
+ END;
+ PROFESIONAL.Connection:=nil;
+end;
+if nro = 4 then begin
+ DataSet2.ConnectionString:=modulo2.Sistema.ConectSeg;
+ DataSet2.CommandText:='SELECT detalle FROM Fn_ElDomicilioContribuyente (' + idcontribP + ')';
+ DataSet2.Open;
+ eldomicilio:=DataSet2.Fields[0].AsString;
+ DataSet2.Close;
+ DataSet2.Connection:=nil;
+end;
+if nro = 10 then begin
+ DataSet2.ConnectionString:=modulo2.Sistema.ConectDerConst;
+ DataSet2.CommandText:='SELECT Porcentaje FROM TarifasAnticipoDerConst where (idanticipo=' + TComboClase(anticipos.Items.Objects[anticipos.ItemIndex]).Param1 + ')';
+ DataSet2.Open;
+ if not DataSet2.isempty then begin
+  edit7.text:= trim(DataSet2.Fields[0].AsString);
+  totliqui.Text := floattostr(Roundto((strtofloat(edit5.Text) * strtoint(edit7.Text))/100,-2));
+ end;
+ DataSet2.Close;
+ DataSet2.Connection:=nil;
+end;
+end;
+
+procedure TDerechoPresupuestoNuevo.ENTIDADExit(Sender: TObject);
+begin
+begin
+ if ENTIDAD.ItemIndex < 0 then begin
+  messagedlg('Error!! Seleccione un tipo de Entidad válida',mterror,[mbok],0);
+  ENTIDAD.SetFocus;
+ end
+ else Consultas(2);
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.ENTIDADKeyPress(Sender: TObject; var Key: Char);
+begin
+if key = #13 then begin
+  Key := #0;
+  grillaentidad.SetFocus;
+end;
+end;
+
+procedure TDerechoPresupuestoNuevo.JvBitBtn1Click(Sender: TObject);
+begin
+ pc2.Pages[0].Caption :='Obra Nueva';
+ pc2.Pages[1].TabVisible:=false;
+ CargaCombos(1);
+ CargaCombos(2);
+ CargaCombos(3);
+ idcontribP:='';
+ PC1.ActivePage :=PC1.Pages[0];
+ edit3.Text :='0';
+ sc.Text :='0';
+ ssc.Text :='0';
+ presu.Text :='0';
+ label12.Caption :='0';
+ ts.Text :='0';
+ edit2.Text :='0';
+ edit4.Text :='0';
+ edit4sem.Text :='0';
+ cb.Checked :=false;
+
+ scdoc.Text :='0';
+ sscdoc.Text :='0';
+ presudoc.Text :='0';
+ label17.Caption :='0';
+ tsdoc.Text :='0';
+ edit6.Text :='0';
+ edit4doc.Text :='0';
+ edit4docsem.Text :='0';
+ cbdoc.Checked :=false;
+ PC2.ActivePage :=PC2.Pages[0];
+ odnip.Clear;        onombp.Clear;
+ n9.Clear;           n2.Clear;
+ n3.Clear;           n4.Clear;
+ n6.Clear;           n7.Clear;
+ n8.Clear;
+ opartida.Enabled :=false;
+ opartida.Text :='0000000000';
+ cargaliqui.Enabled :=false;
+ presu.Visible :=false;
+ presudoc.Visible :=false;
+ label12.Visible :=false;
+ label13.Visible :=false;
+ label16.Visible :=false;
+ label17.Visible :=false;
+ impliqui.Enabled :=false;
+ idcontribP:='';
+ losdatos.Enabled :=false;
+ impliqui.Enabled :=false;
+ edit7.Clear;     edit8.Clear;
+ edit1.Clear;     edit9.Clear;
+ edit10.Clear;
+ totliqui.Text :='0';
+ edit5.Text :='0';
+ DataSet2.Close;
+ DataSet2.Connection:=nil;
+ PROFESIONAL.Close;
+ PROFESIONAL.Connection:=nil;
+ tipoconst.SetFocus;
+end;
+
+procedure TDerechoPresupuestoNuevo.JvBitBtn2Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TDerechoPresupuestoNuevo.JvDBGrid3CellClick(Column: TColumn);
+begin
+ if not PROFESIONAL.IsEmpty then begin
+ if PROFESIONAL.Fields[0].AsInteger <> 0 then begin
+  idcontribP:=PROFESIONAL.Fields[0].AsString;
+  consultas(4);
+  cuimP:=trim(PROFESIONAL.Fields[1].AsString);
+  eltituP:=trim(PROFESIONAL.Fields[2].AsString);
+  opartida.Enabled :=true;
+  opartida.SetFocus;
+ end
+ else begin
+   messagedlg('No se puede editar el contribuyente DESCONOCIDO',mterror,[mbok],0);
+   PC1.ActivePage:=PC1.Pages[3];
+ end;
+end;
+end;
+
+procedure TDerechoPresupuestoNuevo.JvDBGrid3DblClick(Sender: TObject);
+begin
+if not PROFESIONAL.IsEmpty then begin
+ if PROFESIONAL.Fields[0].AsInteger <> 0 then begin
+  idcontribP:=PROFESIONAL.Fields[0].AsString;
+  consultas(4);
+  cuimP:=trim(PROFESIONAL.Fields[1].AsString);
+  eltituP:=trim(PROFESIONAL.Fields[2].AsString);
+  opartida.Enabled :=true;
+  opartida.SetFocus;
+ end
+ else begin
+  messagedlg('No se puede editar el contribuyente DESCONOCIDO',mterror,[mbok],0);
+  PC1.ActivePage:=PC1.Pages[3];
+ end;
+end;
+end;
+
+procedure TDerechoPresupuestoNuevo.cargaliquiClick(Sender: TObject);
+ var x,a,p,u:integer;
+     dato:real;
+begin
+  sc.Text:='0';
+  ssc.Text:='0';
+  ts.Text:='0';
+  edit4.Text:='0';
+  ControlaSelec(1);
+end;
+
+procedure TDerechoPresupuestoNuevo.cbClick(Sender: TObject);
+begin
+  if cb.Checked  then begin
+   presu.Visible :=true;
+   presu.SetFocus;
+   label12.Visible :=true;
+   label13.Visible :=true;
+  end
+  else begin
+   label12.Caption :='0';
+   presu.Visible :=false;
+   label12.Visible :=false;
+   label13.Visible :=false;
+   edit1.Text :='0';
+  end;
+end;
+
+procedure TDerechoPresupuestoNuevo.cbdocClick(Sender: TObject);
+begin
+  if cbdoc.Checked then begin
+   presudoc.Visible :=true;
+   presudoc.SetFocus;
+   label16.Visible :=true;
+   label17.Visible :=true;
+  end
+  else begin
+   label17.Caption :='0';
+   presudoc.Visible :=false;
+   label16.Visible :=false;
+   label17.Visible :=false;
+   edit10.Text :='0';
+  end;
+end;
+
+procedure TDerechoPresupuestoNuevo.SCChange(Sender: TObject);
+var p,u:integer;
+begin
+ if (trim(sc.Text) = '') or (trim(sc.Text) = '0') then begin
+  sc.Text:='0';
+  if strtofloat(trim(sc.Text)) >= 0 then begin
+   edit4.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(sc.Text)),-2)) ;
+   ts.Text :='0';
+   ts.Text := floattostr(strtofloat(trim(sc.Text)) + strtofloat(trim(ssc.Text))) ;
+   consultas(1);
+   for u:=1 to grillacalculo.RowCount-1 do begin
+    if (grillacalculo.Cells[3,u] = 'x') then begin
+     edit2.Text:=trim(grillacalculo.Cells[2,u]) ;
+    end;
+   end;
+  end;
+ end
+ else begin
+  if strtofloat(trim(sc.Text)) >= 0 then begin
+   edit4.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(sc.Text)),-2)) ;
+   ts.Text :='0';
+   ts.Text := floattostr(strtofloat(trim(sc.Text)) + strtofloat(trim(ssc.Text))) ;
+   consultas(1);
+   for u:=1 to grillacalculo.RowCount-1 do begin
+    if (grillacalculo.Cells[3,u] = 'x') then begin
+     edit2.Text:=trim(grillacalculo.Cells[2,u]) ;
+    end;
+   end;
+  end;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.scdocChange(Sender: TObject);
+var p,u:integer;
+begin
+ if (trim(scdoc.Text) = '') or (trim(scdoc.Text) = '0') then begin
+  scdoc.Text:='0';
+  if strtofloat(trim(scdoc.Text)) >= 0 then begin
+   tsdoc.Text :='0';
+   edit4doc.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(scdoc.Text)),-2)) ;
+   tsdoc.Text := floattostr(strtofloat(trim(scdoc.Text)) + strtofloat(trim(sscdoc.Text))) ;
+   consultas(1);
+   for u:=1 to grillacalculodoc.RowCount-1 do begin
+    if (grillacalculodoc.Cells[3,u] = 'x') then begin
+     edit6.Text:=trim(grillacalculodoc.Cells[2,u]) ;
+    end;
+   end;
+  end;
+ end
+ else begin
+  if strtofloat(trim(scdoc.Text)) >= 0 then begin
+   tsdoc.Text :='0';
+   edit4doc.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(scdoc.Text)),-2)) ;
+   tsdoc.Text := floattostr(strtofloat(trim(scdoc.Text)) + strtofloat(trim(sscdoc.Text))) ;
+   consultas(1);
+   for u:=1 to grillacalculodoc.RowCount-1 do begin
+    if (grillacalculodoc.Cells[3,u] = 'x') then begin
+     edit6.Text:=trim(grillacalculodoc.Cells[2,u]) ;
+    end;
+   end;
+  end;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.scdocExit(Sender: TObject);
+begin
+  if (trim(scdoc.Text)= '') then begin   //or (trim(sc.Text)='0') then begin
+   scdoc.Text:='0';
+   tsdoc.Text := floattostr (strtofloat(sscdoc.Text)   + strtofloat(scdoc.Text));
+   edit4doc.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(scdoc.Text)),-2)) ;
+  end
+  else begin
+   if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '5' then begin
+    tsdoc.Text := floattostr (strtofloat(sscdoc.Text) + strtofloat(scdoc.Text));
+    consultas(1);
+   end
+   else begin
+    edit4doc.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(scdoc.Text)),-2)) ;
+   end;
+   sscdoc.SetFocus;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.scdocKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  if (trim(scdoc.Text)= '') then begin  //or (trim(sc.Text)='0') then begin
+   scdoc.Text:='0';
+   tsdoc.Text := floattostr(strtofloat(scdoc.Text) + strtofloat(sscdoc.Text));
+   edit4doc.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(scdoc.Text)),-2)) ;
+  end
+  else begin
+   Consultas(1);
+   sscdoc.SetFocus;
+  end;
+ end
+ else begin
+  if ( StrScan('0123456789.',Key) <> nil ) or ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.SCExit(Sender: TObject);
+begin
+  if (trim(sc.Text)= '') then begin
+   sc.Text:='0';
+   ts.Text := floattostr (strtofloat(ssc.Text)   + strtofloat(sc.Text));
+   edit4.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(sc.Text)),-2)) ;
+  end
+  else begin
+   if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 <> '5' then begin
+    ts.Text := floattostr (strtofloat(ssc.Text)   + strtofloat(sc.Text));
+    consultas(1);
+   end
+   else begin
+    edit4.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(sc.Text)),-2)) ;
+   end;
+   ssc.SetFocus;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.SCKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  if trim(sc.Text) = '' then begin
+  sc.Text:='0';
+  ts.Text := floattostr(strtofloat(sc.Text) + strtofloat(ssc.Text));
+  edit4.Text := floattostr(RoundTo(strtofloat(trim(edit3.Text)) * strtofloat(trim(sc.Text)),-2)) ;
+  end
+  else  ssc.SetFocus;
+ end
+ else begin
+  if ( StrScan('0123456789.',Key) <> nil ) or ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.SSCChange(Sender: TObject);
+var u:integer;
+begin
+ if (trim(ssc.Text) = '' ) or (trim(ssc.Text) = '0') then begin
+  ssc.Text:='0';
+  if strtofloat(trim(ssc.Text)) >= 0 then begin
+   ts.Text :='0';
+   edit4sem.Text := floattostr(strtofloat(edit3.Text)/2 * strtofloat(trim(ssc.Text)));
+   ts.Text := floattostr(strtofloat(trim(sc.Text)) + strtofloat(trim(ssc.Text))) ;
+   consultas(1);
+   for u:=1 to grillacalculo.RowCount-1 do begin
+    if (grillacalculo.Cells[3,u] = 'x') then begin
+     edit2.Text:=trim(grillacalculo.Cells[2,u]) ;
+    end;
+   end;
+  end;
+ end
+ else begin
+  if strtofloat(trim(ssc.Text)) >= 0 then begin
+   ts.Text :='0';
+   edit4sem.Text := floattostr(strtofloat(edit3.Text)/2 * strtofloat(trim(ssc.Text)));
+   ts.Text := floattostr(strtofloat(trim(sc.Text)) + strtofloat(trim(ssc.Text))) ;
+   consultas(1);
+   for u:=1 to grillacalculo.RowCount-1 do begin
+    if (grillacalculo.Cells[3,u] = 'x') then begin
+     edit2.Text:=trim(grillacalculo.Cells[2,u]) ;
+    end;
+   end;
+  end;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.sscdocChange(Sender: TObject);
+var u:integer;
+begin
+ if (trim(sscdoc.Text) = '') or (trim(sscdoc.Text) = '0')  then begin
+  sscdoc.Text:='0';
+  if strtofloat(trim(sscdoc.Text)) >= 0 then begin
+   tsdoc.Text :='0';
+   edit4docsem.Text := floattostr(strtofloat(edit3.Text)/2 * strtofloat(trim(sscdoc.Text)));
+   tsdoc.Text := floattostr(strtofloat(trim(scdoc.Text)) + strtofloat(trim(sscdoc.Text))) ;
+   consultas(1);
+   for u:=1 to grillacalculodoc.RowCount-1 do begin
+    if (grillacalculodoc.Cells[3,u] = 'x') then begin
+      edit6.Text:=trim(grillacalculodoc.Cells[2,u]) ;
+    end;
+   end;
+  end;
+ end
+ else begin
+  if strtofloat(trim(sscdoc.Text)) >= 0 then begin
+   tsdoc.Text :='0';
+   edit4docsem.Text := floattostr(strtofloat(edit3.Text)/2 * strtofloat(trim(sscdoc.Text)));
+   tsdoc.Text := floattostr(strtofloat(trim(scdoc.Text)) + strtofloat(trim(sscdoc.Text))) ;
+   consultas(1);
+   for u:=1 to grillacalculodoc.RowCount-1 do begin
+    if (grillacalculodoc.Cells[3,u] = 'x') then begin
+     edit6.Text:=trim(grillacalculodoc.Cells[2,u]) ;
+    end;
+   end;
+  end;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.sscdocExit(Sender: TObject);
+begin
+ if  (trim(sscdoc.Text) = '') or (trim(sscdoc.Text) = '0') then begin
+  sscdoc.Text:='0';
+  edit4docsem.Text :='0';
+  tsdoc.Text := floattostr(strtofloat(scdoc.Text) + strtofloat(sscdoc.Text));
+  AGREGA.SetFocus;
+ end
+ else begin
+  consultas(1) ;
+  tsdoc.Text := floattostr(strtofloat(scdoc.Text) + strtofloat(sscdoc.Text));
+  AGREGA.SetFocus;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.sscdocKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  if (trim(sscdoc.Text) = '') or  (trim(sscdoc.Text)='0') then  edit4docsem.Text :='0';
+  tsdoc.Text := floattostr(strtofloat(scdoc.Text) + strtofloat(sscdoc.Text));
+  agrega.SetFocus;
+ end
+ else begin
+  if ( StrScan('0123456789.',Key) <> nil ) or ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.SSCExit(Sender: TObject);
+begin
+ if (trim(ssc.Text) = '') or (trim(ssc.Text) = '0')  then begin
+  ssc.Text:='0';
+  edit4sem.Text :='0';
+  ts.Text := floattostr(strtofloat(sc.Text) + strtofloat(ssc.Text));
+  AGREGA.SetFocus;
+ end
+ else begin
+  edit4docsem.Text := floattostr(strtofloat(edit3.Text)/2 * strtofloat(trim(sscdoc.Text)));
+  ts.Text := floattostr(strtofloat(sc.Text) + strtofloat(ssc.Text));
+  if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '5' then begin
+   PC2.ActivePage :=PC2.Pages[1];
+   scdoc.SetFocus;
+  end
+  else begin
+    agrega.SetFocus;
+  end;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.SSCKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  if (trim(ssc.Text) = '') or  (trim(ssc.Text)='0') then  edit4sem.Text :='0';
+   ts.Text := floattostr(strtofloat(sc.Text) + strtofloat(ssc.Text));
+   if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '5' then begin
+    PC2.ActivePage :=PC2.Pages[1];
+    scdoc.SetFocus;
+   end
+   else begin
+     agrega.SetFocus;
+   end;
+ end
+ else begin
+  if ( StrScan('0123456789.',Key) <> nil ) or ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.TipoConstChange(Sender: TObject);
+var p,u:integer;
+begin
+  for p:=0 to grillaentidad.ColCount-1 do
+    for u:=1 to grillaentidad.RowCount-1 do grillaentidad.Cells[p,u]:='';
+  grillaentidad.RowCount:=2;
+
+  for p:=0 to grillacalculo.ColCount-1 do
+    for u:=1 to grillacalculo.RowCount-1 do grillacalculo.Cells[p,u]:='';
+  grillacalculo.RowCount:=2;
+
+  for p:=0 to grillaimportes.ColCount-1 do
+    for u:=1 to grillaimportes.RowCount-1 do grillaimportes.Cells[p,u]:='';
+  grillaimportes.RowCount:=2;
+
+  for p:=0 to grillacalculodoc.ColCount-1 do
+    for u:=1 to grillacalculodoc.RowCount-1 do grillacalculodoc.Cells[p,u]:='';
+  grillacalculodoc.RowCount:=2;
+end;
+
+procedure TDerechoPresupuestoNuevo.TipoConstExit(Sender: TObject);
+begin
+ if TipoConst.ItemIndex < 0 then begin
+  messagedlg('Error!! Seleccione un tipo de Construcción válido',mterror,[mbok],0);
+  TipoConst.SetFocus;
+ end
+ else begin
+  if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '5' then begin
+   pc2.Pages[1].Caption :='Obra a Documentar';
+   pc2.Pages[1].TabVisible:=true;
+  end
+  else begin
+   if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '1'  then pc2.Pages[0].Caption :='Obra Nueva';
+   if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '2'  then pc2.Pages[0].Caption :='Obra a Documentar';
+   pc2.Pages[1].TabVisible:=false;
+  end;
+  Consultas(0);
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.TipoConstKeyPress(Sender: TObject; var Key: Char);
+begin
+if key = #13 then begin
+  Key := #0;
+  PC1.ActivePage :=PC1.Pages[0];
+  entidad.SetFocus;
+end;
+end;
+
+procedure TDerechoPresupuestoNuevo.TotLiquiChange(Sender: TObject);
+begin
+  impliqui.Enabled :=true;
+end;
+
+procedure TDerechoPresupuestoNuevo.TSChange(Sender: TObject);
+var u:integer;
+begin
+ if strtofloat(trim(ts.Text)) > 0 then begin
+  for u:=1 to grillacalculo.RowCount-1 do begin
+   if (grillacalculo.Cells[3,u] = 'x') then begin
+    edit2.Text:=trim(grillacalculo.Cells[2,u]) ;
+   end;
+  end;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.tsdocChange(Sender: TObject);
+var u:integer;
+begin
+ if strtofloat(trim(tsdoc.Text)) > 0 then begin
+  Consultas(1);
+   for u:=1 to grillacalculodoc.RowCount-1 do begin
+    if (grillacalculodoc.Cells[3,u] = 'x') then begin
+     edit6.Text:=trim(grillacalculodoc.Cells[2,u]) ;
+    end;
+   end;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.GrillaEntidadClick(Sender: TObject);
+var u:integer;
+begin
+ if (trim(GrillaEntidad.Cells[3,GrillaEntidad.Row])='') then GrillaEntidad.Cells[3,GrillaEntidad.Row]:='x'
+ else GrillaEntidad.Cells[3,GrillaEntidad.Row]:='';
+ cargaliqui.Enabled :=true;
+ cargaliqui.SetFocus;
+ for u:=1 to GrillaEntidad.RowCount-1 do begin
+  if (GrillaEntidad.Cells[3,u] = 'x') then begin
+    tipodescri:=trim(GrillaEntidad.Cells[1,u]) ;
+   end;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.losdatosClick(Sender: TObject);
+var gf:integer;
+var eldato, nueva, adoc, totnueva, totadoc:real;
+    a,p,u:integer;
+begin
+ if (TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '5') then begin
+  PC1.ActivePage :=PC1.Pages[3];
+  totnueva:=  strtofloat(trim(edit4.Text)) + strtofloat(trim(edit4sem.Text));
+  nueva:= totnueva * strtofloat(trim(edit2.Text));
+  edit8.Text := floattostr(nueva); //floattostr(RoundTo(nueva,-2) * strtofloat(edit2.Text));
+
+  totadoc:= strtofloat(trim(edit4doc.Text)) + strtofloat(trim(edit4docsem.Text)) ;
+  adoc:= totadoc * strtofloat(trim(edit6.Text)) ;
+  edit9.Text := floattostr(adoc); //floattostr(RoundTo(adoc,-2) * strtofloat(edit6.Text));
+  edit5.Text := floattostr(RoundTo(strtofloat(trim(edit8.Text)) + strtofloat(trim(edit9.Text))
+             + strtofloat(trim(label12.Caption)) + strtofloat(trim(label17.Caption)),-2));
+ end
+ else begin
+  PC1.ActivePage :=PC1.Pages[3];
+  edit8.Text := floattostr(strtofloat(trim(edit4.Text)) + strtofloat(trim(edit4sem.Text))); //trim(edit5.Text);
+  if cb.Checked then begin
+   edit1.Text := trim(label12.Caption);
+   edit5.Text := floattostr(RoundTo(strtofloat(trim(edit8.Text)) * strtofloat(trim(edit2.Text)) + strtofloat(trim(label12.Caption)),-2)) ;
+  end
+  else begin
+   edit1.Text := '0';
+   edit5.Text := floattostr(RoundTo(strtofloat(trim(edit8.Text)) * strtofloat(trim(edit2.Text)) + strtofloat(trim(label12.Caption)),-2)) ;
+  end;
+ end;
+ anticipos.SetFocus;
+end;
+
+procedure TDerechoPresupuestoNuevo.ODNIPKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key =#13 then begin
+  Key := #0;
+  ONOMBp.SetFocus;
+ end
+ else begin
+  if ( StrScan('0123456789',Key) <> nil ) or ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.ONOMBPKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  buscarprof.SetFocus;
+ end
+ else begin
+  if ( StrScan('abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ ',Key) <> nil ) or
+      ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.OPARTIDAEnter(Sender: TObject);
+begin
+BuscarP.Enabled:=true;
+end;
+
+procedure TDerechoPresupuestoNuevo.OPARTIDAExit(Sender: TObject);
+begin
+ if (trim(OPARTIDA.Text) = '')  or (trim(OPARTIDA.Text) = '0')
+ or (trim(OPARTIDA.Text) = '00') or (trim(OPARTIDA.Text) = '000')  then begin
+  messagedlg('Error!! Ingrese una Partida válida..',mterror,[mbok],0);
+  OPARTIDA.SetFocus;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.OPARTIDAKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  if buscarp.Enabled then buscarp.SetFocus;
+ end
+ else begin
+  if ( StrScan('0123456789',Key) <> nil ) or  ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.presuChange(Sender: TObject);
+var valorpresu: real;
+begin
+ if (trim(presu.Text) = '' ) or (trim(presu.Text) = '0') then begin
+  presu.Text:='0';
+  if strtofloat(trim(presu.Text)) >= 0 then begin
+   valorpresu :=strtofloat(trim(presu.Text)) * strtofloat(trim(edit2.Text));
+   label12.Caption := floattostr(valorpresu);
+   edit1.Text := floattostr(valorpresu);
+  end
+  else edit1.Text := '0';
+ end
+ else begin
+  if strtofloat(trim(presu.Text)) >= 0 then begin
+   valorpresu :=strtofloat(trim(presu.Text)) * strtofloat(trim(edit2.Text));
+   label12.Caption := floattostr(valorpresu);
+   edit1.Text := floattostr(valorpresu);
+  end
+  else edit1.Text := '0';
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.presudocChange(Sender: TObject);
+var valorpresudoc: real;
+begin
+ if (trim(presudoc.Text) = '') or (trim(presudoc.Text) = '0') then begin
+  presudoc.Text:='0';
+  if strtofloat(trim(presudoc.Text)) >= 0 then begin
+   valorpresudoc :=strtofloat(trim(presudoc.Text)) * strtofloat(trim(edit6.Text));
+   label17.Caption := floattostr(valorpresudoc);
+   edit10.Text := floattostr(valorpresudoc);
+  end
+  else edit10.Text := '0';
+ end
+ else begin
+  if strtofloat(trim(presudoc.Text)) >= 0 then begin
+   valorpresudoc :=strtofloat(trim(presudoc.Text)) * strtofloat(trim(edit6.Text));
+   label17.Caption := floattostr(valorpresudoc);
+   edit10.Text := floattostr(valorpresudoc);
+  end
+  else edit10.Text := '0';
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.presudocExit(Sender: TObject);
+var valorpresu: real;
+begin
+ if (trim(presudoc.Text) = '') or (trim(presudoc.Text) = '0') then begin
+  presudoc.Text:='0';
+  valorpresu :=strtofloat(trim(presudoc.Text)) * strtofloat(trim(edit6.Text));
+  label17.Caption := floattostr(valorpresu);
+  edit10.Text := floattostr(valorpresu);
+ end
+ else begin
+  valorpresu :=strtofloat(trim(presudoc.Text)) * strtofloat(trim(edit6.Text));
+  label17.Caption := floattostr(valorpresu);
+  edit10.Text := floattostr(valorpresu);
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.presudocKeyPress(Sender: TObject; var Key: Char);
+var valorpresu: real;
+begin
+ if key = #13 then begin
+  Key := #0;
+  if trim(presudoc.Text) = '' then presudoc.Text:='0';
+  valorpresu :=strtofloat(trim(presudoc.Text)) * strtofloat(trim(edit6.Text));
+  label17.Caption := floattostr(valorpresu);
+  edit10.Text := floattostr(valorpresu);
+  if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '5' then begin
+   agrega.SetFocus;
+  end
+  else agrega.SetFocus;
+ end
+ else begin
+  if ( StrScan('0123456789.',Key) <> nil ) or  ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.presuExit(Sender: TObject);
+var valorpresu: real;
+begin
+ if trim(presu.Text) = '' then begin
+  presu.Text:='0';
+  valorpresu :=strtofloat(trim(presu.Text)) * strtofloat(trim(edit2.Text));
+  label12.Caption := floattostr(valorpresu);
+  edit1.Text := floattostr(valorpresu);
+ end
+ else begin
+  valorpresu :=strtofloat(trim(presu.Text)) * strtofloat(trim(edit2.Text));
+  label12.Caption := floattostr(valorpresu);
+  edit1.Text := floattostr(valorpresu);
+ end;
+end;
+
+procedure TDerechoPresupuestoNuevo.presuKeyPress(Sender: TObject; var Key: Char);
+var valorpresu: real;
+begin
+ if key = #13 then begin
+  Key := #0;
+  if trim(presu.Text) = '' then presu.Text:='0';
+  valorpresu :=strtofloat(trim(presu.Text)) * strtofloat(trim(edit2.Text));
+  label12.Caption := floattostr(valorpresu);
+  edit1.Text := floattostr(valorpresu);
+  if TComboClase(TipoConst.Items.Objects[TipoConst.ItemIndex]).Param1 = '5' then begin
+   PC2.ActivePage :=PC2.Pages[1];
+   scdoc.SetFocus;
+  end
+  else agrega.SetFocus;
+ end
+ else begin
+  if ( StrScan('0123456789.',Key) <> nil ) or  ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure  TDerechoPresupuestoNuevo.ImprimeRecibo();
+var ReporteRst: TfrxReport;
+    t,y:integer;
+    dmi:widestring;
+    tmp:string;
+begin
+ try
+  ReporteRst:=TfrxReport.Create(nil);
+  ReporteRst.LoadFromFile(Modulo2.Sistema.Path_todo + '\Reportes\ReportePresupuestoDerConst.fr3');
+
+  ReporteRst.Variables['NroPlan'] := QuotedStr(trim(tipoconst.Text));
+  ReporteRst.Variables['NomTitular'] := QuotedStr(eltituP);
+  ReporteRst.Variables['NroDni'] := QuotedStr(trim(opartida.Text));
+  ReporteRst.Variables['NomRespo'] := QuotedStr(trim(edit3.Text));
+
+  ReporteRst.Variables['detalle'] := QuotedStr(trim(tipodescri));
+
+  ReporteRst.Variables['CuimTitular'] := QuotedStr(trim(edit2.Text));
+  ReporteRst.Variables['DirObra'] := QuotedStr(trim(sc.Text));
+  ReporteRst.Variables['DestinoObra'] := QuotedStr(trim(ssc.Text));
+  ReporteRst.Variables['FinalObra'] := QuotedStr(trim(ts.Text));
+  ReporteRst.Variables['Planos'] := QuotedStr(trim(label12.Caption));
+  ReporteRst.Variables['valorOBN'] := QuotedStr(trim(edit8.Text));
+
+  ReporteRst.Variables['IdCuenta'] := QuotedStr(trim(edit6.Text));
+  ReporteRst.Variables['ElqueSuscribe'] := QuotedStr(trim(scdoc.Text));
+  ReporteRst.Variables['DomTitular'] := QuotedStr(trim(sscdoc.Text));
+  ReporteRst.Variables['NroObra'] := QuotedStr(trim(tsdoc.Text));
+  ReporteRst.Variables['ResolNro'] := QuotedStr(trim(label17.Caption));
+  ReporteRst.Variables['valorODOC'] := QuotedStr(trim(edit9.Text));
+
+  ReporteRst.Variables['Total'] := QuotedStr(trim(edit5.Text));
+
+  ReporteRst.Variables['ResolAnio'] := QuotedStr(trim(anticipos.Text));
+  ReporteRst.Variables['ValorALetra'] := QuotedStr(trim(edit7.Text));
+
+  ReporteRst.Variables['MetrosDoc'] := QuotedStr(trim(Totliqui.Text));
+
+  ReporteRst.Variables['entidad'] := QuotedStr(trim(entidad.Text));
+  ReporteRst.Variables['NroUsuario'] := QuotedStr(Modulo2.Usuario.UsuNro);
+  ReporteRst.ShowReport;
+ except
+    on E: Exception do EnviarLog(Self.Caption, 'Error en Reporte ' + E.Message);
+ end;
+ FreeAndNil(ReporteRst);
+end;
+
+procedure TDerechoPresupuestoNuevo.impliquiClick(Sender: TObject);
+var gf:integer;
+begin
+ gf:=messagedlg('Confirma Imprimir la Liquidación del Derecho de Construcción.?',mtInformation,[mbok,mbCancel],0);
+ if gf = 1 then begin
+  if (idcontribP = '') OR (TRIM(N9.TEXT)='') then  BEGIN
+    messagedlg('ERROR... Falta datos para confeccionar la Liquidación!',mtError,[mbok],0);
+  END
+  else begin
+   Recibo:=TRecibo.Create;
+   ImprimeRecibo;
+   FreeAndNil(Recibo);
+  end;
+ end
+ else messagedlg('Ud., Ha cancelado la Impresion de la liquidación!',mtWarning,[mbok],0);
+end;
+
+end.

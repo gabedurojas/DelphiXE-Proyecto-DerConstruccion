@@ -1,0 +1,269 @@
+unit ImpLiquiPresupuesto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ComCtrls, JvExComCtrls, JvComCtrls, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.Buttons,ADODB,StrUtils, JvExDBGrids, JvDBGrid, frxClass, frxDBSet, JvGIF,
+  Vcl.ImgList, JvgPage,//ADOThread,
+  DBClient, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, JvComponentBase, JvEmbeddedForms;
+
+type
+  TImpLiqPresuo = class(TForm)
+    JvPageControl1: TJvPageControl;
+    TabSheet1: TTabSheet;
+    Panel1: TPanel;
+    DataSource1: TDataSource;
+    VER: TBitBtn;
+    Imprime: TBitBtn;
+    Label13: TLabel;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    frxReport1: TfrxReport;
+    barra: TStatusBar;
+    Button4: TBitBtn;
+    GroupBox1: TGroupBox;
+    BitBtn1: TBitBtn;
+    ImageList1: TImageList;
+    PC1: TJvgPageControl;
+    TabSheet2: TTabSheet;
+    DBGrid1: TJvDBGrid;
+    TabSheet3: TTabSheet;
+    Label2: TLabel;
+    Image2: TImage;
+    GroupBox2: TGroupBox;
+    Label3: TLabel;
+    totalas: TEdit;
+    GroupBox3: TGroupBox;
+    Label1: TLabel;
+    Label12: TLabel;
+    Ld: TDateTimePicker;
+    lh: TDateTimePicker;
+    CheckBox1: TCheckBox;
+    FormularioEmb: TJvEmbeddedFormLink;
+    procedure FormCreate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure Consultas(nro:byte);
+    procedure VERClick(Sender: TObject);
+    procedure ImprimeClick(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure LdKeyPress(Sender: TObject; var Key: Char);
+    procedure lhKeyPress(Sender: TObject; var Key: Char);
+    procedure lhExit(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
+  private
+  gh,modif,det:boolean;
+  Cnx2:TADOConnection;
+  ASIENTOS,ASIENTOS2:TADODataSet;
+  //DATOS:TFDQuery;
+    { Private declarations }
+  public
+   Cons:widestring;
+   //th:TDataSetThread;
+   //Consulta:TConsulta;
+    { Public declarations }
+  end;
+
+var
+  ImpLiqPresuo: TImpLiqPresuo;
+
+implementation
+
+{$R *.dfm}
+
+uses Unidad, modulo,Busc_Cont;
+
+
+procedure TImpLiqPresuo.FormActivate(Sender: TObject);
+begin
+ if not (gh) then begin
+  gh:=true;
+  imprime.Enabled :=false;
+  ver.Enabled :=false;
+  PC1.ActivePage:=PC1.Pages[0];
+  ld.Date:= now;
+  lh.Date:= now;
+  GroupBox3.visible:=false;
+  CheckBox1.Checked :=false;
+  Button4.SetFocus;
+ end;
+end;
+
+procedure TImpLiqPresuo.FormCreate(Sender: TObject);
+begin
+ gh:=false;
+ ASIENTOS:=TADODataSet.Create(Self);
+ ASIENTOS.CommandTimeout:=180;
+ ASIENTOS2:=TADODataSet.Create(Self);
+ ASIENTOS2.CommandTimeout:=180;
+end;
+
+procedure TImpLiqPresuo.ImprimeClick(Sender: TObject);
+var ReporteRst: TfrxReport;
+    frxDB1: TfrxDBDataset;
+begin
+ try
+  ReporteRst:=TfrxReport.Create(nil);
+  frxDB1:=TfrxDBDataset.Create(nil);
+  frxDB1.DataSet:=ASIENTOS;
+  frxDB1.UserName:='frxDBDataset1';
+  ReporteRst.DataSets.Add(frxDB1);
+  ReporteRst.LoadFromFile(Modulo2.Sistema.Path_todo + '\Reportes\LibroContable2.fr3');
+  TfrxPictureView(ReporteRst.FindObject('Logo1')).Picture.LoadFromFile(Modulo2.Sistema.Path_todo + '\Imagenes\LogoM2.jpg');
+  ReporteRst.Variables['Cuenta'] := QuotedStr(trim(edit4.Text) + ' - ' + trim(edit5.Text));
+  ReporteRst.Variables['Desde'] := QuotedStr(trim(DateToStr(ld.Date))); //QuotedStr(trim(fdesde.Text));
+  ReporteRst.Variables['Hasta'] := QuotedStr(trim(DateToStr(lh.Date))); //QuotedStr(trim(fhasta.Text ));
+  //ReporteRst.Variables['CuimTitular'] := QuotedStr(grilla4.Cells[0,1]);
+  ReporteRst.ShowReport;
+ except
+  on E: Exception do EnviarLog(Self.Caption, 'Error en Reporte ' + E.Message);
+ end;
+ FreeAndNil(frxDB1);
+ FreeAndNil(ReporteRst);
+end;
+
+procedure TImpLiqPresuo.LdKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  lh.SetFocus;
+ end;
+end;
+
+procedure TImpLiqPresuo.lhExit(Sender: TObject);
+begin
+ if strtodate(DateToStr(lh.Date)) < strtodate(DateToStr(ld.Date)) then begin
+   messagedlgpos('La FECHA HASTA no puede ser menor a la anterior!!',mterror,[mbok],0,screen.Width div 3,screen.Height div 3);
+   lh.SetFocus;
+ end
+ else begin
+    button4.setfocus;
+ end;
+end;
+
+procedure TImpLiqPresuo.lhKeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  button4.SetFocus;
+ end;
+end;
+
+procedure TImpLiqPresuo.CheckBox1Click(Sender: TObject);
+begin
+ if CheckBox1.Checked = true then begin
+  GroupBox3.visible:=true;
+  ld.SetFocus;
+ end
+ else begin
+  GroupBox3.visible:=false;
+ end;
+
+end;
+
+procedure TImpLiqPresuo.Consultas(nro:byte);
+var t,y,gf,p,u,cont:integer;
+    pso:boolean;
+    svalor:string;
+begin
+ Cnx2:=TADOConnection.Create(nil);
+ Cnx2.LoginPrompt:=false;
+ Cnx2.ConnectionString:=modulo2.Sistema.ConectDerConst;
+ if nro=0 then begin
+  {ASIENTOS2.Close;
+  ASIENTOS2.Connection:=Cnx2;
+  ASIENTOS2.CommandText:='SELECT AsientosCabeceras.IdPeriodo, cta.Descripcion, cta.CuentaFinanciera FROM AsientosCabeceras  '
+  + 'inner join CuentasFinancieras cta on AsientosCabeceras.IdCuentaFinanciera = cta.IdCuentaFinanciera '
+  +' WHERE  AsientosCabeceras.FecAsiento >= '  + chr(39) + trim(DateToStr(ld.Date)) + chr(39)
+  + ' and AsientosCabeceras.FecAsiento <= ' + chr(39) + trim(DateToStr(lh.Date)) + chr(39)
+  + ' and cta.CuentaFinanciera= '+ chr(39) + trim(edit4.Text) + chr(39) ;
+  ASIENTOS2.Open;
+  if not ASIENTOS2.IsEmpty  then begin
+   totalas.Text := inttostr(ASIENTOS2.RecordCount);
+  end;
+  ASIENTOS2.Connection:=nil;   }
+ end;
+ if nro = 1 then begin
+  PC1.ActivePage:=PC1.Pages[1];
+  imprime.Enabled :=false;
+  ASIENTOS.Close;
+  ASIENTOS.Connection:=Cnx2;
+  DataSource1.DataSet:=ASIENTOS;
+  if CheckBox1.Checked  then begin
+   ASIENTOS.CommandText:='SELECT [NroDocContribuyente],[Contribuyente],[Importeliquidacion],[Pvliquidacion],convert(char(10),Fechaliquidacion,103) as Fechaliquidacion '
+   +',[Observaciones],[NroLiquidacion],[TipoAnticipoDesucento],[TotalObraNuevaAConstruir],[PresupuestoObraNuevaAConstruir] '
+   +',[TotalObraADocumentar],[PresupuestoTotalObraADocumentar],[TotalValorDerechoConstruccion] ,[TotalAnticipoDerechoConstruccion]'
+   +',[Usu_Liquidacion] FROM [DerConst].[dbo].[V_LiquidacionDatosPresupuesto] where (NroDocContribuyente = ' + trim(edit4.Text) + ')'
+   +' and Fechaliquidacion >= ' + chr(39) + trim(DateToStr(ld.Date)) + chr(39) //+ trim(fdesde.Text) + chr(39)
+   +' and Fechaliquidacion <= ' + chr(39) + trim(DateToStr(lh.Date)) + chr(39) //+ trim(fhasta.Text) + chr(39)
+   +' order by 1';
+  end
+  else begin
+   ASIENTOS.CommandText:='SELECT [NroDocContribuyente],[Contribuyente],[Importeliquidacion],[Pvliquidacion],convert(char(10),Fechaliquidacion,103) as Fechaliquidacion '
+   +',[Observaciones],[NroLiquidacion],[TipoAnticipoDesucento],[TotalObraNuevaAConstruir],[PresupuestoObraNuevaAConstruir] '
+   +',[TotalObraADocumentar],[PresupuestoTotalObraADocumentar],[TotalValorDerechoConstruccion] ,[TotalAnticipoDerechoConstruccion]'
+   +',[Usu_Liquidacion] FROM [DerConst].[dbo].[V_LiquidacionDatosPresupuesto] where (NroDocContribuyente = ' + trim(edit4.Text) + ') order by 1';
+  end;
+  ASIENTOS.Open;
+  if not ASIENTOS.IsEmpty  then begin
+   DBGrid1.Columns[0].Width := 40;
+   DBGrid1.Columns[1].Width := 40;
+   DBGrid1.Columns[2].Width := 100;
+   DBGrid1.Columns[3].Width := 120;
+   DBGrid1.Columns[4].Width := 250;
+   DBGrid1.Columns[5].Width := 60;
+   DBGrid1.Columns[6].Width := 60;
+   DBGrid1.Columns[7].Width := 80;
+   DBGrid1.Columns[8].Width := 80;
+   DBGrid1.Columns[9].Width := 120;
+   DBGrid1.Columns[10].Width := 80;
+   DBGrid1.Columns[11].Width := 80;
+   DBGrid1.Columns[12].Width := 120;
+   DBGrid1.Columns[13].Width := 250;
+   DBGrid1.Columns[14].Width := 120;
+   imprime.Enabled :=true;
+  end;
+  ASIENTOS.Connection:=nil;
+ end;
+ barra.Panels[0].Text := 'Total de Registros:' + inttostr(ASIENTOS.RecordCount);
+ imprime.Enabled :=true;
+ Cnx2.Close;
+ FreeAndNil(Cnx2);
+ PC1.ActivePage:=PC1.Pages[0];
+end;
+
+procedure TImpLiqPresuo.VERClick(Sender: TObject);
+var laconec:widestring;
+var con,select:string;
+begin
+Consultas(1);
+end;
+
+procedure TImpLiqPresuo.Button4Click(Sender: TObject);
+var Bus_Titulares:TBus_Titulares;
+begin
+ try
+  Bus_Titulares:=TBus_Titulares.Create(self);
+  Bus_Titulares.NroOpcion:=1;
+  //Bus_Titulares.ONOMB.Text:=NOMBRE.Text;
+  Bus_Titulares.ShowModal;
+  if Bus_Titulares.ConSelec then begin
+   edit5.Text :=Bus_Titulares.TITULARES.FieldByName('Contribuyente').AsString;
+   edit4.Text :=Bus_Titulares.TITULARES.FieldByName('NroDni').AsString;;
+  end;
+ finally
+  FreeAndNIl(Bus_Titulares);
+ end;
+ if trim(edit5.Text) <> '' then begin
+   ver.Enabled :=true;
+   ver.SetFocus;
+ end;
+
+end;
+
+end.

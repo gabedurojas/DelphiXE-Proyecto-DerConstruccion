@@ -1,0 +1,289 @@
+unit Busc_Cont;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, Menus, Grids, DBGrids, JvExDBGrids, JvDBGrid,
+  StdCtrls, JvgGroupBox, ADODB, DB, JvExStdCtrls, JvBehaviorLabel,
+  JvExExtCtrls, JvExtComponent, JvPanel, ExtCtrls, RzCmboBx, Vcl.Buttons,
+  JvExButtons, JvBitBtn, StrUtils, Objetos;
+
+type
+  TBus_Titulares = class(TForm)
+    JvgGroupBox3: TJvgGroupBox;
+    JvDBGrid2: TJvDBGrid;
+    Barra1: TStatusBar;
+    DTS1: TDataSource;
+    Panel3: TPanel;
+    JvPanel2: TJvPanel;
+    JvBehaviorLabel2: TJvBehaviorLabel;
+    Label1: TLabel;
+    JvgGroupBox1: TJvgGroupBox;
+    LB1: TLabel;
+    ODNI: TEdit;
+    Buscar: TJvBitBtn;
+    Label25: TLabel;
+    ONOMB: TEdit;
+    Label2: TLabel;
+    OCUIT: TEdit;
+    PopupMenu1: TPopupMenu;
+    Filtrar1: TMenuItem;
+    DesactivarFiltro1: TMenuItem;
+    procedure FormCreate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure Consultas(nro:byte);
+    procedure JvPanel2MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure ODNIKeyPress(Sender: TObject; var Key: Char);
+    procedure BuscarClick(Sender: TObject);
+    procedure ONOMBKeyPress(Sender: TObject; var Key: Char);
+    procedure OCUITKeyPress(Sender: TObject; var Key: Char);
+    procedure JvDBGrid2DblClick(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
+    procedure Filtrar1Click(Sender: TObject);
+    procedure DesactivarFiltro1Click(Sender: TObject);
+  private
+    gh:boolean;
+    ColCli:array of char;
+    { Private declarations }
+  public
+    ConSelec:boolean;
+    TITULARES:TADODataSet;
+    NroOpcion:byte;{ Public declarations }
+  end;
+
+var
+  Bus_Titulares: TBus_Titulares;
+
+implementation
+
+uses Modulo, Unidad, frm_filtro;
+
+{$R *.dfm}
+
+procedure TBus_Titulares.FormCreate(Sender: TObject);
+begin
+gh:=false;
+TITULARES:=TADODataSet.Create(nil);
+end;
+
+
+procedure TBus_Titulares.FormActivate(Sender: TObject);
+begin
+if not(gh) then begin
+  gh:=true;
+  ONOMB.SetFocus;
+  if NroOpcion = 2 then begin
+    JvgGroupBox1.Visible:=false;
+    Consultas(NroOpcion);
+  end;
+end;
+end;
+
+procedure TBus_Titulares.BuscarClick(Sender: TObject);
+begin
+if (TRIM(onomb.Text)='') and (trim(odni.Text)='') and (trim(OCUIT.Text)='') then begin
+ messagedlg('Error.. No Existe ningun Contribuyente segun el Criterio de Busqueda..Por Favor realice otra búsqueda.',mterror,[mbok],0);
+ onomb.SetFocus;
+ end
+ else Consultas(NroOpcion);
+end;
+
+procedure TBus_Titulares.Consultas(nro:byte);
+var param:string;
+    Comando:widestring;
+begin
+Modulo2.ObjConexion:=TADOConnection.Create(nil);
+Modulo2.ObjConexion.LoginPrompt:=false;
+Modulo2.ObjConexion.ConnectionString:=Modulo2.Sistema.ConectSeg;
+try
+  if nro = 1 then begin
+    if trim(ONOMB.Text) <> '' then param:=chr(39) + trim(ONOMB.Text) + chr(39) + ' , '
+    else param:='NULL , ';
+    if trim(ODNI.Text) <> '' then param:=param + trim(ODNI.Text) + ' , '
+    else param:=param + 'NULL , ';
+    if trim(OCUIT.Text) <> '' then param:=param + trim(OCUIT.Text)
+    else param:=param + 'NULL';
+
+    Comando:='SELECT Id, Contribuyente, FechaNacimiento, Sexo, NroCuit, TipoPersona, '
+    + 'Mail, EstadoCivil, Telefono, EsFallecido, Origen, FechaAlta, CUIM, NroDni, '
+    + 'TipoDoc, TipoSexo, Barrio, Calle, Altura, IdTpoDoc, TipoDocAbrev, Nacionalidad, IdDomi '
+    + 'FROM dbo.Fn_Contribuyentes(' + param + ') ORDER BY Contribuyente';
+    TITULARES.Close;
+    DTS1.DataSet:=TITULARES;
+    TITULARES.Connection:=Modulo2.ObjConexion;
+    TITULARES.CommandText:=Comando;
+    TITULARES.Open;
+    //if not TITULARES.IsEmpty then begin
+    //  Barra1.Panels[1].Text:='Cant. Contribuyentes: ' + IntToStr(TITULARES.RecordCount);
+    //      JvDBGrid2.Columns[0].Width:=80;
+    //      JvDBGrid2.Columns[1].Width:=150;
+    //      JvDBGrid2.Columns[2].Width:=70;
+    //      JvDBGrid2.Columns[3].Width:=70;
+    //      JvDBGrid2.Columns[4].Width:=70;
+    //      JvDBGrid2.Columns[5].Width:=150;
+    //      JvDBGrid2.Columns[6].Width:=70;
+    //      JvDBGrid2.Columns[7].Width:=70;
+    //end;
+    TITULARES.Connection:=nil;
+  end;
+  if nro = 2 then begin
+    Comando:='SELECT DISTINCT Cuim,Contribuyente as Nombre,TipoContribuyente, TipoDoc, '
+    + 'DNI, Provincia, Barrio, Calle, Altura, Piso, Depto, Manzana, Casa, Torre, Sector, '
+    + 'Parcela, LoteRural, Domicilio FROM PlanesPagos.dbo.Fn_PlanPagoContribuyente (null,1) '
+    + 'ORDER BY Contribuyente';
+    TITULARES.Close;
+    DTS1.DataSet:=TITULARES;
+    TITULARES.Connection:=Modulo2.ObjConexion;
+    TITULARES.CommandText:=Comando;
+    TITULARES.Open;
+    //if not TITULARES.IsEmpty then begin
+    //  Barra1.Panels[1].Text:='Cant. Contribuyentes: ' + IntToStr(TITULARES.RecordCount);
+    //      JvDBGrid2.Columns[0].Width:=80;
+    //      JvDBGrid2.Columns[1].Width:=150;
+    //      JvDBGrid2.Columns[2].Width:=70;
+    //      JvDBGrid2.Columns[3].Width:=70;
+    //      JvDBGrid2.Columns[4].Width:=70;
+    //      JvDBGrid2.Columns[5].Width:=150;
+    //      JvDBGrid2.Columns[6].Width:=70;
+    //      JvDBGrid2.Columns[7].Width:=70;
+    //end;
+    TITULARES.Connection:=nil;
+  end;
+  if TITULARES.IsEmpty then begin
+     messagedlg('Error.. La Busqueda no arrojo ningun Contribuyente..' + chr(13)
+     + 'Por favor realice otra busqueda.' ,mterror,[mbok],0);
+  end
+  else begin
+   Barra1.Panels[1].Text:='Cant. Contribuyentes: ' + IntToStr(TITULARES.RecordCount);
+   JvDBGrid2.SetFocus;
+  end;
+except
+  on E: Exception do begin
+    EnviarLog(Self.Caption, E.Message);
+    EnviarLog(Self.Caption, comando);
+  end;
+end;
+Modulo2.ObjConexion.Close;
+FreeAndNil(Modulo2.ObjConexion);
+end;
+
+procedure TBus_Titulares.JvDBGrid2DblClick(Sender: TObject);
+begin
+if not TITULARES.IsEmpty then begin
+  ConSelec:=true;
+  Close;
+
+end;
+end;
+
+procedure TBus_Titulares.JvPanel2MouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+ReleaseCapture();
+Perform( WM_SYSCOMMAND, $F012, 0 );
+end;
+
+procedure TBus_Titulares.Label1Click(Sender: TObject);
+begin
+ConSelec:=false;
+Close;
+end;
+
+procedure TBus_Titulares.OCUITKeyPress(Sender: TObject; var Key: Char);
+begin
+if key =#13 then begin
+  Key := #0;
+  BUSCAR.SetFocus;
+end
+else begin
+  if ( StrScan('0123456789',Key) <> nil ) or
+      ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+end;
+end;
+
+procedure TBus_Titulares.ODNIKeyPress(Sender: TObject; var Key: Char);
+begin
+if key =#13 then begin
+  Key := #0;
+  OCUIT.SetFocus;
+end
+else begin
+  if ( StrScan('0123456789',Key) <> nil ) or
+      ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+end;
+end;
+
+procedure TBus_Titulares.ONOMBKeyPress(Sender: TObject; var Key: Char);
+begin
+if key = #13 then begin
+  Key := #0;
+  ODNI.SetFocus;
+end
+else begin
+  if ( StrScan('0123456789abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ%. /°-',Key) <> nil ) or
+      ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+end;
+end;
+
+procedure TBus_Titulares.Filtrar1Click(Sender: TObject);
+var Frm_Filtros:TFrm_Filtros;
+    t:integer;
+    valor:string;
+begin
+try
+  Modulo2.Filtro.Columna.Clear;
+  Modulo2.Filtro.Tipo.Clear;
+  Modulo2.Filtro.Valor:='';
+  Modulo2.Filtro.Patron:=false;
+  Barra1.Panels[0].Style:=psOwnerDraw;
+
+  Frm_Filtros:=TFrm_Filtros.Create(nil);
+
+  for t:=0 to TITULARES.FieldCount-1 do begin
+    Modulo2.Filtro.Columna.Append(TITULARES.Fields[t].DisplayName);
+    if TITULARES.Fields[t].DataType in [ftDate, ftTime, ftDateTime] then Modulo2.Filtro.Tipo.Append('F');
+    if TITULARES.Fields[t].DataType in [ftString, ftFmtMemo, ftWideString, ftFixedWideChar, ftWideMemo] then Modulo2.Filtro.Tipo.Append('C');
+    if TITULARES.Fields[t].DataType in [ftSmallint, ftInteger, ftWord, ftFloat, ftCurrency,
+    ftBCD, ftBytes, ftVarBytes, ftAutoInc, ftLargeint, ftLongWord, ftShortint, ftByte, ftExtended, ftSingle] then Modulo2.Filtro.Tipo.Append('N');
+  end;
+  Frm_Filtros.COLUMNA.Items.AddStrings(Modulo2.Filtro.Columna);
+  if Filtrar1.Checked then Frm_Filtros.FILTRO.Text:=TITULARES.Filter;
+
+  Frm_Filtros.ShowModal;
+  try
+    if not Frm_Filtros.Cancelado then begin
+      TITULARES.Filtered:=false;
+      TITULARES.Filter:=Frm_Filtros.FILTRO.Text;
+      TITULARES.Filtered:=true;
+      Barra1.Panels[0].Text:='Filtro: ACTIVO';
+      Filtrar1.Checked:=true;
+      DesactivarFiltro1.Enabled:=true;
+    end;
+    Barra1.Panels[2].Text:='Cant. Registros: ' + IntToStr(TITULARES.RecordCount);
+  except
+    on E: Exception do begin
+       ShowMessage(E.Message);
+       EnviarLog(Self.Caption, E.Message);
+    end;
+  end;
+finally
+  Frm_Filtros.free;
+end
+end;
+
+
+procedure TBus_Titulares.DesactivarFiltro1Click(Sender: TObject);
+begin
+DesactivarFiltro1.Checked:=true;
+TITULARES.Filtered:=false;
+Barra1.Panels[0].Style:=psText;
+Barra1.Panels[0].Text:='Filtro: INACTIVO';
+Barra1.Panels[2].Text:='Cant. Registros: ' + IntToStr(TITULARES.RecordCount);
+end;
+
+end.

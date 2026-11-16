@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/05/09 11:20:01.000.838,D:\Proyectos Delphi XE5\Muni - Planes de Pagos\PlanesPagos.dproj=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\ConsultasVarias.dproj</Transaction>
+    <Transaction>2016/05/11 06:57:01.000.822,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\A_PlanPago.pas</Transaction>
+    <Transaction>2016/05/11 18:05:30.000.015,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Busc_Cont.pas</Transaction>
+    <Transaction>2016/05/12 18:08:56.000.207,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Fecha_Fa.pas</Transaction>
+    <Transaction>2016/05/27 09:20:13.000.824,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Busqueda.pas</Transaction>
+    <Transaction>2016/05/27 09:20:13.000.926,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\ConsuPagares.pas</Transaction>
+    <Transaction>2016/05/27 09:20:13.000.692,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\AM_PlanPagpPagare.pas</Transaction>
+    <Transaction>2016/05/27 09:20:13.000.734,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Anular_PagarePPagos.pas</Transaction>
+    <Transaction>2016/05/27 09:20:13.000.883,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Con_Planes.pas</Transaction>
+    <Transaction>2016/05/27 09:20:14.000.030,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Imp_CuotasPlanes.pas</Transaction>
+    <Transaction>2016/05/27 09:20:14.000.280,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\PlanPagoModifDom.pas</Transaction>
+    <Transaction>2016/05/30 07:16:44.000.196,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Sel_Fecha.pas</Transaction>
+    <Transaction>2016/06/04 09:07:21.000.524,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\frm_filtro.pas</Transaction>
+    <Transaction>2016/06/06 18:47:02.000.074,=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Unit2.pas</Transaction>
+    <Transaction>2016/06/06 18:50:12.000.616,D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Unit2.pas=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\ConsPagare.pas</Transaction>
+    <Transaction>2016/06/06 18:50:12.000.616,D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Unit2.dfm=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\ConsPagare.dfm</Transaction>
+    <Transaction>2016/07/23 09:20:22.000.354,D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Canc_Objetos.pas=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Con_Planes.pas</Transaction>
+    <Transaction>2016/07/23 09:20:22.000.354,D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Canc_Objetos.dfm=D:\Proyectos Delphi XE5\Muni - Planes de Pagos\Con_Planes.dfm</Transaction>
+    <Transaction>2016/08/19 16:00:28.000.303,=D:\Proyectos Delphi XE5\PlanesDePagos\AsignRecep_PP.pas</Transaction>
+    <Transaction>2016/08/19 16:11:53.000.571,=D:\Proyectos Delphi XE5\PlanesDePagos\Resumen_PP.pas</Transaction>
+    <Transaction>2016/08/25 17:23:38.000.998,=D:\Proyectos Delphi XE5\PlanesDePagos\Busqueda.pas</Transaction>
+    <Transaction>2016/08/25 17:23:38.000.783,=D:\Proyectos Delphi XE5\PlanesDePagos\AM_Contrib.pas</Transaction>
+    <Transaction>2016/08/25 17:23:38.000.822,=D:\Proyectos Delphi XE5\PlanesDePagos\AM_PlanPagpPagare.pas</Transaction>
+    <Transaction>2016/08/25 17:23:39.000.976,=D:\Proyectos Delphi XE5\PlanesDePagos\SplashForm.pas</Transaction>
+    <Transaction>2016/08/25 17:23:39.000.887,=D:\Proyectos Delphi XE5\PlanesDePagos\ResumenAuditoria_PP.pas</Transaction>
+    <Transaction>2016/08/25 17:23:39.000.158,=D:\Proyectos Delphi XE5\PlanesDePagos\Conf_ContribuDebitos.pas</Transaction>
+    <Transaction>2016/08/25 17:23:39.000.798,=D:\Proyectos Delphi XE5\PlanesDePagos\Report_Debitos.pas</Transaction>
+    <Transaction>2016/08/25 17:23:39.000.101,=D:\Proyectos Delphi XE5\PlanesDePagos\Con_Planes.pas</Transaction>
+    <Transaction>2016/08/25 17:23:39.000.947,=D:\Proyectos Delphi XE5\PlanesDePagos\SelecContribu.pas</Transaction>
+    <Transaction>2016/08/25 17:23:39.000.237,=D:\Proyectos Delphi XE5\PlanesDePagos\Cons_Gral.pas</Transaction>
+    <Transaction>2016/08/25 17:29:57.000.121,=D:\Proyectos Delphi XE5\PlanesDePagos\BusCodPos.pas</Transaction>
+    <Transaction>2016/08/25 17:29:57.000.160,=D:\Proyectos Delphi XE5\PlanesDePagos\SelecCuim.pas</Transaction>
+    <Transaction>2016/08/25 17:47:14.000.410,D:\Proyectos Delphi XE5\PlanesDePagos\Cons_Gral.pas=</Transaction>
+    <Transaction>2016/10/18 08:40:43.000.477,D:\Proyecto XE5\PlanesDePagoServer3\Imp_CuotasPlanes.pas=D:\Proyecto XE5\PlanesDePagoServer3\Imp_LosPeriodosdelPlan.pas</Transaction>
+    <Transaction>2016/10/18 08:40:43.000.477,D:\Proyecto XE5\PlanesDePagoServer3\Imp_CuotasPlanes.dfm=D:\Proyecto XE5\PlanesDePagoServer3\Imp_LosPeriodosdelPlan.dfm</Transaction>
+    <Transaction>2016/11/14 09:45:22.000.314,D:\Proyecto XE5\PlanesDePagoServer3\Intimaciones_Imp.pas=D:\Proyecto XE5\PlanesDePagoServer3\Report_Debitos.pas</Transaction>
+    <Transaction>2016/11/14 09:45:22.000.314,D:\Proyecto XE5\PlanesDePagoServer3\Intimaciones_Imp.dfm=D:\Proyecto XE5\PlanesDePagoServer3\Report_Debitos.dfm</Transaction>
+    <Transaction>2016/11/18 07:13:15.000.466,D:\Proyecto XE5\PlanesDePagoServer3\Intimaciones_Imp.dfm=D:\Proyecto XE5\PlanesDePagoServer3\Intimaciones_Buscar.dfm</Transaction>
+    <Transaction>2016/11/18 07:13:15.000.466,D:\Proyecto XE5\PlanesDePagoServer3\Intimaciones_Imp.pas=D:\Proyecto XE5\PlanesDePagoServer3\Intimaciones_Buscar.pas</Transaction>
+    <Transaction>2017/03/14 09:41:44.000.775,D:\Proyecto XE5\PlanesDePagoServer3\Busc_MiniMasivas.dfm=D:\Proyecto XE5\PlanesDePagoServer3\Busc_Cont.dfm</Transaction>
+    <Transaction>2017/03/14 09:41:44.000.775,D:\Proyecto XE5\PlanesDePagoServer3\Busc_MiniMasivas.pas=D:\Proyecto XE5\PlanesDePagoServer3\Busc_Cont.pas</Transaction>
+    <Transaction>2017/05/13 09:19:22.000.778,D:\Proyecto XE5\PlanesDePagoServer3\Intimaciones_Buscar.pas=D:\Proyecto XE5\PlanesDePagoServer3\BoletaDeuda_Buscar.pas</Transaction>
+    <Transaction>2017/05/13 09:19:22.000.778,D:\Proyecto XE5\PlanesDePagoServer3\Intimaciones_Buscar.dfm=D:\Proyecto XE5\PlanesDePagoServer3\BoletaDeuda_Buscar.dfm</Transaction>
+    <Transaction>2017/09/07 08:10:32.000.430,D:\Proyecto XE5\Proyecto DerConstruccion\PlanesPagos.dproj=D:\Proyecto XE5\Proyecto DerConstruccion\DerConstruccion.dproj</Transaction>
+    <Transaction>2017/12/18 09:09:35.000.556,=D:\Proyecto XE5\Proyecto DerConstruccion\Unit2.pas</Transaction>
+    <Transaction>2017/12/18 09:12:46.000.033,D:\Proyecto XE5\Proyecto DerConstruccion\LiquidarDerecho.pas=D:\Proyecto XE5\Proyecto DerConstruccion\Unit2.pas</Transaction>
+    <Transaction>2017/12/18 09:12:46.000.033,D:\Proyecto XE5\Proyecto DerConstruccion\LiquidarDerecho.dfm=D:\Proyecto XE5\Proyecto DerConstruccion\Unit2.dfm</Transaction>
+    <Transaction>2017/12/28 08:30:49.000.610,=D:\Proyecto XE5\Proyecto DerConstruccion\ModelSupport_DerConstruccion\default.txaPackage</Transaction>
+    <Transaction>2017/12/28 08:30:57.000.359,=D:\Proyecto XE5\Proyecto DerConstruccion\ModelSupport_DerConstruccion\default.txvpck</Transaction>
+    <Transaction>2017/12/28 08:31:00.000.604,=D:\Proyecto XE5\Proyecto DerConstruccion\ModelSupport_DerConstruccion\DerConstruccion\default.txvpck</Transaction>
+    <Transaction>2017/12/28 08:31:00.000.510,=D:\Proyecto XE5\Proyecto DerConstruccion\ModelSupport_DerConstruccion\AM_Contrib\default.txvpck</Transaction>
+    <Transaction>2017/12/28 08:31:06.000.729,=D:\Proyecto XE5\Proyecto DerConstruccion\ModelSupport_DerConstruccion\LiquidarDerecho\default.txvpck</Transaction>
+    <Transaction>2019/09/25 07:36:37.000.090,D:\Proyecto XE5\Proyecto DerConstruccion\PresupuestoDerecho.dfm=D:\Proyecto XE5\Proyecto DerConstruccion\LiquidarDerecho.dfm</Transaction>
+    <Transaction>2019/09/25 07:36:37.000.090,D:\Proyecto XE5\Proyecto DerConstruccion\PresupuestoDerecho.pas=D:\Proyecto XE5\Proyecto DerConstruccion\LiquidarDerecho.pas</Transaction>
+    <Transaction>2019/10/16 16:22:12.000.905,D:\Proyecto XE5\Proyecto DerConstruccion\PresupuestoDerecho.pas=D:\Proyecto XE5\Proyecto DerConstruccion\PresupuestoDerechoNew.pas</Transaction>
+    <Transaction>2019/10/16 16:22:12.000.905,D:\Proyecto XE5\Proyecto DerConstruccion\PresupuestoDerecho.dfm=D:\Proyecto XE5\Proyecto DerConstruccion\PresupuestoDerechoNew.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

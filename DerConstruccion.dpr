@@ -1,0 +1,27 @@
+program DerConstruccion;
+
+uses
+  Forms,
+  Acceso1 in 'Acceso1.pas' {Acceso},
+  Acerca in 'Acerca.pas' {Acerca_de},
+  AM_Contrib in 'AM_Contrib.pas' {AM_Contribuyentes},
+  Busqueda in 'Busqueda.pas' {LA_BUSQUEDA},
+  Menu in 'Menu.pas' {Form1},
+  Modulo in 'Modulo.pas' {Modulo2: TDataModule},
+  Objetos in 'Objetos.pas',
+  SelecContribu in 'SelecContribu.pas' {Seleccion_Contribu},
+  SplashForm in 'SplashForm.pas' {Splash},
+  Unidad in 'Unidad.pas',
+  BusCodPos in 'BusCodPos.pas' {Bus_CodigoPostal},
+  SelecCuim in 'SelecCuim.pas' {Selec_Cuim},
+  PresupuestoDerechoNew in 'PresupuestoDerechoNew.pas' {DerechoPresupuestoNuevo};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TModulo2, Modulo2);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TDerechoPresupuestoNuevo, DerechoPresupuestoNuevo);
+  Application.Run;
+end.

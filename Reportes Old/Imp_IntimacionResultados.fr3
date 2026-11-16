@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="4.15.6" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="42506.8240951505" ReportOptions.Description.Text="" ReportOptions.LastChange="42832.4739291551" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;begin&#13;&#10;&#13;&#10;end." PropData="044C656674030C0303546F7003E6000844617461736574730101061C20446174615365744E616D653D2266727844424461746173657431220000095661726961626C657301010616204E616D653D22204E65772043617465676F7279312200010622204E616D653D224665636861222056616C75653D222730342F30382F3230313627220001142B000000204E616D653D225573756172696F222056616C75653D2227425241C39141204A55414E20414E47454C27220001061E204E616D653D224E726F5573756172696F222056616C75653D22313230220000055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" Height="192.75603" Left="0" Top="18.89765" Width="718.1107">
+      <TfrxShapeView Name="Shape1" Left="1" Top="0" Width="716.22047244" Height="86.92919" ShowHint="False"/>
+      <TfrxPictureView Name="Logo1" Left="7.55906" Top="3.77953" Width="68.03154" Height="79.37013" ShowHint="False" HightQuality="False" Transparent="False" TransparentColor="16777215"/>
+      <TfrxMemoView Name="Memo2" Left="86.92919" Top="3.77953" Width="241.88992" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Municipalidad de la Ciudad de Formosa"/>
+      <TfrxMemoView Name="Memo3" Left="79.37013" Top="22.67718" Width="241.88992" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="Agencia de Recaudación"/>
+      <TfrxMemoView Name="Memo4" Left="151.1812" Top="60.47248" Width="302.3624" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="5" HAlign="haCenter" ParentFont="False" Text="RESUMEN DE PREINTIMACION"/>
+      <TfrxMemoView Name="Memo15" Left="521.57514" Top="56.69295" Width="105.82684" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Fecha Impresión:"/>
+      <TfrxMemoView Name="Memo16" Left="3.77953" Top="94.60637" Width="287.24428" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="5" ParentFont="False" Text="DATOS FILTRADOS POR:"/>
+      <TfrxMemoView Name="Memo6" Left="3.77953" Top="116.84261" Width="71.81107" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Señor/a/es:"/>
+      <TfrxMemoView Name="Memo18" Left="5" Top="166.19697" Width="102.04731" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Deuda Mayor a:"/>
+      <TfrxMemoView Name="Memo20" Left="5.77953" Top="142.51979" Width="45.35436" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Barrio:"/>
+      <TfrxMemoView Name="Memo29" Left="285.68522" Top="165.9765" Width="102.04731" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Deuda Menor a:"/>
+      <TfrxMemoView Name="Memo34" Left="631.18151" Top="56.69295" Width="79.37013" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[Date]"/>
+      <TfrxMemoView Name="ElqueSuscribe" Left="75.5906" Top="116.94496" Width="570.70903" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[ElqueSuscribe]"/>
+      <TfrxMemoView Name="NroDni" Left="106.60637" Top="166.51979" Width="79.37013" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[NroDni]"/>
+      <TfrxMemoView Name="Barrio" Left="51.13389" Top="142.84261" Width="597.16574" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[Barrio]"/>
+      <TfrxMemoView Name="Altura" Left="387.29159" Top="165.51979" Width="98.26778" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[Altura]"/>
+    </TfrxReportTitle>
+    <TfrxMasterData Name="MasterData1" Height="45.35436" Left="0" Top="294.80334" Width="718.1107" ColumnWidth="0" ColumnGap="0" DataSetName="frxDBDataset1" RowCount="0">
+      <TfrxShapeView Name="Shape8" Left="1" Top="0" Width="716.22047244" Height="18.89765" ShowHint="False" Color="-16777188"/>
+      <TfrxShapeView Name="Shape5" Left="1" Top="18.89765" Width="716.22047244" Height="26.45671" ShowHint="False" Color="-16777188"/>
+      <TfrxMemoView Name="Memo26" Left="0" Top="0" Width="714.33117" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text=" - - - - - - - Detalle del Filtro Aplicado - - - - - - -"/>
+      <TfrxMemoView Name="Memo7" Left="37.7953" Top="18.89765" Width="117.16543" Height="26.45671" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Contribuyente"/>
+      <TfrxMemoView Name="Memo19" Left="608.50433" Top="18.89765" Width="90.70872" Height="26.45671" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Total Deuda"/>
+      <TfrxMemoView Name="Memo17" Left="0" Top="18.89765" Width="37.7953" Height="26.45671" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Select"/>
+      <TfrxLineView Name="Line1" Left="37.7953" Top="18.89765" Width="0" Height="26.45671" ShowHint="False" Frame.Typ="1"/>
+      <TfrxLineView Name="Line2" Left="472.44125" Top="18.89765" Width="0" Height="26.45671" ShowHint="False" Frame.Typ="1"/>
+      <TfrxLineView Name="Line7" Left="593.38621" Top="18.89765" Width="0" Height="26.45671" ShowHint="False" Frame.Typ="1"/>
+      <TfrxMemoView Name="Memo8" Left="483.77984" Top="18.89765" Width="90.70872" Height="26.45671" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Nro DNI"/>
+    </TfrxMasterData>
+    <TfrxPageFooter Name="PageFooter1" Height="22.67718" Left="0" Top="495.11843" Width="718.1107">
+      <TfrxMemoView Name="Memo21" Left="52.91342" Top="3.77953" Width="120.94496" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="1" ParentFont="False" VAlign="vaCenter" Text="[NroUsuario]"/>
+      <TfrxMemoView Name="Memo1" Left="642.5201" Top="0" Width="75.5906" Height="18.89765" ShowHint="False" HAlign="haRight" Text="[Page#]"/>
+      <TfrxMemoView Name="Memo5" Left="0" Top="3.77953" Width="52.91342" Height="15.11812" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Usu Imp:"/>
+    </TfrxPageFooter>
+    <TfrxDetailData Name="DetailData1" Height="22.67718" Left="0" Top="362.83488" Width="718.1107" ColumnWidth="0" ColumnGap="0" DataSetName="frxDBDataset1" RowCount="0">
+      <TfrxShapeView Name="Shape4" Left="1" Top="0" Width="716.22047244" Height="22.67718" ShowHint="False"/>
+      <TfrxLineView Name="Line4" Left="37.7953" Top="0" Width="0" Height="22.67718" ShowHint="False" Frame.Typ="1"/>
+      <TfrxMemoView Name="frxDBDataset1Detalle" Left="45.13389" Top="2" Width="415.7483" Height="15.11812" ShowHint="False" DataField="Contribuyente" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[frxDBDataset1.&#34;Contribuyente&#34;]"/>
+      <TfrxLineView Name="Line11" Left="472.44125" Top="0" Width="0" Height="22.67718" ShowHint="False" Frame.Typ="1"/>
+      <TfrxLineView Name="Line12" Left="593.38621" Top="0" Width="0" Height="22.67718" ShowHint="False" Frame.Typ="1"/>
+      <TfrxMemoView Name="Memo11" Left="483.77984" Top="0" Width="98.26778" Height="18.89765" ShowHint="False" DataSetName="frxDBDataset1" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haCenter" ParentFont="False" Text="[frxDBDataset1.&#34;NroDni&#34;]"/>
+      <TfrxMemoView Name="Memo23" Left="600.94527" Top="0.22047" Width="117.16543" Height="18.89765" ShowHint="False" DataSetName="frxDBDataset1" DisplayFormat.FormatStr="%2.2m" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haCenter" ParentFont="False" Text="[frxDBDataset1.&#34;TotalDeuda&#34;]"/>
+    </TfrxDetailData>
+    <TfrxHeader Name="Header1" Height="0" Left="0" Top="272.12616" Width="718.1107"/>
+    <TfrxFooter Name="Footer1" Height="26.45671" Left="0" Top="408.18924" Width="718.1107">
+      <TfrxShapeView Name="Shape2" Left="472.44125" Top="0" Width="245.66945" Height="26.45671" ShowHint="False" Shape="skRoundRectangle"/>
+      <TfrxMemoView Name="Memo9" Left="480.00031" Top="4.23624" Width="109.60637" Height="18.89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Total Deuda Gral.:"/>
+      <TfrxMemoView Name="Memo10" Left="600.94527" Top="3.77953" Width="113.3859" Height="18.89765" ShowHint="False" DisplayFormat.FormatStr="%2.2m" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="[Total]"/>
+      <TfrxLineView Name="Line3" Left="593.38621" Top="0" Width="0" Height="26.45671" ShowHint="False" Frame.Typ="1"/>
+    </TfrxFooter>
+  </TfrxReportPage>
+</TfrxReport>

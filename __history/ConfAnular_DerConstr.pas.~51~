@@ -1,0 +1,1737 @@
+unit ConfAnular_DerConstr;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls, DB, ADODB, Mask, Buttons, Grids, DBGrids,
+  ExtCtrls, StrUtils, JvExDBGrids, JvDBGrid, JvgGroupBox, JvExButtons, JvBitBtn,
+  ToolWin, JvExGrids, JvStringGrid, Menus, ImgList, JvSimLogic,DBClient,
+  jpeg, JvComponentBase, JvEmbeddedForms,Math,Objetos,frxClass, frxDBSet,frxBarcode,
+  RzEdit, JvExExtCtrls, JvExtComponent, JvCaptionPanel, JvExStdCtrls, JvCheckBox ;
+
+type THackStringGrid = class(TJvStringGrid);
+type
+  TConfAnu_ExptesDerConst = class(TForm)
+    Barra1: TStatusBar;
+    DataSource1: TDataSource;
+    PC1: TPageControl;
+    ToolBar1: TToolBar;
+    ToolButton1: TToolButton;
+    BORRA: TJvBitBtn;
+    ToolButton2: TToolButton;
+    ToolButton3: TToolButton;
+    SALE: TJvBitBtn;
+    ImageList1: TImageList;
+    DataSource2: TDataSource;
+    TabSheet2: TTabSheet;
+    PageControl1: TPageControl;
+    TabSheet3: TTabSheet;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
+    Label33: TLabel;
+    Label34: TLabel;
+    Label35: TLabel;
+    Label36: TLabel;
+    Label38: TLabel;
+    Label39: TLabel;
+    AÑO1: TEdit;
+    NRO1: TEdit;
+    LETRA1: TEdit;
+    NROE: TEdit;
+    AÑO: TEdit;
+    LETRA: TEdit;
+    tiponotif: TComboBox;
+    Label40: TLabel;
+    RELIQUI: TCheckBox;
+    Label41: TLabel;
+    Label42: TLabel;
+    VISADO: TEdit;
+    AÑOVISADO: TEdit;
+    REVOCADO: TEdit;
+    REVOCADOAÑO: TEdit;
+    OPUBLICA: TCheckBox;
+    TabSheet6: TTabSheet;
+    PC4: TPageControl;
+    TabSheet7: TTabSheet;
+    Label10: TLabel;
+    Label15: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label11: TLabel;
+    Label37: TLabel;
+    Label14: TLabel;
+    Label1: TLabel;
+    N2: TEdit;
+    N6: TEdit;
+    N7: TEdit;
+    N8: TEdit;
+    N4: TEdit;
+    N3: TEdit;
+    N9: TEdit;
+    OPARTIDA: TMaskEdit;
+    BuscarP: TButton;
+    GroupBox5: TGroupBox;
+    Label30: TLabel;
+    Label53: TLabel;
+    Label54: TLabel;
+    Label55: TLabel;
+    Label56: TLabel;
+    Label57: TLabel;
+    Label58: TLabel;
+    Label59: TLabel;
+    Label60: TLabel;
+    Label61: TLabel;
+    Label62: TLabel;
+    Label64: TLabel;
+    BARRIOINMU: TComboBox;
+    CALLEINMU: TComboBox;
+    DOMIINMU: TEdit;
+    ALTURAINMU: TEdit;
+    PISOINMU: TEdit;
+    DEPTOINMU: TEdit;
+    MZINMU: TEdit;
+    PARINMU: TEdit;
+    TORREINMU: TEdit;
+    CASAINMU: TEdit;
+    SECTORINMU: TEdit;
+    LRINMU: TEdit;
+    Label65: TLabel;
+    DOMOBRA: TEdit;
+    Label66: TLabel;
+    DESTINOOBRA: TEdit;
+    guarda: TJvBitBtn;
+    ToolButton4: TToolButton;
+    TabSheet8: TTabSheet;
+    JvgGroupBox6: TJvgGroupBox;
+    JvgGroupBox7: TJvgGroupBox;
+    JvgGroupBox0: TJvgGroupBox;
+    grilla2: TJvStringGrid;
+    Label68: TLabel;
+    TOTAL: TEdit;
+    EXEPCION: TCheckBox;
+    CARGAMANUAL: TCheckBox;
+    ORDENANZA: TCheckBox;
+    GroupBox7: TGroupBox;
+    PLANO: TEdit;
+    RESOLUCION: TEdit;
+    FINALOBRA: TEdit;
+    Label71: TLabel;
+    Label70: TLabel;
+    Label69: TLabel;
+    COMENTARIOS: TMemo;
+    FormularioEmb: TJvEmbeddedFormLink;
+    Label4: TLabel;
+    empresa: TEdit;
+    TabSheet1: TTabSheet;
+    JvgGroupBox3: TJvgGroupBox;
+    JvDBGrid1: TJvDBGrid;
+    GroupBox6: TGroupBox;
+    C6: TCheckBox;
+    C3: TCheckBox;
+    C4: TCheckBox;
+    C5: TCheckBox;
+    C7: TCheckBox;
+    C8: TCheckBox;
+    JvgGroupBox1: TJvgGroupBox;
+    LB1: TLabel;
+    Label9: TLabel;
+    Edit1: TEdit;
+    BusExpte: TJvBitBtn;
+    DataSource3: TDataSource;
+    SECTOR: TComboBox;
+    TabSheet4: TTabSheet;
+    E1: TRichEdit;
+    GroupBox8: TGroupBox;
+    Label5: TLabel;
+    ExisDoc: TEdit;
+    PopupMenu1: TPopupMenu;
+    ImprimirFormulario1: TMenuItem;
+    IMPLIQUI: TJvBitBtn;
+    ToolButton5: TToolButton;
+    frxReport1: TfrxReport;
+    TabSheet9: TTabSheet;
+    PageControl2: TPageControl;
+    TabSheet5: TTabSheet;
+    JvgGroupBox4: TJvgGroupBox;
+    Label43: TLabel;
+    Label44: TLabel;
+    Label45: TLabel;
+    BUSCAR: TJvBitBtn;
+    ODNI: TEdit;
+    ONOMB: TEdit;
+    OCUIT: TEdit;
+    JvDBGrid2: TJvDBGrid;
+    GroupBox4: TGroupBox;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label6: TLabel;
+    Label31: TLabel;
+    Label32: TLabel;
+    Label46: TLabel;
+    Label47: TLabel;
+    Label48: TLabel;
+    Label49: TLabel;
+    Label50: TLabel;
+    Label51: TLabel;
+    Label52: TLabel;
+    BARRIORESPO: TComboBox;
+    CALLERESPO: TComboBox;
+    DOMRESPO: TEdit;
+    ALTURARESPO: TEdit;
+    PISORESPO: TEdit;
+    DEPTORESPO: TEdit;
+    MZRESPO: TEdit;
+    PARRESPO: TEdit;
+    TORRERESPO: TEdit;
+    CASARESPO: TEdit;
+    SECTORRESPO: TEdit;
+    LRRESPO: TEdit;
+    Label13: TLabel;
+    tpopartida: TEdit;
+    Label16: TLabel;
+    tpotit: TEdit;
+    Label17: TLabel;
+    emailRESPO: TEdit;
+    Label18: TLabel;
+    telefonorespo: TEdit;
+    TabSheet10: TTabSheet;
+    PageControl3: TPageControl;
+    TabSheet11: TTabSheet;
+    JvgGroupBox2: TJvgGroupBox;
+    Label19: TLabel;
+    Label20: TLabel;
+    BUSCARPROF: TJvBitBtn;
+    odnip: TEdit;
+    ONOMBP: TEdit;
+    JvDBGrid3: TJvDBGrid;
+    GroupBox9: TGroupBox;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    Label28: TLabel;
+    Label29: TLabel;
+    Label63: TLabel;
+    Label67: TLabel;
+    Label72: TLabel;
+    Label74: TLabel;
+    Label75: TLabel;
+    Label73: TLabel;
+    barriop: TComboBox;
+    callep: TComboBox;
+    domp: TEdit;
+    alturap: TEdit;
+    pisop: TEdit;
+    deptop: TEdit;
+    mzp: TEdit;
+    parp: TEdit;
+    torrep: TEdit;
+    casap: TEdit;
+    sectorp: TEdit;
+    lrp: TEdit;
+    emailp: TEdit;
+    telefonop: TEdit;
+    matricula: TEdit;
+    GroupBox10: TGroupBox;
+    Shape1: TShape;
+    Label76: TLabel;
+    Label77: TLabel;
+    Shape3: TShape;
+    Label78: TLabel;
+    Shape4: TShape;
+    ToolButton6: TToolButton;
+    infformu: TJvBitBtn;
+    Label12: TLabel;
+    titrespo: TEdit;
+    dnirespo: TEdit;
+    tipodocrespo: TEdit;
+    Label79: TLabel;
+    Panel1: TPanel;
+    Label81: TLabel;
+    cuimtit: TEdit;
+    PANEL11: TJvCaptionPanel;
+    GroupBox11: TGroupBox;
+    Label80: TLabel;
+    importetotal: TRzNumericEdit;
+    liquiimporte: TEdit;
+    anticipos: TComboBox;
+    Edit2: TEdit;
+    aceptar: TJvBitBtn;
+    JvBitBtn2: TJvBitBtn;
+    liqui1: TJvCheckBox;
+    liqui2: TJvCheckBox;
+    DataSource4: TDataSource;
+    procedure FormCreate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure CargaCombos(nro:byte);
+    procedure Consultas(nro:byte);
+    procedure BORRAClick(Sender: TObject);
+    procedure BuscarClick(Sender: TObject);
+    procedure SALEClick(Sender: TObject);
+    procedure JvDBGrid2CellClick(Column: TColumn);
+    procedure BuscarPClick(Sender: TObject);
+    procedure guardaClick(Sender: TObject);
+    procedure grilla2DrawCell(Sender: TObject; ACol, ARow: Integer;
+      Rect: TRect; State: TGridDrawState);
+    procedure grilla2ExitCell(Sender: TJvStringGrid; AColumn,
+      ARow: Integer; const EditText: string);
+    procedure grilla2KeyPress(Sender: TObject; var Key: Char);
+    procedure grilla2SelectCell(Sender: TObject; ACol, ARow: Integer;
+      var CanSelect: Boolean);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure JvDBGrid1CellClick(Column: TColumn);
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
+    procedure COMENTARIOSChange(Sender: TObject);
+    procedure BusExpteClick(Sender: TObject);
+    Function Verificacion(nro:byte):boolean;
+    procedure ExisDocChange(Sender: TObject);
+    procedure ImprimeRecibo();
+    procedure ImprimeRecibo2();
+    procedure ImprimeExpte();
+    procedure GuardarRecibo(nro:byte);
+    procedure IMPLIQUIClick(Sender: TObject);
+    procedure JvDBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure infformuClick(Sender: TObject);
+    procedure SECTORKeyPress(Sender: TObject; var Key: Char);
+    procedure SECTORExit(Sender: TObject);
+    procedure aceptarClick(Sender: TObject);
+    procedure importetotalExit(Sender: TObject);
+    procedure importetotalKeyPress(Sender: TObject; var Key: Char);
+    procedure anticiposExit(Sender: TObject);
+    procedure anticiposKeyPress(Sender: TObject; var Key: Char);
+    procedure JvBitBtn2Click(Sender: TObject);
+  private
+    Lista:array of string;
+    CONTRIBUYENTE,EXPEDIENTES,DataSet0,DataSet1,DataSet2,OBRAS,PROFESIONAL,DataSetAnticipo,
+    DataSetP,DataSetPartida,DataSetCont,DataSetInmu,DataSetImp,DataSetDom,DataSetGrilla:TADODataSet;
+    Com1:TADOCommand;
+    Recibo:TRecibo;
+    seleccontrib,confir,liquida:boolean;
+    { Private declarations }
+  public
+    sumdoc,dtopresu:real;
+    gh,yaexiste,Pos4,selec:boolean;
+    nomb,losperi,elcuim,cuim,losdetalles,Contr,losid,elidentif,idcontrib,eltitular,valorliqui,
+    fechas,lares,idexpte,lapartida,eltitu,FechaAct,idexptecont,cuimexptecont,nomexptecont,elexpte:string;
+    { Public declarations }
+  end;
+
+var
+  ConfAnu_ExptesDerConst: TConfAnu_ExptesDerConst;
+
+implementation
+
+
+uses Unidad, modulo,Anula_Generica;
+
+{$R *.dfm}
+
+procedure TConfAnu_ExptesDerConst.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  FreeAndNil(CONTRIBUYENTE);
+  freeAndNil(PROFESIONAL);
+  FreeAndNil(EXPEDIENTES);
+  FreeAndNil(OBRAS);
+  FreeAndNil(DataSet0);
+  FreeAndNil(DataSet1);
+  FreeAndNil(DataSet2);
+  FreeAndNil(DataSetP);
+  FreeAndNil(DataSetPartida);
+  freeAndNil(DataSetCont);
+  FreeAndnil(DataSetInmu);
+  FreeAndNil(DataSetImp);
+  FreeAndNil(DataSetDom);
+  FreeAndNil(DataSetGrilla);
+  FreeAndNil(DataSetAnticipo);
+  FreeAndNil(Self);
+end;
+
+procedure TConfAnu_ExptesDerConst.FormCreate(Sender: TObject);
+begin
+  gh:=false;
+  panel11.Visible :=false;
+  Modulo2.ObjConexion:=nil;
+  CONTRIBUYENTE:=TADODataSet.Create(Self);
+  EXPEDIENTES:=TADODataSet.Create(Self);
+  OBRAS:=TADODataSet.Create(Self);
+  PROFESIONAL:=TADODataSet.Create(Self);
+  DataSet0:=TADODataSet.Create(Self);
+  DataSet1:=TADODataSet.Create(Self);
+  DataSet2:=TADODataSet.Create(Self);
+  DataSetP:=TADODataSet.Create(Self);
+  DataSetPartida:=TADODataSet.Create(Self);
+  DataSetCont:=TADODataSet.Create(Self);
+  DataSetAnticipo:=TADODataSet.Create(Self);
+  DataSetInmu:=TADODataSet.Create(Self);
+  DataSetImp:=TADODataSet.Create(Self);
+  DataSetDom:=TADODataSet.Create(Self);
+  DataSetGrilla:=TADODataSet.Create(Self);
+  pc1.Pages[1].TabVisible:=false;
+  pc1.Pages[2].TabVisible:=false;
+  pc1.Pages[3].TabVisible:=false;
+  pc1.Pages[4].TabVisible:=false;
+  pc1.Pages[5].TabVisible:=false;
+end;
+
+procedure TConfAnu_ExptesDerConst.FormActivate(Sender: TObject);
+begin
+ if not (gh) then begin
+  gh:=true;
+  confir:=false;
+  liquida:=false;
+  selec:=false;
+  PC1.ActivePage:=PC1.Pages[0];
+  grilla2.Cells[0,0]:='Id';
+  grilla2.Cells[1,0]:='Descripcion';
+  grilla2.Cells[2,0]:='Metros';
+  grilla2.Cells[3,0]:='Costo';
+  grilla2.Cells[4,0]:='Porcentaje';
+  grilla2.Cells[5,0]:='Total';
+  seleccontrib:=false;
+  FechaAct:=LeftStr(Fec_System(),10);
+  guarda.Enabled:=false;
+  borra.Enabled:=false;
+  IMPLIQUI.Enabled:=false;
+  infformu.Enabled :=false;
+  C3.Checked:=false;
+  Pos4:=false;
+  Consultas(1);
+  CargaCombos(1);
+  CargaCombos(2);
+  CargaCombos(3);
+  CargaCombos(4);
+  CargaCombos(5);
+  AÑO.Text:=RightStr(strcut(fec_system(),10),4);
+  CARGAMANUAL.Enabled:=false;
+  Consultas(3);
+  Consultas(11);
+  CargaCombos(6);
+  CargaCombos(7);
+  CargaCombos(8);
+  CargaCombos(9);
+  Consultas(13);
+  sector.SetFocus;
+ end;
+end;
+
+procedure TConfAnu_ExptesDerConst.CargaCombos(nro:byte);
+begin
+ if nro=1 then Modulo2.CargaCombo(TIPONOTIF,'SELECT Detalle,iD FROM TipoNotificacion',modulo2.Sistema.ConectDerConst,false);
+ if nro=2 then Modulo2.CargaCombo(BARRIORESPO,'SELECT Detalle,Id FROM Barrios ORDER BY Detalle',modulo2.Sistema.ConectSeg,false);
+ if nro=3 then Modulo2.CargaCombo(CALLERESPO,'SELECT Descrip,Calle FROM CALLES WHERE (Dpto_Polit=1) AND (LOCALIDAD=1) '
+  + ' ORDER BY DESCRIP',modulo2.Sistema.ConectUsu,false);
+ if nro=4 then Modulo2.CargaCombo(BARRIOINMU,'SELECT Detalle,Id FROM Barrios ORDER BY Detalle',modulo2.Sistema.ConectSeg,false);
+ if nro=5 then Modulo2.CargaCombo(CALLEINMU,'SELECT Descrip,Calle FROM CALLES WHERE (Dpto_Polit=1) AND (LOCALIDAD=1) '
+  + ' ORDER BY DESCRIP',modulo2.Sistema.ConectUsu,false);
+ if nro=6 then Modulo2.CargaCombo(sector,'SELECT distinct substring([NroExpediente],1,1) '
+  + ' FROM [DerConst].[dbo].[Expediente] where substring([NroExpediente],1,1) <> '''' order by 1',modulo2.Sistema.ConectDerConst,false);
+ if nro=7 then Modulo2.CargaCombo(BARRIOP,'SELECT Detalle,Id FROM Barrios ORDER BY Detalle',modulo2.Sistema.ConectSeg,false);
+ if nro=8 then Modulo2.CargaCombo(CALLEP,'SELECT Descrip,Calle FROM CALLES WHERE (Dpto_Polit=1) AND (LOCALIDAD=1) '
+  + ' ORDER BY DESCRIP',modulo2.Sistema.ConectUsu,false);
+ if nro=9 then Modulo2.CargaCombo(anticipos,'SELECT Descripcion,IdAnticipo '
+  + ' FROM [DerConst].[dbo].[TarifasAnticipoDerConst] order by 2',modulo2.Sistema.ConectDerConst,false);
+end;
+
+Function TConfAnu_ExptesDerConst.Verificacion(nro:byte):boolean;
+begin
+ E1.Clear;
+ if nro = 1 then begin //Altas
+  if seleccontrib= false then E1.Lines.Add('NO existe Ningun Contribuyente Seleccionado');
+  if n2.Text = '' then E1.Lines.Add('NO existe Ninguna PARTIDA Seleccionada');
+  if total.Text = '' then E1.Lines.Add('NO existe Ningun IMPORTE del Expediente Calculado');
+ end;
+ if E1.Lines.Count > 0 then begin
+  pc1.Pages[4].TabVisible:=true;
+  Result:=false;
+  PC1.ActivePage:=PC1.Pages[4];
+ end
+ else Result:=true;
+end;
+
+procedure TConfAnu_ExptesDerConst.COMENTARIOSChange(Sender: TObject);
+begin
+c8.Checked :=true;
+end;
+
+procedure TConfAnu_ExptesDerConst.Consultas(nro:byte);
+var t,y,gf,a:integer;
+    eltotal:real;
+    txt,dni,lapar,dnip:string;
+    CLIENTE:TADODataSet;
+    Comando:widestring;
+    Cnx2:TADOConnection;
+    Valor: Double;
+begin
+Modulo2.ObjConexion:=TADOConnection.Create(nil);
+Modulo2.ObjConexion.LoginPrompt:=false;
+if nro = 0 then begin
+  DataSet0.ConnectionString:=modulo2.Sistema.ConectSeg;
+  DataSet0.CommandText:='SELECT detalle FROM [SeguridadWEB].[dbo].[Fn_ElDomicilioContribuyente ] (' + idcontrib + ')';
+  DataSet0.Open;
+  if not DataSet0.isempty then begin
+   domrespo.text:= trim(DataSet0.Fields[0].AsString);
+  end;
+  DataSet0.Connection:=nil;
+  DataSet1.CommandText:='SELECT Id,Barrio,Calle,CodPostal,Altura,Piso,Dpto,Mz,Parcela,Casa,Sector,'  //10
+  + 'Torre,LoteRural,Domicilio,CodBar,CodCal FROM dbo.Fn_ContribuyentesDomicilios(' + idcontrib + ')';
+  DataSet1.Open;
+  if not DataSet1.isempty then begin
+   barriorespo.ItemIndex:=barriorespo.Items.IndexOf(trim(DataSet1.Fields[1].AsString));
+   callerespo.ItemIndex:=callerespo.Items.IndexOf(trim(DataSet1.Fields[2].AsString));
+   domrespo.text:= trim(DataSet1.Fields[0].AsString);
+   alturarespo.text:=trim(DataSet1.Fields[4].AsString);
+   pisorespo.text:= trim(DataSet1.Fields[5].AsString);
+   deptorespo.text:=trim(DataSet1.Fields[6].AsString);
+   mzrespo.text:=   trim(DataSet1.Fields[7].AsString);
+   torrerespo.text:=trim(DataSet1.Fields[11].AsString);
+   casarespo.text:= trim(DataSet1.Fields[9].AsString);
+   sectorrespo.text:=trim(DataSet1.Fields[10].AsString);
+   parrespo.text:= trim(DataSet1.Fields[8].AsString);
+   lrrespo.text:=  trim(DataSet1.Fields[12].AsString);
+  end;
+  DataSet1.Connection:=nil;
+end;
+if nro = 1 then begin
+  for t:=1 to Grilla2.RowCount-1 do
+  for y:=0 to Grilla2.ColCount-1 do
+    Grilla2.Cells[y,t]:='';
+  Grilla2.RowCount:=2;
+  Modulo2.ObjConexion.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  CLIENTE:=TADODataSet.Create(nil);
+  CLIENTE.Connection:=modulo2.ObjConexion;
+  CLIENTE.CommandText:='SELECT Id, Detalle, Porcentaje FROM TipoObra';
+  CLIENTE.Open;
+  for t:=1 to CLIENTE.RecordCount do begin
+   CLIENTE.Recno:=t;
+   Grilla2.RowCount:=t+1;
+   Grilla2.Cells[0,t]:=CLIENTE.FieldByName('ID').AsString;
+   Grilla2.Cells[1,t]:=CLIENTE.FieldByName('Detalle').AsString;
+   Grilla2.Cells[2,t]:='0.00';
+   Grilla2.Cells[3,t]:='0.00';
+   Grilla2.Cells[4,t]:=AnsiReplaceStr(CLIENTE.FieldByName('Porcentaje').AsString,',','.');
+   Grilla2.Cells[5,t]:='0.00';
+  end;
+  CLIENTE.Connection:=nil;
+end;
+if nro = 2  then begin
+  DataSet1.ConnectionString:=modulo2.Sistema.ConectSeg;
+  DataSet1.CommandText:='SELECT TOP (1) CUIM FROM ContribuyentesIdentidad  '
+  + ' WHERE  (IdContribuyente = ' + idcontrib + ') AND (Activo = 1) ORDER BY Id';
+  DataSet1.Open;
+  if not DataSet1.isempty then begin
+   elcuim:= trim(DataSet1.Fields[0].AsString);
+  end;
+  DataSet1.Connection:=nil;
+end;
+if nro = 3 then begin
+  EXPEDIENTES.Close;
+  Modulo2.ObjConexion.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  EXPEDIENTES.Connection:=modulo2.ObjConexion;
+  DataSource3.DataSet:=EXPEDIENTES;
+  EXPEDIENTES.CommandText:='SELECT ID,nroexpediente,nroexpedienteantecedente,TipoNotificacion,reliquidacion,revocarnro,'  //5
+  +'resolucionanio,recibonro,esobrapublica,empresaconstructora,adjuntosplanos,adjuntoresoluciones,adjuntofinalobra,' //12
+  +'anulado,idtiponotif,left(nroexpediente,1),RIGHT(nroexpediente,4),SUBSTRING(NroExpediente,2,8),' //17
+  +'left(nroexpedienteantecedente,1),'
+  +'case when len(nroexpedienteantecedente)> 11 then RIGHT(nroexpedienteantecedente,4) else RIGHT(nroexpedienteantecedente,1) end'
+  +',SUBSTRING(nroexpedienteantecedente,2,8),DestinoObra,RevocarAnio,ResolucionNro,partida,MetrosDocumentados,'
+  +'IdContribuyente,cuimExpte,TituExpte,confirmado' //29
+  +' FROM [DerConst].[dbo].[FN_ObtenerExpedientes] (null) order by id desc';
+  EXPEDIENTES.Open;
+  if EXPEDIENTES.IsEmpty then BEGIN
+   messagedlg('Expediente de Der. de Construccion Inexistente...' + chr(13) + 'Debe darlo de  Alta?',mtWarning,[mbok,mbCancel],0);
+   PC1.ActivePage:=PC1.Pages[0];
+   sector.SetFocus;
+  END;
+  EXPEDIENTES.Connection:=nil;
+end;
+if nro = 4 then begin
+  EXPEDIENTES.Close;
+  Modulo2.ObjConexion.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  EXPEDIENTES.Connection:=modulo2.ObjConexion;
+  DataSource3.DataSet:=EXPEDIENTES;
+  EXPEDIENTES.CommandText:='SELECT ID,nroexpediente,nroexpedienteantecedente,TipoNotificacion,reliquidacion,revocarnro,'  //5
+  +'resolucionanio,recibonro,esobrapublica,empresaconstructora,adjuntosplanos,adjuntoresoluciones,adjuntofinalobra,' //12
+  +'anulado,idtiponotif,left(nroexpediente,1),RIGHT(nroexpediente,4),SUBSTRING(NroExpediente,2,8),' //17
+  +'left(nroexpedienteantecedente,1)'
+  +',case when len(nroexpedienteantecedente)> 11 then RIGHT(nroexpedienteantecedente,4) else RIGHT(nroexpedienteantecedente,1) end'
+  +',SUBSTRING(nroexpedienteantecedente,2,8),DestinoObra,RevocarAnio,ResolucionNro,partida,'
+  +'MetrosDocumentados,IdContribuyente,cuimExpte,TituExpte,confirmado' //29
+  +' FROM FN_ObtenerExpedientes (null) where substring(NroExpediente,1,1)=' + chr(39) +  trim(sector.Text) + chr(39)
+  + ' and substring(NroExpediente,2,8) LIKE ' + chr(39) + chr(37) + AnsiReplaceStr(trim(Edit1.Text),chr(39),chr(33)) + chr(37) + chr(39);
+  EXPEDIENTES.Open;
+  if EXPEDIENTES.IsEmpty then BEGIN
+   messagedlg('Expediente de Der. de Construccion Inexistente...' + chr(13) + 'Debe darlo de Alta?',mtWarning,[mbok,mbCancel],0);
+   edit1.SetFocus;
+   PC1.ActivePage:=PC1.Pages[0];
+  end;
+  EXPEDIENTES.Connection:=nil;
+end;
+if nro = 5 then begin /// traemos el contrib de un expediente
+  DataSetCont.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  DataSetCont.CommandText:='SELECT IdExpte,Cuim,Contribuyente ,NroDni ,barrio, calle ,Domicilio,Altura , '
+	+'Piso,Dpto ,Mz,Torre,Casa ,Sector ,Parcela,LoteRural ,idcontrib FROM FN_ObtenerExpedientesContrib ( '+ idexpte + ')';
+  DataSetCont.Open;
+  if not DataSetCont.isempty then begin
+   cuimtit.Text :=trim(DataSetCont.Fields[1].AsString);
+   titrespo.Text :=trim(DataSetCont.Fields[2].AsString);
+   dnirespo.Text := trim(DataSetCont.Fields[3].AsString);
+   dni:= trim(DataSetCont.Fields[3].AsString);
+   barriorespo.ItemIndex:=barriorespo.Items.IndexOf(trim(DataSetCont.Fields[4].AsString));
+   callerespo.ItemIndex:=callerespo.Items.IndexOf(trim(DataSetCont.Fields[5].AsString));
+   domrespo.text:= trim(DataSetCont.Fields[6].AsString);
+   alturarespo.text:=trim(DataSetCont.Fields[7].AsString);
+   pisorespo.text:= trim(DataSetCont.Fields[8].AsString);
+   deptorespo.text:=trim(DataSetCont.Fields[9].AsString);
+   mzrespo.text:=   trim(DataSetCont.Fields[10].AsString);
+   torrerespo.text:=trim(DataSetCont.Fields[11].AsString);
+   casarespo.text:= trim(DataSetCont.Fields[12].AsString);
+   sectorrespo.text:=trim(DataSetCont.Fields[13].AsString);
+   parrespo.text:=trim(DataSetCont.Fields[14].AsString);
+   lrrespo.text:= trim(DataSetCont.Fields[15].AsString);
+  end;
+  DataSetCont.Connection:=nil;
+
+  // lleno la grilla
+  CONTRIBUYENTE.Close;
+  Modulo2.ObjConexion.ConnectionString:=modulo2.Sistema.ConectSeg;
+  CONTRIBUYENTE.Connection:=modulo2.ObjConexion;
+  DataSource1.DataSet:=CONTRIBUYENTE;
+  CONTRIBUYENTE.CommandText:='EXEC SPP_ContribuyentesDerConst 1, null,' + dni + ',' + idexpte;
+  CONTRIBUYENTE.Open;
+  if not CONTRIBUYENTE.IsEmpty then BEGIN
+   emailrespo.Text := trim(CONTRIBUYENTE.Fields[16].AsString);
+   telefonorespo.Text :=  trim(CONTRIBUYENTE.Fields[17].AsString);
+   tpotit.Text :=  trim(CONTRIBUYENTE.Fields[18].AsString);
+  END;
+  CONTRIBUYENTE.Connection:=nil;
+
+  DataSet2.ConnectionString:=modulo2.Sistema.ConectSeg;
+  DataSet2.CommandText:='SELECT detalle FROM [SeguridadWEB].[dbo].[Fn_ElDomicilioContribuyente ] (' + idexpte + ')';
+  DataSet2.Open;
+  if not DataSet2.isempty then begin
+   domrespo.text:= trim(DataSet2.Fields[0].AsString);
+  end;
+  DataSet2.Connection:=nil;
+end;
+if nro = 6  then  begin   // traemos la partida del expte
+  DataSetInmu.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  DataSetInmu.CommandText:='SELECT IdExpte,Partida ,barrio, calle ,Domicilio,Altura , '
+	+'Piso,Dpto ,Mz,Torre,Casa ,Sector ,Parcela,LoteRural,DomObra,FormaPartida FROM FN_ObtenerExpedientesInmuebles ( '+ idexpte+ ')';
+  DataSetInmu.Open;
+  if not DataSetInmu.isempty then begin
+   lapar:= trim(DataSetInmu.Fields[2].AsString);
+   barrioinmu.ItemIndex:=barrioinmu.Items.IndexOf(trim(DataSetInmu.Fields[2].AsString));
+   calleinmu.ItemIndex:=calleinmu.Items.IndexOf(trim(DataSetInmu.Fields[3].AsString));
+   domiinmu.text:= trim(DataSetInmu.Fields[4].AsString);
+   alturainmu.text:=trim(DataSetInmu.Fields[5].AsString);
+   pisoinmu.text:= trim(DataSetInmu.Fields[6].AsString);
+   deptoinmu.text:=trim(DataSetInmu.Fields[7].AsString);
+   mzinmu.text:=   trim(DataSetInmu.Fields[8].AsString);
+   torreinmu.text:=trim(DataSetInmu.Fields[9].AsString);
+   casainmu.text:= trim(DataSetInmu.Fields[10].AsString);
+   sectorinmu.text:=trim(DataSetInmu.Fields[11].AsString);
+   parinmu.text:=trim(DataSetInmu.Fields[12].AsString);
+   lrinmu.text:= trim(DataSetInmu.Fields[13].AsString);
+   domobra.text:=trim(DataSetInmu.Fields[14].AsString);
+   tpopartida.text:=trim(DataSetInmu.Fields[15].AsString);
+  end;
+  DataSetInmu.Connection:=nil;
+end;
+if nro = 7 then begin // buscamos un contrib
+  if trim(ONOMB.Text) = '' then txt:='NULL'
+   else txt:=chr(39) + trim(ONOMB.Text) + chr(39);
+  if trim(ODNI.Text) = '' then txt:=txt + ' , NULL'
+   else txt:=txt + ' , ' + chr(39) + trim(ODNI.Text) + chr(39);
+  if trim(OCUIT.Text) = '' then txt:=txt + ' , NULL'
+   else txt:=txt + ' , ' + chr(39) + trim(OCUIT.Text) + chr(39);
+  CONTRIBUYENTE.Close;
+  Modulo2.ObjConexion.ConnectionString:=modulo2.Sistema.ConectSeg;
+  CONTRIBUYENTE.Connection:=modulo2.ObjConexion;
+  DataSource1.DataSet:=CONTRIBUYENTE;
+  CONTRIBUYENTE.CommandText:='EXEC SPP_ContribuyentesDerConst 1, ' + txt;
+  CONTRIBUYENTE.Open;
+  if CONTRIBUYENTE.IsEmpty then BEGIN
+   messagedlg('Contribuyente Inexistente...' + chr(13) + 'Debe darlo de  Alta?',mtWarning,[mbok,mbCancel],0);
+   PC1.ActivePage:=PC1.Pages[0];
+   odni.SetFocus;
+  END;
+  CONTRIBUYENTE.Connection:=nil;
+end;
+if nro = 8  then  begin  /// traemos la grilla de importes
+  DataSetImp.Close;
+  DataSetImp.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  DataSetImp.CommandText:='SELECT Importe FROM ExpedienteCalculo WHERE (IdExpediente = ' + idexpte + ') and importe is not null';
+  DataSetImp.Open;
+  if not DataSetImp.isempty then begin
+   eltotal := strtofloat(trim(DataSetImp.Fields[0].AsString));
+   total.Text := floattostr(eltotal);
+  end;
+  DataSetImp.Connection:=nil;
+end;
+if nro = 9 then begin
+  DataSetDom.ConnectionString:=modulo2.Sistema.ConectSeg;
+  DataSetDom.CommandText:='SELECT detalle FROM [SeguridadWEB].[dbo].[Fn_ElDomicilioContribuyente] (' + idexptecont + ')';
+  DataSetDom.Open;
+  if not DataSetDom.isempty then begin
+   domrespo.text:= trim(DataSetDom.Fields[0].AsString);
+  end;
+  DataSetDom.Connection:=nil;
+end;
+if nro = 10 then begin
+  //DataSetAnticipo.Close;
+  //DataSetAnticipo.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  //DataSetAnticipo.CommandText:='SELECT Porcentaje FROM TarifasAnticipoDerConst where (idanticipo=' + TComboClase(anticipos.Items.Objects[anticipos.ItemIndex]).Param1 + ')';
+  //DataSetAnticipo.Open;
+  //if not DataSetAnticipo.isempty then begin
+  // edit2.text:= trim(DataSetAnticipo.Fields[0].AsString);
+  // liquiimporte.Text := floattostr((strtofloat(importetotal.Text) * strtoint(edit2.Text))/100);
+  //end;
+  //DataSetAnticipo.Connection:=nil;
+end;
+if nro = 11 then begin
+  DataSetAnticipo.Close;
+  DataSetAnticipo.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  DataSetAnticipo.CommandText:='SELECT importesujerido FROM [municipio].[dbo].[rubrossub] where (idsubrubro=1110462)';
+  DataSetAnticipo.Open;
+  if not DataSetAnticipo.isempty then begin
+   valorliqui:= trim(DataSetAnticipo.Fields[0].AsString);
+  end;
+  DataSetAnticipo.Connection:=nil;
+end;
+if nro = 12 then begin /// traemos el contrib de un expediente
+  DataSetP.ConnectionString:=modulo2.Sistema.ConectDerConst;
+  DataSetP.CommandText :='SELECT dat.IdExpte,dat.Cuim , dat.Contribuyente,dat.NroDni,dat.barrio, dat.calle ,'
+  +'dat.Domicilio,dat.Altura,dat.Piso,dat.Dpto,dat.Mz,dat.Torre,dat.Casa,dat.Sector,dat.Parcela,'
+  +'dat.LoteRural ,dat.idcontrib, prof.nromatricula,prof.Email,prof.Telefono '
+	+ ' FROM FN_ObtenerExpedientesProfesional  ('+ idexpte+ ') dat '
+  + ' inner join ExpedienteProfesional prof on prof.Cuim = dat.cuim';
+  DataSetP.Open;
+  if not DataSetP.isempty then begin
+   dnip:= trim(DataSetP.Fields[3].AsString);
+   barriop.ItemIndex:=barriop.Items.IndexOf(trim(DataSetP.Fields[4].AsString));
+   callep.ItemIndex:=callep.Items.IndexOf(trim(DataSetP.Fields[5].AsString));
+   domp.text:= trim(DataSetP.Fields[6].AsString);
+   alturap.text:=trim(DataSetP.Fields[7].AsString);
+   pisop.text:= trim(DataSetP.Fields[8].AsString);
+   deptop.text:=trim(DataSetP.Fields[9].AsString);
+   mzp.text:=   trim(DataSetP.Fields[10].AsString);
+   torrep.text:=trim(DataSetP.Fields[11].AsString);
+   casap.text:= trim(DataSetP.Fields[12].AsString);
+   sectorp.text:=trim(DataSetP.Fields[13].AsString);
+   parp.text:= trim(DataSetP.Fields[14].AsString);
+   lrp.text:=  trim(DataSetP.Fields[15].AsString);
+   matricula.Text :=trim(DataSetP.Fields[17].AsString);
+   emailp.Text :=   trim(DataSetP.Fields[18].AsString);
+   telefonop.Text :=trim(DataSetP.Fields[19].AsString);
+
+   PROFESIONAL.Close;
+   Modulo2.ObjConexion.ConnectionString:=modulo2.Sistema.ConectSeg;
+   PROFESIONAL.Connection:=modulo2.ObjConexion;
+   DataSource4.DataSet:=PROFESIONAL;
+   PROFESIONAL.CommandText:='EXEC SPP_ProfesionalDerConst null,' + dnip + ',' + idexpte;
+   PROFESIONAL.Open;
+   if not PROFESIONAL.IsEmpty then BEGIN
+    //
+   END;
+  end;
+  DataSetP.Connection:=nil;
+  PROFESIONAL.Connection:=nil;
+end;
+if nro = 13 then begin
+ DataSet2.ConnectionString:=modulo2.Sistema.ConectDerConst;
+ DataSet2.CommandText:='SELECT isnull(PorcentajeAnticipo,0) as porcentaje FROM ImportePresupuestoConfig WHERE  (FechaBaja IS NULL)';
+ DataSet2.Open;
+ if DataSet2.IsEmpty then begin
+  dtopresu:=0;
+ end
+ else begin
+  dtopresu:=strtofloat(DataSet2.Fields[0].AsString);
+ end;
+ DataSet2.Close;
+ DataSet2.Connection:=nil;
+end;
+Modulo2.ObjConexion.Close;
+Modulo2.ObjConexion.Free;
+end;
+
+procedure TConfAnu_ExptesDerConst.Edit1KeyPress(Sender: TObject; var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  busexpte.SetFocus;
+ end
+ else begin
+  if ( StrScan('1234567890',Key) <> nil ) or ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TConfAnu_ExptesDerConst.anticiposExit(Sender: TObject);
+begin
+// if anticipos.ItemIndex < 0 then begin
+//  messagedlg('Error!! Seleccione un tipo de Detalle de Pago válido',mterror,[mbok],0);
+//  anticipos.SetFocus;
+// end
+// else Consultas(10);
+end;
+
+procedure TConfAnu_ExptesDerConst.anticiposKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+ //if key = #13 then begin
+ // Key := #0;
+ // aceptar.SetFocus;
+ //end;
+end;
+
+procedure TConfAnu_ExptesDerConst.BORRAClick(Sender: TObject);
+var gf:integer;
+    Cnx2:TADOConnection;
+    Anula_General:TAnula_General;
+begin
+ gf:=messagedlg('Desea ANULAR este Expediente..?',mtWarning,[mbok,mbCancel],0);
+ if gf = 1 then begin
+  Anula_General:= TAnula_General.create(self);
+  try
+   Anula_General.elid := idexpte;
+   Anula_General.ShowModal;
+  finally
+   Anula_General.destroy;
+  end;
+  PC1.ActivePage:=PC1.Pages[0];
+ end;
+end;
+
+procedure TConfAnu_ExptesDerConst.BuscarClick(Sender: TObject);
+begin
+Consultas(7); //
+end;
+
+procedure TConfAnu_ExptesDerConst.SALEClick(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TConfAnu_ExptesDerConst.SECTORExit(Sender: TObject);
+begin
+ if SECTOR.ItemIndex < 0 then begin
+  messagedlg('Error!! Seleccione una Letra de Expediente válido',mterror,[mbok],0);
+  SECTOR.SetFocus;
+ end;
+end;
+
+procedure TConfAnu_ExptesDerConst.SECTORKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  EDIT1.SetFocus;
+ end
+ else begin
+  if ( StrScan('abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ',Key) <> nil ) or ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+procedure TConfAnu_ExptesDerConst.aceptarClick(Sender: TObject);
+var gf:integer;
+    veri:boolean;
+    Cnx2:TADOConnection;
+    tx,txt,txtm,tipoobra,totalpresudescto:string;
+begin
+ totalpresudescto:='0';
+ Cnx2:=TADOConnection.Create(nil);
+ Cnx2.LoginPrompt:=false;
+ Cnx2.ConnectionString:=modulo2.Sistema.ConectDerConst;
+ tipoobra:=trim(tiponotif.Text) + '/' + trim(destinoobra.Text);
+ if liquida =true then begin
+  gf:=messagedlg('Desea IMPRIMIR la Liquidacion del Derecho de Construccion..?',mtWarning,[mbok,mbCancel],0);
+  if gf = 1 then begin
+   Recibo:=TRecibo.Create;
+   GuardarRecibo(2);
+   ImprimeRecibo;
+   try
+    /// calculo el 30% dto especial
+    if dtopresu = 0 then begin
+     totalpresudescto := trim(importetotal.Text)
+    end
+    else begin
+     totalpresudescto := floattostr(strtofloat(importetotal.Text) - ((strtofloat(importetotal.Text) * dtopresu)/100));
+    end;
+
+    Com1:=TADOCommand.Create(nil);
+    Com1.Connection:=Cnx2;
+    Com1.CommandText:='SPA_ExpedienteLiquidacionAnticipo ' + idexpte
+    + ' , ' + chr(39) + tipoobra + chr(39) //+ chr(39) + trim(anticipos.Text) + chr(39)
+    + ' , ' + totalpresudescto //trim(importetotal.Text)
+    + ' , null ' //+ trim(edit2.Text)
+    + ' , ' + trim(importetotal.Text) //+ trim(liquiimporte.Text)
+    + ' , ' + Recibo.NroLiquidacion
+    + ' , ' + modulo2.Usuario.UsuNro;
+    Com1.Execute;
+   except
+    messagedlg('ERROR al GUARDAR la Liquidacion...',mtError,[mbok],0);
+   end;
+   FreeAndNil(Com1);
+   Cnx2.Close;
+  end;
+  FreeAndNil(Recibo);
+  if liqui1.Checked  then begin
+   Recibo:=TRecibo.Create;
+   GuardarRecibo(0);
+   ImprimeRecibo2();
+  end;
+  if liqui2.Checked  then begin
+   Recibo:=TRecibo.Create;
+   GuardarRecibo(1);
+   ImprimeRecibo2();
+  end;
+ end;
+
+ if confir=true then begin
+  gf:=messagedlg('Desea CONFIRMAR los datos de este Expediente..?',mtWarning,[mbok,mbCancel],0);
+  if gf = 1 then begin
+   try
+    Com1:=TADOCommand.Create(nil);
+    Com1.Connection:=Cnx2;
+    Com1.CommandText:='SPM_ExpedienteConf ' + idexpte
+    + ' , ' + modulo2.Usuario.UsuNro
+    + ' , ' + importetotal.Text
+    + ' , ' + chr(39) + modulo2.Sistema.MyHost + chr(39)
+    + ' , ' + chr(39) + modulo2.Sistema.MyIP + chr(39);
+    Com1.Execute;
+    messagedlg('El Expedinte se ha CONFIRMADO Correctamente!!',mtConfirmation,[mbok],0);
+    guarda.Enabled :=false;
+    confir:=false;
+    impliqui.Enabled :=false;
+    panel11.Visible :=false;
+    PC1.ActivePage:=PC1.Pages[0];
+    sector.Text := trim(letra.Text);
+    edit1.Text := trim(nroe.Text);
+    busexpte.Click;
+   except
+    messagedlg('ERROR al Confirmar el Expediente',mtError,[mbok],0);
+   end;
+   FreeAndNil(Com1);
+   Cnx2.Close;
+  end;
+ end;
+end;
+
+procedure TConfAnu_ExptesDerConst.JvBitBtn2Click(Sender: TObject);
+begin
+  panel11.Visible :=false;
+  PC1.ActivePage:=PC1.Pages[0];
+end;
+
+procedure TConfAnu_ExptesDerConst.JvDBGrid1CellClick(Column: TColumn);
+begin
+if not EXPEDIENTES.IsEmpty then begin
+ if EXPEDIENTES.Fields[0].AsInteger <> 0 then begin
+  selec:=true;
+  pc1.Pages[1].TabVisible:=true;
+  pc1.Pages[2].TabVisible:=true;
+  pc1.Pages[3].TabVisible:=true;
+  pc1.Pages[4].TabVisible:=true;
+  pc1.Pages[5].TabVisible:=true;
+  idexpte:= trim(EXPEDIENTES.Fields[0].AsString);
+  elexpte:= trim(EXPEDIENTES.Fields[1].AsString);
+  letra.Text:=trim(EXPEDIENTES.Fields[15].AsString);
+  nroe.Text:= trim(EXPEDIENTES.Fields[17].AsString);
+  año.Text:=  trim(EXPEDIENTES.Fields[16].AsString);
+  letra1.Text:=trim(EXPEDIENTES.Fields[0].AsString); //trim(EXPEDIENTES.Fields[18].AsString);
+  nro1.Text:=  trim(EXPEDIENTES.Fields[1].AsString); //trim(EXPEDIENTES.Fields[20].AsString);
+  //año1.Text :=  trim(EXPEDIENTES.Fields[19].AsString);
+  tiponotif.ItemIndex:=tiponotif.Items.IndexOf(trim(EXPEDIENTES.Fields[3].AsString));
+  destinoobra.Text:=  trim(EXPEDIENTES.Fields[21].AsString);
+  empresa.Text:=  trim(EXPEDIENTES.Fields[9].AsString);
+  reliqui.Checked:=EXPEDIENTES.Fields[4].AsBoolean;
+  opublica.Checked:=EXPEDIENTES.Fields[8].AsBoolean;
+  visado.Text:= trim(EXPEDIENTES.Fields[23].AsString);
+  añovisado.Text:=trim(EXPEDIENTES.Fields[6].AsString);
+  revocado.text:=trim(EXPEDIENTES.Fields[5].AsString);
+  revocadoaño.text:=trim(EXPEDIENTES.Fields[22].AsString);
+  opartida.Text:= trim(EXPEDIENTES.Fields[24].AsString);
+  plano.Text:= trim(EXPEDIENTES.Fields[10].AsString);
+  resolucion.Text:=trim(EXPEDIENTES.Fields[11].AsString);
+  finalobra.Text:=trim(EXPEDIENTES.Fields[12].AsString);
+  exisdoc.Text:= trim(EXPEDIENTES.Fields[25].AsString);
+  idexptecont:= trim(EXPEDIENTES.Fields[26].AsString);
+  cuimexptecont:=trim(EXPEDIENTES.Fields[27].AsString);
+  nomexptecont:= trim(EXPEDIENTES.Fields[28].AsString);
+  consultas(5); // titular
+  consultas(6); // inmueble
+  consultas(9);   // dom contribuyente
+  consultas(12);   // profesional
+  if trim(EXPEDIENTES.Fields[13].AsString)='True' then begin
+   guarda.Enabled:=false;
+   borra.Enabled:=false;
+   impliqui.Enabled:=false;
+  end
+  else begin
+   if trim(EXPEDIENTES.Fields[29].AsString)='True' then  begin
+    consultas(8);   //  calculos importes
+    guarda.Enabled:=false;
+    impliqui.Enabled:=true;
+    infformu.Enabled:=true;
+    borra.Enabled :=false;
+   end
+   else  begin
+    guarda.Enabled:=true;
+   end;
+  end;
+  PC1.ActivePage:=PC1.Pages[1];
+ end;
+end;
+end;
+
+procedure TConfAnu_ExptesDerConst.JvDBGrid1DrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+var t:integer;
+begin
+ if trim(JvDBGrid1.Fields[29].Text) = 'True' then t:=1 ;
+ if trim(JvDBGrid1.Fields[13].Text) = 'True' then t:=2 ;
+ case t of
+  1:begin
+   JvDBGrid1.Canvas.Brush.Color:=clLime;
+   JvDBGrid1.Canvas.FillRect(Rect);
+   JvDBGrid1.Canvas.Font.Color:= clBlack;
+  end;
+  2:begin
+   JvDBGrid1.Canvas.Brush.Color:=clYellow;
+   JvDBGrid1.Canvas.FillRect(Rect);
+   JvDBGrid1.Canvas.Font.Color:= clBlack;
+  end;
+ end;
+ JvDBGrid1.DefaultDrawColumnCell(Rect,Datacol,Column,State);
+end;
+
+procedure TConfAnu_ExptesDerConst.JvDBGrid2CellClick(Column: TColumn);
+begin
+{if not CONTRIBUYENTE.IsEmpty then begin
+ if CONTRIBUYENTE.Fields[0].AsInteger <> 0 then begin
+  seleccontrib:=true;
+  idcontrib:=CONTRIBUYENTE.Fields[0].AsString;
+  cuim:=trim(CONTRIBUYENTE.Fields[1].AsString);
+  eltitu:=trim(CONTRIBUYENTE.Fields[2].AsString);
+  Consultas(0);
+  domrespo.SetFocus;
+ end
+ else begin
+   messagedlg('No se puede editar el contribuyente DESCONOCIDO',mterror,[mbok],0);
+   PC1.ActivePage:=PC1.Pages[0];
+   PC1.Pages[1].Enabled:=false;
+ end;
+end;  }
+end;
+
+procedure TConfAnu_ExptesDerConst.grilla2DrawCell(Sender: TObject; ACol,
+  ARow: Integer; Rect: TRect; State: TGridDrawState);
+begin
+{with TJvStringGrid(Sender) do begin
+  if not (gdFixed in State) then begin
+    if (gdRowSelected in State) then
+      Canvas.Brush.Color:=clWindow
+    else
+      Canvas.Brush.Color:=clInfoBk; //$00E6C4CD;
+  end;
+  Canvas.TextRect( Rect, Rect.Left+2, Rect.Top+2, Cells[acol, arow]);
+end; }
+end;
+
+procedure TConfAnu_ExptesDerConst.grilla2ExitCell(Sender: TJvStringGrid;
+  AColumn, ARow: Integer; const EditText: string);
+var r1,r2,eltotal:real;
+    ps:boolean;
+    t,y:integer;
+begin
+{grilla2.Options:=[goFixedVertLine,goFixedHorzLine,goVertLine,goHorzLine,goEditing];
+ps:=true;
+eltotal:=0;
+sumdoc:=0;
+if AColumn <= 4 then begin
+  try
+    r1:=StrToFloat(Grilla2.Cells[AColumn,ARow]);
+  except
+    try
+      r1:=StrToFloat(AnsiReplaceStr(Grilla2.Cells[AColumn,ARow],'.',','));
+    except
+      ps:=false;
+      messagedlg('El valor ingresado en una fila no es numérico',mtError,[mbok],0);
+    end;
+  end;
+  if ps then begin
+      sumdoc:= sumdoc + StrToFloat(trim(exisdoc.Text))
+               + StrToFloat(Grilla2.Cells[2,1])
+               + StrToFloat(Grilla2.Cells[2,2])
+               + StrToFloat(Grilla2.Cells[2,3]) ;
+
+      if sumdoc > 100 then begin
+       Grilla2.Cells[4,1]:='0.006';
+       Grilla2.Cells[4,2]:='0.003';
+      end
+      else begin
+       Grilla2.Cells[4,1]:='0.002';
+       Grilla2.Cells[4,2]:='0.001';
+      end;
+       //Aca hay que calcular el total
+       //if StrToFloat(Grilla2.Cells[2,1]) > 100 then Grilla2.Cells[4,1]:='0.006'
+        //else  Grilla2.Cells[4,1]:='0.002';
+
+       //if StrToFloat(Grilla2.Cells[2,2]) < 100 then Grilla2.Cells[4,2]:='0.001'
+        //else  Grilla2.Cells[4,2]:='0.003';
+   try
+     r1:=StrToFloat(Grilla2.Cells[3,ARow]);
+     r2:=StrToFloat(Grilla2.Cells[4,ARow]);
+   except
+     try
+      r1:=StrToFloat(AnsiReplaceStr(Grilla2.Cells[3,ARow],'.',','));
+      r2:=StrToFloat(AnsiReplaceStr(Grilla2.Cells[4,ARow],'.',','));
+     except
+     end;
+    end;
+   grilla2.Cells[5,ARow]:=FloatToStr(r1 * r2);
+   for t:=1 to grilla2.RowCount-1 do begin
+    eltotal := eltotal + strtofloat(Grilla2.Cells[5,t]);
+   end;
+   total.Text := floattostr(eltotal);
+  end;
+end;     }
+end;
+
+procedure TConfAnu_ExptesDerConst.grilla2KeyPress(Sender: TObject; var Key: Char);
+begin
+{if (key = #13) or (key = #9) then begin
+  if (Grilla2.Row = Grilla2.RowCount-1) and (Grilla2.Col = 4) then begin
+    //
+  end
+  else begin
+    Grilla2.Col:=Grilla2.Col + 1;
+    if (Grilla2.Col = 4) and not(Pos4) then begin
+      Grilla2.Col:=2;
+      //exepcion.SetFocus;
+      if not (Grilla2.Row = Grilla2.RowCount-1) then Grilla2.Row:=Grilla2.Row + 1;
+    end;
+    if (Grilla2.Col = 5) then begin
+      Grilla2.Col:=2;
+      //exepcion.SetFocus;
+      if not (Grilla2.Row = Grilla2.RowCount-1) then Grilla2.Row:=Grilla2.Row + 1;
+    end;
+  end;
+end
+else begin
+  if ( StrScan('0123456789.',Key) <> nil )
+  or ( Key = Char(VK_BACK) ) then begin
+    if (Grilla2.Col = 4) and not Pos4 then Key := #0
+    else if (Grilla2.Col = 5) then Key := #0
+    else if (Grilla2.Col < 4) then Key:=UpCase(Key)
+  end
+  else
+    Key := #0;
+end;    }
+end;
+
+procedure TConfAnu_ExptesDerConst.BuscarPClick(Sender: TObject);
+var t,j,p:integer;
+r,bloqueo:boolean;
+txt:string;
+TxtW:widestring;
+begin
+  N2.text:='...';
+  N3.text:='...';N4.text:='...';N6.text:='...';
+  N7.text:='...';N8.text:='...';N9.text:='...';
+  Barra1.Panels[1].Text:='Buscando Datos del Inmueble. Por Favor Espere!!';
+  DataSetPartida.ConnectionString:=modulo2.Sistema.ConectUsu;
+  DataSetPartida.CommandText:='SELECT PARTIDA,rtrim(ltrim(NOMRAZ)) + '' ('' + rtrim(ltrim(tipotitular)) + '')'' ,'
+  + 'BARRIO,CALLE,PUERTA,RESPOPAG,FECHA_ALTA,CUOTA_TASA,CUOTA_INMO1,CUOTA_INMO2,CUOTA_INMO3,CUOTA_INMO4,CUOTA_INMO5,'  //12
+  + 'VAL_TOTAL,NOMENC,NRO_DOC,CUIM,MANZANA,SECTOR,PARCELA,TORRE,PISO,DEPTO,CASA,sup_mens,'  //24
+  + 'anio,fecha_baja,fecha_adj,Habilitada FROM DatosPartidasActualesBis (' + trim(OPARTIDA.Text) + ') order by nomraz;';
+  DataSetPartida.Open;
+  Barra1.Panels[1].Text:='...';
+  if DataSetPartida.RecordCount = 0 then begin
+   messagedlg('No Existe el N° de Partida Ingresado',mterror,[mbok],0);
+   DataSetPartida.Close;
+   OPARTIDA.SetFocus;
+  end
+  else begin
+   if DataSetPartida.Fields[28].AsBoolean then begin
+    DataSetPartida.RecNo:=DataSetPartida.RecordCount;
+    N9.Text:= trim(DataSetPartida.Fields[1].AsString);
+    n2.Text:= trim(DataSetPartida.Fields[0].AsString);
+    n3.Text:= trim(DataSetPartida.Fields[24].AsString);
+    n4.Text:= trim(DataSetPartida.Fields[14].AsString);
+    n6.Text:= trim(DataSetPartida.Fields[6].AsString);
+    n7.Text:= trim(DataSetPartida.Fields[26].AsString);
+    n8.Text:= trim(DataSetPartida.Fields[27].AsString);
+    if not selec then  barrioinmu.SetFocus;
+   end
+   else begin
+    messagedlg('Partida NO HABILITADA O NO PUBLICA!!... Posible Espacio VERDE...',mterror,[mbok],0);
+    r:=false;
+   end;
+  end;
+  DataSetPartida.Close;
+end;
+
+procedure TConfAnu_ExptesDerConst.BusExpteClick(Sender: TObject);
+begin
+Consultas(4);
+end;
+
+procedure TConfAnu_ExptesDerConst.ExisDocChange(Sender: TObject);
+begin
+ sumdoc:= sumdoc + StrToFloat(trim(exisdoc.Text))
+ + StrToFloat(Grilla2.Cells[2,1])
+ + StrToFloat(Grilla2.Cells[2,2])
+ + StrToFloat(Grilla2.Cells[2,3]) ;
+end;
+
+procedure TConfAnu_ExptesDerConst.guardaClick(Sender: TObject);
+var gf:integer;
+    veri:boolean;
+    Cnx2:TADOConnection;
+    tx,txt,txtm:string;
+begin
+ confir:=true;
+ if confir=true then begin
+  PC1.ActivePage:=PC1.Pages[1];
+  //label83.Visible :=false;
+  //anticipos.Visible :=false;
+  //label84.Visible :=false;
+  //edit2.Visible :=false;
+  //label82.Visible :=false;
+  //liquiimporte.Visible :=false;
+  panel11.Visible :=true;
+  importetotal.SetFocus;
+ end
+end;
+
+procedure TConfAnu_ExptesDerConst.grilla2SelectCell(Sender: TObject; ACol, ARow: Integer;
+  var CanSelect: Boolean);
+begin
+ if ((ACol = 4) and not(Pos4)) or (ACol = 5) then grilla2.Options:=[goFixedVertLine,goFixedHorzLine,goVertLine,goHorzLine]
+  else grilla2.Options:=[goFixedVertLine,goFixedHorzLine,goVertLine,goHorzLine,goEditing];
+ if (grilla2.Cells[0,4] = '4') and (Acol = 2) then grilla2.Options:=[goFixedVertLine,goFixedHorzLine,goVertLine,goHorzLine]
+  else grilla2.Options:=[goFixedVertLine,goFixedHorzLine,goVertLine,goHorzLine,goEditing];
+end;
+
+procedure  TConfAnu_ExptesDerConst.GuardarRecibo(nro:byte);
+var dmi,tmp,imp,GER,totalpresudescto1:string;
+    t,y:integer;
+    DataSet3:TADODataSet;
+    Com1:TADOCommand;
+    Cnx2:TADOConnection;
+begin
+ dmi:='';
+ if trim(barriorespo.Text)='DESCONOCIDO' then begin
+  if trim(callerespo.Text)='DESCONOCIDO' then begin
+   dmi:= dmi + trim(AnsiReplaceStr(trim(domrespo.Text),chr(39),chr(33)))
+  end
+  else begin
+   dmi:= dmi + 'Bº ' + trim(barriorespo.Text) + ' ' +  trim(callerespo.Text) + ' ' + trim(alturarespo.Text);
+  end;
+ end
+ else begin
+  if trim(callerespo.Text)='DESCONOCIDO' then begin
+   dmi:= dmi + trim(AnsiReplaceStr(trim(domrespo.Text),chr(39),chr(33)))
+  end
+  else begin
+   dmi:= dmi + 'Bº ' + trim(barriorespo.Text) + ' ' +  trim(callerespo.Text) + ' ' + trim(alturarespo.Text);
+  end;
+ end;
+
+ //Caso de la liquidacion por la resolucion
+ if nro = 0 then begin
+  Recibo.TituloDesc:='ACT. ADMINISTRA. Y SELLOS';
+  Recibo.CuotaDe:='UNICA';
+  recibo.PrimerV:= FechaAct;
+  recibo.Anio:=RightStr(FechaAct,4);
+  recibo.NroCuota :='1'; //trim(tiponotif.Text);
+  recibo.FechaIni :=trim(destinoobra.Text);
+  recibo.Objetos :=trim(empresa.Text);
+  Recibo.NombreTit:=AnsiReplaceStr(trim(titrespo.Text),chr(39),chr(33));
+  Recibo.DomicilioTit:=AnsiReplaceStr(trim(domrespo.Text),chr(39),chr(33));
+  Recibo.CuimTit:=AnsiReplaceStr(trim(cuimtit.Text),chr(39),chr(33));//cuim;
+  Recibo.NroPlan :=trim(opartida.Text);
+  GER:=trim(letra.Text) + StrFill(trim(nroe.Text),8,'0','I') + '/'+ trim(año.Text) ;
+  Recibo.DetalleRecibo:='ABONA POR TRAMITES NO CONTEMPLADOS POR RESOLUCION';//   + GER ;//; + );
+  Recibo.NroUsuario:=Modulo2.Usuario.UsuNro;
+  try
+   Cnx2:=TADOConnection.Create(nil);
+   Cnx2.LoginPrompt:=false;
+   Cnx2.ConnectionString:=Modulo2.Sistema.ConectUsu;
+   DataSet3:=TADODataSet.Create(nil);
+   DataSet3.Connection:=Cnx2;
+   DataSet3.CommandText:='EXEC darmaximonro ' + chr(39) + 'TASAANUALLIQUIDACION' + chr(39) + ' , ' + modulo2.Sistema.PuntoV ;
+   DataSet3.Open;
+   Recibo.NroLiquidacion:=StrFill(DataSet3.Fields[0].AsString,7,'0','');
+   DataSet3.Close;
+  except
+   on E: Exception do EnviarLog(Self.Caption, E.Message);
+  end;
+  imp:='13';
+  Recibo.SubRubro:='1110462';
+  if strtofloat(trim(valorliqui)) < 1000000.00 then begin
+    Recibo.Importe1:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(valorliqui,',','.')));
+    Recibo.Importe2:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(valorliqui,',','.')));
+    Recibo.NroCobro:=modulo2.Sistema.PuntoV + RightStr(FechaAct,2) + ' - ' + imp + '90';
+    dmi:='927' + StrFill(AnsiReplaceStr(Recibo.Importe1,'.',''),8,'0','');
+    tmp:=FechaAct;
+    if strtodate(trim(FechaAct)) > strtodate(FechaAct) then tmp:=trim(FechaAct);
+    dmi:=dmi + RightStr(tmp,2);
+    dmi:=dmi + StrFill(fecha_dif('01/01/' +  RightStr(tmp,4),FechaAct),3,'0','');
+    dmi:=dmi + StrFill(modulo2.Sistema.PuntoV,2,'0','') + RightStr(tmp,2);
+    dmi:=dmi + imp + '00';
+    dmi:=dmi + Recibo.NroLiquidacion + '0';
+    dmi:=dmi + StrFill(AnsiReplaceStr(Recibo.Importe1,'.',''),8,'0','');
+    dmi:=dmi + RightStr(tmp,2);
+    dmi:=dmi + StrFill(fecha_dif('01/01/' +  RightStr(tmp,4),FechaAct),3,'0','');
+    dmi:=dmi + digitos(dmi, 1);
+    Recibo.NroCodBar:=dmi;
+  end
+  else begin
+   Cnx2:=TADOConnection.Create(nil);
+   Cnx2.LoginPrompt:=false;
+   Cnx2.ConnectionString:=Modulo2.Sistema.ConectDb;
+   DataSet3:=TADODataSet.Create(nil);
+   DataSet3.Connection:=Cnx2;
+   //Recibo.Importe1:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(valorliqui,',','.')));
+   //Recibo.Importe2:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(valorliqui,',','.')));
+   DataSet3.CommandText:='select codbar from [ComarcioTasa].[dbo].[TodosCorbar] ('
+    + chr(39) + trim(valorliqui) + chr(39)
+    + ' , ' + chr(39) + FechaAct + chr(39)
+    + ' , ' + chr(39) + trim(valorliqui) + chr(39)
+    + ' , ' + chr(39) + FechaAct + chr(39)
+    + ' , ' + chr(39) + Recibo.SubRubro + chr(39) + ' , 0 '
+    + ' , ' + chr(39) + Recibo.NroLiquidacion + chr(39)
+    + ' , ' + chr(39) + modulo2.Sistema.PuntoV + chr(39) + ')';
+   DataSet3.Open;
+   dmi:=DataSet3.Fields[0].AsString;
+   Recibo.NroCodBar:=dmi;
+   DataSet3.Close;
+  end;
+ end;
+
+  //Caso de la liquidacion por final de obra
+ if nro = 1 then begin
+  Recibo.TituloDesc:='ACT. ADMINISTRA. Y SELLOS';
+  Recibo.CuotaDe:='UNICA';
+  recibo.PrimerV:= FechaAct;
+  recibo.Anio:=RightStr(FechaAct,4);
+  recibo.NroCuota :='1'; //trim(tiponotif.Text);
+  recibo.FechaIni :=trim(destinoobra.Text);
+  recibo.Objetos :=trim(empresa.Text);
+  Recibo.NombreTit:=AnsiReplaceStr(trim(titrespo.Text),chr(39),chr(33));
+  Recibo.DomicilioTit:=AnsiReplaceStr(trim(domrespo.Text),chr(39),chr(33));
+  Recibo.CuimTit:=AnsiReplaceStr(trim(cuimtit.Text),chr(39),chr(33));//cuim;
+  Recibo.NroPlan :=trim(opartida.Text);
+  GER:=trim(letra.Text) + StrFill(trim(nroe.Text),8,'0','I') + '/'+ trim(año.Text) ;
+  Recibo.DetalleRecibo:='ABONA POR TRAMITES NO CONTEMPLADOS POR FINAL DE OBRA';//   + GER ;//; + );
+  Recibo.NroUsuario:=Modulo2.Usuario.UsuNro;
+  try
+   Cnx2:=TADOConnection.Create(nil);
+   Cnx2.LoginPrompt:=false;
+   Cnx2.ConnectionString:=Modulo2.Sistema.ConectUsu;
+   DataSet3:=TADODataSet.Create(nil);
+   DataSet3.Connection:=Cnx2;
+   DataSet3.CommandText:='EXEC darmaximonro ' + chr(39) + 'TASAANUALLIQUIDACION' + chr(39) + ' , ' + modulo2.Sistema.PuntoV ;
+   DataSet3.Open;
+   Recibo.NroLiquidacion:=StrFill(DataSet3.Fields[0].AsString,7,'0','');
+   DataSet3.Close;
+  except
+   on E: Exception do EnviarLog(Self.Caption, E.Message);
+  end;
+  imp:='13';
+  Recibo.SubRubro:='1110462';
+   if strtofloat(trim(valorliqui)) < 1000000.00 then begin
+    Recibo.Importe1:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(valorliqui,',','.')));
+    Recibo.Importe2:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(valorliqui,',','.')));
+    Recibo.NroCobro:=modulo2.Sistema.PuntoV + RightStr(FechaAct,2) + ' - ' + imp + '90';
+    dmi:='927' + StrFill(AnsiReplaceStr(Recibo.Importe1,'.',''),8,'0','');
+    tmp:=FechaAct;
+    if strtodate(trim(FechaAct)) > strtodate(FechaAct) then tmp:=trim(FechaAct);
+    dmi:=dmi + RightStr(tmp,2);
+    dmi:=dmi + StrFill(fecha_dif('01/01/' +  RightStr(tmp,4),FechaAct),3,'0','');
+    dmi:=dmi + StrFill(modulo2.Sistema.PuntoV,2,'0','') + RightStr(tmp,2);
+    dmi:=dmi + imp + '00';
+    dmi:=dmi + Recibo.NroLiquidacion + '0';
+    dmi:=dmi + StrFill(AnsiReplaceStr(Recibo.Importe1,'.',''),8,'0','');
+    dmi:=dmi + RightStr(tmp,2);
+    dmi:=dmi + StrFill(fecha_dif('01/01/' +  RightStr(tmp,4),FechaAct),3,'0','');
+    dmi:=dmi + digitos(dmi, 1);
+    Recibo.NroCodBar:=dmi;
+   end
+   else begin
+    Cnx2:=TADOConnection.Create(nil);
+    Cnx2.LoginPrompt:=false;
+    Cnx2.ConnectionString:=Modulo2.Sistema.ConectDb;
+    DataSet3:=TADODataSet.Create(nil);
+    DataSet3.Connection:=Cnx2;
+    DataSet3.CommandText:='select codbar from [ComarcioTasa].[dbo].[TodosCorbar] ('
+     + chr(39) + trim(valorliqui) + chr(39)
+     + ' , ' + chr(39) + FechaAct + chr(39)
+     + ' , ' + chr(39) + trim(valorliqui) + chr(39)
+     + ' , ' + chr(39) + FechaAct + chr(39)
+     + ' , ' + chr(39) + Recibo.SubRubro + chr(39) + ' , 0 '
+     + ' , ' + chr(39) + Recibo.NroLiquidacion + chr(39)
+     + ' , ' + chr(39) + modulo2.Sistema.PuntoV + chr(39) + ')';
+    DataSet3.Open;
+    dmi:=DataSet3.Fields[0].AsString;
+    Recibo.NroCodBar:=dmi;
+    DataSet3.Close;
+   end;
+ end;
+
+ //Caso de la liquidacion total por el derecho de construcion
+ if nro = 2 then begin
+  Recibo.TituloDesc:='EDIF. LINEA Y NIVEL';
+  Recibo.CuotaDe:='UNICA';
+  recibo.PrimerV:= FechaAct;
+  recibo.Anio:=RightStr(FechaAct,4);
+  recibo.NroCuota :='1'; //trim(tiponotif.Text);
+  recibo.FechaIni :=trim(destinoobra.Text);
+  recibo.Objetos :=trim(empresa.Text);
+  Recibo.NombreTit:=AnsiReplaceStr(trim(titrespo.Text),chr(39),chr(33));
+  Recibo.DomicilioTit:=AnsiReplaceStr(trim(domrespo.Text),chr(39),chr(33));
+  Recibo.CuimTit:=AnsiReplaceStr(trim(cuimtit.Text),chr(39),chr(33));//cuim;
+  Recibo.NroPlan :=trim(opartida.Text);
+  GER:=trim(letra.Text) + StrFill(trim(nroe.Text),8,'0','I') + '/'+ trim(año.Text) ;
+  Recibo.DetalleRecibo:='ABONA PLANO - DERECHO DE CONSTRUCCION S/EXPTE ' + GER ;//; + ' ' + rim(NRO.Text) + '/' +TRIM(AÑO.Text);
+  Recibo.NroUsuario:=Modulo2.Usuario.UsuNro;
+  try
+   Cnx2:=TADOConnection.Create(nil);
+   Cnx2.LoginPrompt:=false;
+   Cnx2.ConnectionString:=Modulo2.Sistema.ConectUsu;
+   DataSet3:=TADODataSet.Create(nil);
+   DataSet3.Connection:=Cnx2;
+   DataSet3.CommandText:='EXEC darmaximonro ' + chr(39) + 'TASAANUALLIQUIDACION' + chr(39) + ' , ' + modulo2.Sistema.PuntoV ;
+   DataSet3.Open;
+   Recibo.NroLiquidacion:=StrFill(DataSet3.Fields[0].AsString,7,'0','');
+   DataSet3.Close;
+  except
+   on E: Exception do EnviarLog(Self.Caption, E.Message);
+  end;
+  imp:='13';
+  tmp:=FechaAct;
+  Recibo.SubRubro:='1110504';
+   /// calculo el 30% dto especial
+   if dtopresu = 0 then begin
+    totalpresudescto1 := trim(importetotal.Text)
+   end
+   else begin
+    totalpresudescto1 := floattostr(strtofloat(importetotal.Text) - ((strtofloat(importetotal.Text) * dtopresu)/100));
+   end;
+
+   //if strtofloat(trim(importetotal.Text)) < 1000000.00 then begin
+   if strtofloat(trim(totalpresudescto1)) < 1000000.00 then begin
+    Recibo.Importe1:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(trim(totalpresudescto1),',','.')));
+    Recibo.Importe2:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(trim(totalpresudescto1),',','.')));
+    //Recibo.Importe1:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(trim(importetotal.Text),',','.')));
+    //Recibo.Importe2:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(trim(importetotal.Text),',','.')));
+    Recibo.NroCobro:=modulo2.Sistema.PuntoV + RightStr(FechaAct,2) + ' - ' + imp + '90';
+    dmi:='927' + StrFill(AnsiReplaceStr(Recibo.Importe1,'.',''),8,'0','');
+    tmp:=FechaAct;
+    if strtodate(trim(FechaAct)) > strtodate(FechaAct) then tmp:=trim(FechaAct);
+    dmi:=dmi + RightStr(tmp,2);
+    dmi:=dmi + StrFill(fecha_dif('01/01/' +  RightStr(tmp,4),FechaAct),3,'0','');
+    dmi:=dmi + StrFill(modulo2.Sistema.PuntoV,2,'0','') + RightStr(tmp,2);
+    dmi:=dmi + imp + '00';
+    dmi:=dmi + Recibo.NroLiquidacion + '0';
+    dmi:=dmi + StrFill(AnsiReplaceStr(Recibo.Importe1,'.',''),8,'0','');
+    dmi:=dmi + RightStr(tmp,2);
+    dmi:=dmi + StrFill(fecha_dif('01/01/' +  RightStr(tmp,4),FechaAct),3,'0','');
+    dmi:=dmi + digitos(dmi, 1);
+    Recibo.NroCodBar:=dmi;
+   end
+   else begin
+    Cnx2:=TADOConnection.Create(nil);
+    Cnx2.LoginPrompt:=false;
+    Cnx2.ConnectionString:=Modulo2.Sistema.ConectDb;
+    Recibo.Importe1:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(trim(totalpresudescto1),',','.')));
+    Recibo.Importe2:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(trim(totalpresudescto1),',','.')));
+    //Recibo.Importe1:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(trim(importetotal.Text),',','.')));
+    //Recibo.Importe2:=FormatFloat('000000.00',StrToFloat(AnsiReplaceStr(trim(importetotal.Text),',','.')));
+    DataSet3:=TADODataSet.Create(nil);
+    DataSet3.Connection:=Cnx2;
+    DataSet3.CommandText:='select codbar from [ComercioTasa].[dbo].[TodosCorbar] (' + chr(39) + trim(totalpresudescto1) + chr(39)
+     //+ chr(39) + trim(importetotal.Text) + chr(39)
+     + ' , ' + chr(39) + FechaAct + chr(39)
+     + ' , ' + chr(39) + trim(totalpresudescto1) + chr(39)
+     //+ ' , ' + chr(39) + trim(importetotal.Text) + chr(39)
+     + ' , ' + chr(39) + FechaAct + chr(39)
+     + ' , ' + chr(39) + Recibo.SubRubro + chr(39) + ' , 0 '
+     + ' , ' + chr(39) + Recibo.NroLiquidacion + chr(39)
+     + ' , ' + chr(39) + modulo2.Sistema.PuntoV + chr(39) + ')';
+    DataSet3.Open;
+    dmi:=DataSet3.Fields[0].AsString;
+    Recibo.NroCodBar:=dmi;
+    DataSet3.Close;
+   end;
+ end;
+  {Guardamos los Datos en Tasaanual y en TasaanualCuotas}
+ try
+  tmp:=FechaAct;
+  Com1:=TADOCommand.Create(nil);
+  Com1.Connection:=Cnx2;
+  DataSet3.CommandText:='EXEC [municipio].[dbo].SPA_LiquidacionAnticipoDerConstruccion ' + chr(39) + Recibo.CuimTit + chr(39)
+  + ' , ' + Recibo.NroPlan
+  + ' , NULL, NULL, ' + MidStr(Recibo.CuimTit,4,8)
+  + ' , ' + chr(39) + LeftStr(Recibo.NombreTit,50) + chr(39)
+  + ' , NULL, ' + Recibo.Importe1
+  + ' , ' + chr(39) + FechaAct + chr(39)
+  + ' , ' + Recibo.Importe1
+  + ' , ' + chr(39) + FechaAct + chr(39)
+  + ' , ' + RightStr(tmp,4)
+  + ' , ' + imp + '90 ,' + Recibo.NroLiquidacion
+  + ' , ' + chr(39) + Recibo.NroCodBar + chr(39)
+  + ' , ' + Modulo2.Sistema.PuntoV
+  + ' , ' + Modulo2.Usuario.UsuNro
+  + ' , ' + LeftStr(Recibo.SubRubro,5)
+  + ' , ' + idexpte
+  + ' , NULL, 0, 0, 0, 0, ' + Recibo.SubRubro
+  + ' , ' + chr(39) + Recibo.DetalleRecibo + chr(39);
+  DataSet3.Open;
+  Recibo.IdRegistro:=DataSet3.Fields[0].AsString;
+  DataSet3.Close;
+  DataSet3.Connection:=nil;
+ except
+   on E: Exception do EnviarLog(Self.Caption, E.Message);
+ end;
+ Cnx2.Close;
+ FreeAndNil(DataSet3);
+ FreeAndNil(Com1);
+ FreeAndNil(Cnx2);
+end;
+
+procedure TConfAnu_ExptesDerConst.ImprimeExpte();
+var ReporteRst: TfrxReport;
+    t,y:integer;
+    dmi:widestring;
+    tmp:string;
+      DtsCuotas:TClientDataSet;
+      frxDB3: TfrxDBDataset;
+begin
+ try
+  // CREAMOS UN DATASER PARA CARGAR LOS VALORES DE LA GRILLA
+  DtsCuotas:=TClientDataSet.Create(nil);
+  DtsCuotas.FieldDefs.Clear;
+  DtsCuotas.Active:=False;
+  with DtsCuotas.FieldDefs.AddFieldDef do begin
+    Name:='Descripcion';DataType:=ftString;Size:=50;
+  end;
+  with DtsCuotas.FieldDefs.AddFieldDef do begin
+    Name:='Metros';DataType:=ftString;Size:=50;
+  end;
+  with DtsCuotas.FieldDefs.AddFieldDef do begin
+    Name:='Costo';DataType:=ftString;Size:=50;
+  end;
+  with DtsCuotas.FieldDefs.AddFieldDef do begin
+    Name:='Porcentaje';DataType:=ftString;Size:=50;
+  end;
+  with DtsCuotas.FieldDefs.AddFieldDef do begin
+    Name:='Total';DataType:=ftString;Size:=50;
+  end;
+  DtsCuotas.CreateDataSet;
+  DtsCuotas.Active:=True;
+  for t:=1 to Grilla2.RowCount-1 do begin
+   DtsCuotas.Append;
+   DtsCuotas.FieldValues['Descripcion']:=grilla2.Cells[1,t];
+   DtsCuotas.FieldValues['Metros']:=grilla2.Cells[2,t];
+   DtsCuotas.FieldValues['Costo']:=grilla2.Cells[3,t];
+   DtsCuotas.FieldValues['Porcentaje']:=grilla2.Cells[4,t];
+   DtsCuotas.FieldValues['Total']:=grilla2.Cells[5,t];
+   DtsCuotas.Post;
+  end;
+  ReporteRst:=TfrxReport.Create(nil);
+  /// CON ESTO SE IMPRIME LA GRILLA
+  frxDB3:=TfrxDBDataset.Create(nil);
+  frxDB3.DataSet:=DtsCuotas;
+  frxDB3.UserName:='frxDBDataset1';
+  ReporteRst.DataSets.Add(frxDB3);
+  //
+  ReporteRst.LoadFromFile(Modulo2.Sistema.Path_todo + '\Reportes\ReporteDerConst.fr3');
+  ReporteRst.Variables['NroPlan'] := QuotedStr(letra.Text);
+  ReporteRst.Variables['NroDni'] := QuotedStr(nroe.Text);
+  ReporteRst.Variables['NomRespo'] := QuotedStr(año.Text);
+  ReporteRst.Variables['NombreTitular'] := QuotedStr(titrespo.Text);
+  ReporteRst.Variables['ElQueSuscribe'] := QuotedStr('DNI');
+  ReporteRst.Variables['CuimTitular'] := QuotedStr(dnirespo.Text);
+  ReporteRst.Variables['DomTitular'] := QuotedStr(n4.Text)  ;
+  ReporteRst.Variables['IdCuenta'] := QuotedStr(opartida.Text);
+  ReporteRst.Variables['DirObra'] := QuotedStr(domobra.Text);
+  ReporteRst.Variables['DestinoObra'] := QuotedStr(destinoobra.Text);
+  ReporteRst.Variables['ResolNro'] := QuotedStr(visado.Text);
+  ReporteRst.Variables['ResolAnio'] := QuotedStr(añovisado.Text);
+  ReporteRst.Variables['Planos'] := QuotedStr(plano.Text);
+  ReporteRst.Variables['Resol'] := QuotedStr(resolucion.Text);
+  ReporteRst.Variables['FinalObra'] := QuotedStr(finalobra.Text);
+  ReporteRst.Variables['Total'] := QuotedStr(total.Text);
+  tmp:=numtopesos(trim(total.Text));
+  ReporteRst.Variables['ValoraLetra'] := QuotedStr(tmp);
+  ReporteRst.Variables['MetrosDoc'] := QuotedStr(exisdoc.Text);
+  ReporteRst.ShowReport;
+ except
+  on E: Exception do EnviarLog(Self.Caption, 'Error en Reporte ' + E.Message);
+ end;
+ FreeAndNil(ReporteRst);
+ FreeAndNil(frxDB3);
+ FreeAndNil(DtsCuotas);
+end;
+
+procedure  TConfAnu_ExptesDerConst.ImprimeRecibo();
+var ReporteRst: TfrxReport;
+    t,y:integer;
+    dmi:widestring;
+    tmp:string;
+begin
+ try
+  ReporteRst:=TfrxReport.Create(nil);
+  ReporteRst.LoadFromFile(Modulo2.Sistema.Path_todo + '\Reportes\LiquidacionFinalDerConst.fr3');
+  TfrxPictureView(ReporteRst.FindObject('Logo1')).Picture.LoadFromFile(Modulo2.Sistema.Path_todo + '\Imagenes\LogoM2.jpg');
+  TfrxPictureView(ReporteRst.FindObject('Logo2')).Picture.LoadFromFile(Modulo2.Sistema.Path_todo + '\Imagenes\LogoM2.jpg');
+  TfrxPictureView(ReporteRst.FindObject('Logo3')).Picture.LoadFromFile(Modulo2.Sistema.Path_todo + '\Imagenes\LogoM2.jpg');
+  TfrxPictureView(ReporteRst.FindObject('Logo4')).Picture.LoadFromFile(Modulo2.Sistema.Path_todo + '\Imagenes\LogoM2.jpg');
+  ReporteRst.Variables['TituloDesc'] := QuotedStr('EDIFIC. LINEA Y NIVEL');
+  ReporteRst.Variables['NombreTit'] := QuotedStr(Recibo.NombreTit);
+  ReporteRst.Variables['CuimTit'] := QuotedStr(Recibo.CuimTit);
+
+  if dtopresu = 0 then ReporteRst.Variables['Cuim'] := QuotedStr('')
+   else ReporteRst.Variables['Cuim'] := QuotedStr('Bonificacion del 30% S/Resol: 272/26');
+
+  //ReporteRst.Variables['NombreRespo'] := QuotedStr(Recibo.NombreRespo);
+  //ReporteRst.Variables['CuimRespo'] := QuotedStr(Recibo.CuimRespo);
+  //ReporteRst.Variables['DomicilioRespo'] := QuotedStr(Recibo.DomicilioRespo);
+  //ReporteRst.Variables['CuotaDe'] := QuotedStr(Recibo.CuotaDe);
+  ReporteRst.Variables['Anio'] := QuotedStr(Recibo.Anio);
+  ReporteRst.Variables['NroPlan'] := QuotedStr(trim(tipodocrespo.Text));
+  ReporteRst.Variables['NroCuota'] := QuotedStr('PLANO - DERECHO DE CONSTRUCCION');
+  ReporteRst.Variables['FechaIni'] := QuotedStr(Recibo.FechaIni);
+  //ReporteRst.Variables['CantObj'] := QuotedStr(Recibo.CantObj);
+  //ReporteRst.Variables['Objetos'] := QuotedStr(Recibo.Objetos);
+  ReporteRst.Variables['DetalleRecibo'] := QuotedStr(Recibo.DetalleRecibo);
+  //ReporteRst.Variables['IdExpte'] := QuotedStr(idexpte);
+  ReporteRst.Variables['NroCobro'] := QuotedStr(Recibo.NroCobro);
+  ReporteRst.Variables['NroLiquidacion'] := QuotedStr(Recibo.NroLiquidacion);
+  ReporteRst.Variables['PrimerV'] := QuotedStr(Recibo.PrimerV);
+  ReporteRst.Variables['Importe1'] := QuotedStr(Recibo.Importe1);
+  ReporteRst.Variables['SegundoV'] := QuotedStr(Recibo.SegundoV);
+  ReporteRst.Variables['Importe2'] := QuotedStr(Recibo.Importe2);
+  Recibo.CodBar:=codigo_bar(Recibo.NroCodBar);
+  ReporteRst.Variables['CodBar'] := QuotedStr(Recibo.CodBar);
+  ReporteRst.Variables['NroCodBar'] := QuotedStr(Recibo.NroCodBar);
+  //ReporteRst.Variables['TituloDesc'] := QuotedStr(Recibo.TituloDesc);
+  ReporteRst.Variables['NroUsuario'] := QuotedStr(Modulo2.Usuario.UsuNro);
+  ReporteRst.ShowReport;
+ except
+  on E: Exception do EnviarLog(Self.Caption, 'Error en Reporte ' + E.Message);
+ end;
+ FreeAndNil(ReporteRst);
+end;
+
+procedure  TConfAnu_ExptesDerConst.ImprimeRecibo2();
+var ReporteRst: TfrxReport;
+    t,y:integer;
+    dmi:widestring;
+    tmp:string;
+begin
+ try
+  ReporteRst:=TfrxReport.Create(nil);
+  ReporteRst.LoadFromFile(Modulo2.Sistema.Path_todo + '\Reportes\LiquidacionSellosDerConst.fr3');
+  TfrxPictureView(ReporteRst.FindObject('Logo1')).Picture.LoadFromFile(Modulo2.Sistema.Path_todo + '\Imagenes\LogoM2.jpg');
+  TfrxPictureView(ReporteRst.FindObject('Logo2')).Picture.LoadFromFile(Modulo2.Sistema.Path_todo + '\Imagenes\LogoM2.jpg');
+  TfrxPictureView(ReporteRst.FindObject('Logo3')).Picture.LoadFromFile(Modulo2.Sistema.Path_todo + '\Imagenes\LogoM2.jpg');
+  TfrxPictureView(ReporteRst.FindObject('Logo4')).Picture.LoadFromFile(Modulo2.Sistema.Path_todo + '\Imagenes\LogoM2.jpg');
+  ReporteRst.Variables['TituloDesc'] := QuotedStr('ACT. ADMINISTRA. Y SELLOS');
+  ReporteRst.Variables['NombreTit'] := QuotedStr(Recibo.NombreTit);
+  ReporteRst.Variables['CuimTit'] := QuotedStr(Recibo.CuimTit);
+
+  //if dtopresu = 0 then ReporteRst.Variables['CuimRespo'] := QuotedStr('')
+  // else ReporteRst.Variables['CuimRespo'] := QuotedStr('Bonificacion del 30% S/Resol: 272/26');
+
+  //ReporteRst.Variables['DomicilioTit'] := QuotedStr(Recibo.DomicilioTit);
+  //ReporteRst.Variables['NombreRespo'] := QuotedStr(Recibo.NombreRespo);
+  //ReporteRst.Variables['CuimRespo'] := QuotedStr(Recibo.CuimRespo);
+  //ReporteRst.Variables['DomicilioRespo'] := QuotedStr(Recibo.DomicilioRespo);
+  //ReporteRst.Variables['CuotaDe'] := QuotedStr(Recibo.CuotaDe);
+  ReporteRst.Variables['Anio'] := QuotedStr(Recibo.Anio);
+  ReporteRst.Variables['NroPlan'] := QuotedStr(trim(tipodocrespo.Text));
+  ReporteRst.Variables['NroCuota'] := QuotedStr('POR TRAMITES NO CONTEMPLADOS');
+  ReporteRst.Variables['FechaIni'] := QuotedStr(Recibo.FechaIni);
+  //ReporteRst.Variables['CantObj'] := QuotedStr(Recibo.CantObj);
+  //ReporteRst.Variables['Objetos'] := QuotedStr(Recibo.Objetos);
+  ReporteRst.Variables['DetalleRecibo'] := QuotedStr(Recibo.DetalleRecibo);
+  //ReporteRst.Variables['IdExpte'] := QuotedStr(idexpte);
+  ReporteRst.Variables['NroCobro'] := QuotedStr(Recibo.NroCobro);
+  ReporteRst.Variables['NroLiquidacion'] := QuotedStr(Recibo.NroLiquidacion);
+  ReporteRst.Variables['PrimerV'] := QuotedStr(Recibo.PrimerV);
+  ReporteRst.Variables['Importe1'] := QuotedStr(Recibo.Importe1);
+  ReporteRst.Variables['SegundoV'] := QuotedStr(Recibo.SegundoV);
+  ReporteRst.Variables['Importe2'] := QuotedStr(Recibo.Importe2);
+  Recibo.CodBar:=codigo_bar(Recibo.NroCodBar);
+  ReporteRst.Variables['CodBar'] := QuotedStr(Recibo.CodBar);
+  ReporteRst.Variables['NroCodBar'] := QuotedStr(Recibo.NroCodBar);
+  //ReporteRst.Variables['TituloDesc'] := QuotedStr(Recibo.TituloDesc);
+  ReporteRst.Variables['NroUsuario'] := QuotedStr(Modulo2.Usuario.UsuNro);
+  ReporteRst.ShowReport;
+ except
+  on E: Exception do EnviarLog(Self.Caption, 'Error en Reporte ' + E.Message);
+ end;
+ FreeAndNil(ReporteRst);
+end;
+
+procedure TConfAnu_ExptesDerConst.infformuClick(Sender: TObject);
+begin
+ImprimeExpte;
+FreeAndNil(Recibo);
+end;
+
+procedure TConfAnu_ExptesDerConst.IMPLIQUIClick(Sender: TObject);
+begin
+ liquida:=true;
+ if liquida=true then begin
+  PC1.ActivePage:=PC1.Pages[1];
+  //label83.Visible :=true;
+  //anticipos.Visible :=true;
+  //label84.Visible :=true;
+  //edit2.Visible :=true;
+  //label82.Visible :=true;
+  //liquiimporte.Visible :=true;
+  panel11.Visible :=true;
+  importetotal.ReadOnly :=true;
+  importetotal.Text := trim(total.Text);
+  //importetotal.SetFocus;
+  aceptar.SetFocus;
+ end;
+end;
+
+procedure TConfAnu_ExptesDerConst.importetotalExit(Sender: TObject);
+begin
+ if (trim(importetotal.Text) = '') or (trim(importetotal.Text) = '0')
+  or (trim(importetotal.Text) = '00') or (trim(importetotal.Text) = '0.0') then begin
+  messagedlg('Error!! El importe Total del Expte. es incorrecto.',mterror,[mbok],0);
+  importetotal.SetFocus;
+ end;
+end;
+
+procedure TConfAnu_ExptesDerConst.importetotalKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+ if key = #13 then begin
+  Key := #0;
+  if liquida =true then liqui1.SetFocus //anticipos.SetFocus
+    else aceptar.SetFocus;
+ end
+ else begin
+  if ( StrScan('0123456789.',Key) <> nil ) or  ( Key = Char(VK_BACK) ) then
+   else Key := #0;
+ end;
+end;
+
+end.

@@ -1,0 +1,392 @@
+object Bus_Titulares: TBus_Titulares
+  Left = 358
+  Top = 143
+  BorderStyle = bsNone
+  Caption = 'Lista de Titulares'
+  ClientHeight = 442
+  ClientWidth = 912
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object JvgGroupBox3: TJvgGroupBox
+    Left = 0
+    Top = 81
+    Width = 912
+    Height = 342
+    Align = alClient
+    Caption = 'Lista de Contribuyentes Encontrados'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    Border.Inner = bvSpace
+    Border.Outer = bvNone
+    Border.Bold = False
+    CaptionAlignment = fcaCenter
+    CaptionBorder.Inner = bvSpace
+    CaptionBorder.Outer = bvNone
+    CaptionBorder.Bold = False
+    CaptionGradient.Active = False
+    CaptionGradient.Orientation = fgdHorizontal
+    CaptionShift.X = 8
+    CaptionShift.Y = 0
+    Colors.Text = clHighlightText
+    Colors.TextActive = clHighlightText
+    Colors.Caption = clBtnShadow
+    Colors.CaptionActive = clPurple
+    Colors.Client = clBtnFace
+    Colors.ClientActive = clBtnFace
+    Gradient.FromColor = clBlack
+    Gradient.ToColor = clGray
+    Gradient.Active = False
+    Gradient.Orientation = fgdHorizontal
+    Options = [fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
+    FullHeight = 0
+    object JvDBGrid2: TJvDBGrid
+      Left = 2
+      Top = 16
+      Width = 908
+      Height = 324
+      Align = alClient
+      DataSource = DTS1
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -9
+      Font.Name = 'Arial'
+      Font.Style = []
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      ParentFont = False
+      ParentShowHint = False
+      PopupMenu = PopupMenu1
+      ReadOnly = True
+      ShowHint = True
+      TabOrder = 0
+      TitleFont.Charset = ANSI_CHARSET
+      TitleFont.Color = clNavy
+      TitleFont.Height = -12
+      TitleFont.Name = 'Arial Narrow'
+      TitleFont.Style = [fsBold]
+      OnDblClick = JvDBGrid2DblClick
+      AlternateRowColor = clSkyBlue
+      SelectColumnsDialogStrings.Caption = 'Select columns'
+      SelectColumnsDialogStrings.OK = '&OK'
+      SelectColumnsDialogStrings.NoSelectionWarning = 'At least one column must be visible!'
+      EditControls = <>
+      RowsHeight = 16
+      TitleRowHeight = 20
+    end
+  end
+  object Barra1: TStatusBar
+    Left = 0
+    Top = 423
+    Width = 912
+    Height = 19
+    Panels = <
+      item
+        Width = 200
+      end
+      item
+        Width = 400
+      end
+      item
+        Width = 300
+      end>
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 0
+    Width = 912
+    Height = 23
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 11107192
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    OnMouseDown = JvPanel2MouseDown
+    object JvPanel2: TJvPanel
+      Left = 0
+      Top = 0
+      Width = 912
+      Height = 23
+      Align = alTop
+      BevelOuter = bvNone
+      Color = 5966336
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnMouseDown = JvPanel2MouseDown
+      object JvBehaviorLabel2: TJvBehaviorLabel
+        Left = 6
+        Top = 2
+        Width = 207
+        Height = 18
+        Caption = 'B'#250'squeda de Contribuyentes'
+        Color = 5966336
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindow
+        Font.Height = -15
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        OnMouseDown = JvPanel2MouseDown
+      end
+      object Label1: TLabel
+        Left = 888
+        Top = 0
+        Width = 24
+        Height = 23
+        Cursor = crHandPoint
+        Hint = 'Sale y Cierra ventana'
+        Align = alRight
+        Caption = 'r'
+        Color = 5966336
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -23
+        Font.Name = 'Marlett'
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        OnClick = Label1Click
+      end
+    end
+  end
+  object JvgGroupBox1: TJvgGroupBox
+    Left = 0
+    Top = 23
+    Width = 912
+    Height = 58
+    Align = alTop
+    Caption = 'B'#250'squeda'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    Border.Inner = bvSpace
+    Border.Outer = bvNone
+    Border.Bold = False
+    CaptionAlignment = fcaCenter
+    CaptionBorder.Inner = bvSpace
+    CaptionBorder.Outer = bvNone
+    CaptionBorder.Bold = False
+    CaptionGradient.Active = False
+    CaptionGradient.Orientation = fgdHorizontal
+    CaptionShift.X = 8
+    CaptionShift.Y = 0
+    Colors.Text = clHighlightText
+    Colors.TextActive = clHighlightText
+    Colors.Caption = clBtnShadow
+    Colors.CaptionActive = clPurple
+    Colors.Client = clBtnFace
+    Colors.ClientActive = clBtnFace
+    Gradient.FromColor = clBlack
+    Gradient.ToColor = clGray
+    Gradient.Active = False
+    Gradient.Orientation = fgdHorizontal
+    Options = [fgoFilledCaption, fgoFluentlyCollapse, fgoFluentlyExpand, fgoHideChildrenWhenCollapsed, fgoSaveChildFocus]
+    FullHeight = 0
+    object LB1: TLabel
+      Left = 466
+      Top = 32
+      Width = 34
+      Height = 13
+      Caption = 'N'#176' Dni:'
+    end
+    object Label25: TLabel
+      Left = 3
+      Top = 32
+      Width = 73
+      Height = 13
+      Caption = 'Contribuyente:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 638
+      Top = 32
+      Width = 43
+      Height = 13
+      Caption = 'N'#176' CUIT:'
+    end
+    object ODNI: TEdit
+      Left = 506
+      Top = 23
+      Width = 92
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      MaxLength = 11
+      ParentFont = False
+      TabOrder = 1
+      OnKeyPress = ODNIKeyPress
+    end
+    object Buscar: TJvBitBtn
+      Left = 790
+      Top = 10
+      Width = 115
+      Height = 39
+      Caption = 'Buscar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      Glyph.Data = {
+        36080000424D3608000000000000360400002800000020000000200000000100
+        08000000000000040000CE0E0000D80E00000001000000000000000000004000
+        000080000000FF000000002000004020000080200000FF200000004000004040
+        000080400000FF400000006000004060000080600000FF600000008000004080
+        000080800000FF80000000A0000040A0000080A00000FFA0000000C0000040C0
+        000080C00000FFC0000000FF000040FF000080FF0000FFFF0000000020004000
+        200080002000FF002000002020004020200080202000FF202000004020004040
+        200080402000FF402000006020004060200080602000FF602000008020004080
+        200080802000FF80200000A0200040A0200080A02000FFA0200000C0200040C0
+        200080C02000FFC0200000FF200040FF200080FF2000FFFF2000000040004000
+        400080004000FF004000002040004020400080204000FF204000004040004040
+        400080404000FF404000006040004060400080604000FF604000008040004080
+        400080804000FF80400000A0400040A0400080A04000FFA0400000C0400040C0
+        400080C04000FFC0400000FF400040FF400080FF4000FFFF4000000060004000
+        600080006000FF006000002060004020600080206000FF206000004060004040
+        600080406000FF406000006060004060600080606000FF606000008060004080
+        600080806000FF80600000A0600040A0600080A06000FFA0600000C0600040C0
+        600080C06000FFC0600000FF600040FF600080FF6000FFFF6000000080004000
+        800080008000FF008000002080004020800080208000FF208000004080004040
+        800080408000FF408000006080004060800080608000FF608000008080004080
+        800080808000FF80800000A0800040A0800080A08000FFA0800000C0800040C0
+        800080C08000FFC0800000FF800040FF800080FF8000FFFF80000000A0004000
+        A0008000A000FF00A0000020A0004020A0008020A000FF20A0000040A0004040
+        A0008040A000FF40A0000060A0004060A0008060A000FF60A0000080A0004080
+        A0008080A000FF80A00000A0A00040A0A00080A0A000FFA0A00000C0A00040C0
+        A00080C0A000FFC0A00000FFA00040FFA00080FFA000FFFFA0000000C0004000
+        C0008000C000FF00C0000020C0004020C0008020C000FF20C0000040C0004040
+        C0008040C000FF40C0000060C0004060C0008060C000FF60C0000080C0004080
+        C0008080C000FF80C00000A0C00040A0C00080A0C000FFA0C00000C0C00040C0
+        C00080C0C000FFC0C00000FFC00040FFC00080FFC000FFFFC0000000FF004000
+        FF008000FF00FF00FF000020FF004020FF008020FF00FF20FF000040FF004040
+        FF008040FF00FF40FF000060FF004060FF008060FF00FF60FF000080FF004080
+        FF008080FF00FF80FF0000A0FF0040A0FF0080A0FF00FFA0FF0000C0FF0040C0
+        FF0080C0FF00FFC0FF0000FFFF0040FFFF0080FFFF00FFFFFF00FFFFFFFFFFFF
+        FFFFFF0000000000000000006D6D6DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        000000DBDBDBDBFF93FF93930000006D6D6DFFFFFFFFFFFFFFFFFFFFFFFF0000
+        DBDBDBDBDBDBDBFF93FF939393939300006D6D6DFFFFFFFFFFFFFFFFFF009393
+        DBDBDBDBDBDBDBFF93FF93939393939393006D6D6DFFFFFFFFFFFFFF00939393
+        DBDBDBDBDBDBDBFF93FF9393939393939393006D6D6DFFFFFFFFFF0093939393
+        DBDBDB00000000000000000093939393939393006D6D6DFFFFFF009393939393
+        000000FFFFFFFFFFFFFFFFFF0000009393939393006D6DFFFFFF009393930000
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000939393006D6D6DFFFF00939300FFFF
+        FFFF00000000000000000000FFFFFFFFFF009393006D6D6DFFFF009300FFFFFF
+        000093939393939393939393000000FFFFFF0093006D6D6D6DFF0000FFFFFF00
+        93939393939393939393939393939300FFFFFF00006D6D6D6DFF00FFFFFF006E
+        939393939393939393FFFFFF9393939300FFFFFF006D6D6D6DFF00FFFF009393
+        6E9393939393939393939393FF93936E9300FFFF006D6D6DFFFF00FFFF009393
+        936E6EDB9393939393939393FF6E6E939300FFFF006D6D6DFFFF00FFFF009393
+        9393DBFFDB6E6E6E6E6E6E6E6E9393939300FFFF006D6DFFFFFF00FFFFFF0093
+        939393DB93939393939393939393B69300FFFFFF006DFFFFFFFFFF00FFFFFF00
+        93939393939393939393939393939300FFFFFF00FFFFFFFFFFFFFFFF00FFFFFF
+        000000939393939393939393930000FFFFFF00FFFFFFFFFFFFFFFFFFFF00FFFF
+        FFFFFF00000000000000000000FFFFFFFF006D6DFFFFFFFFFFFFFFFFFFFF0000
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000092006D6DFFFFFFFFFFFFFFFFFFFFFF
+        000000FFFFFFFFFFFFFFFFFFFF0000DBDBDB92006D6DFFFFFFFFFFFFFFFFFFFF
+        FFFFFF00000000000000000000DBFFFFDBDBDB00006D6DFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFF00DBFFFFDB000000006D6DFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000006D6DFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00246D2400000000006D6DFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00246D2400000000006DFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00246D240000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00246D2400000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00246D24000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00246D240000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      ParentFont = False
+      TabOrder = 3
+      OnClick = BuscarClick
+    end
+    object ONOMB: TEdit
+      Left = 78
+      Top = 23
+      Width = 347
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      MaxLength = 50
+      ParentFont = False
+      TabOrder = 0
+      OnKeyPress = ONOMBKeyPress
+    end
+    object OCUIT: TEdit
+      Left = 687
+      Top = 23
+      Width = 92
+      Height = 24
+      CharCase = ecUpperCase
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      MaxLength = 11
+      ParentFont = False
+      TabOrder = 2
+      OnKeyPress = OCUITKeyPress
+    end
+  end
+  object DTS1: TDataSource
+    Left = 32
+    Top = 160
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 35
+    Top = 226
+    object Filtrar1: TMenuItem
+      Caption = 'Filtrar'
+      RadioItem = True
+    end
+    object DesactivarFiltro1: TMenuItem
+      Caption = 'Desactivar Filtro'
+      Checked = True
+      Enabled = False
+      RadioItem = True
+      OnClick = DesactivarFiltro1Click
+    end
+  end
+end

@@ -1,0 +1,85 @@
+unit Anula_Generica;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls, Mask,ADODB, Vcl.Buttons, JvExButtons, JvBitBtn,StrUtils;
+
+type
+  TAnula_General = class(TForm)
+    Barra1: TStatusBar;
+    GroupBox2: TGroupBox;
+    MOTIVO: TEdit;
+    confirma: TJvBitBtn;
+    sale: TJvBitBtn;
+    procedure FormActivate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure saleClick(Sender: TObject);
+    procedure confirmaClick(Sender: TObject);
+  private
+      Com1:TADOCommand;
+    { Private declarations }
+  public
+  elid:string;
+    { Public declarations }
+  end;
+
+var
+  Anula_General: TAnula_General;
+
+implementation
+
+uses Unidad, modulo;
+
+
+{$R *.dfm}
+
+procedure TAnula_General.confirmaClick(Sender: TObject);
+var gf:integer;
+    Cnx2:TADOConnection;
+begin
+ gf:=messagedlg('Desea ANULAR los datos de este Expediente Seleccionado..?',mtWarning,[mbok,mbCancel],0);
+ if gf = 1 then begin
+  try
+   Cnx2:=TADOConnection.Create(nil);
+   Cnx2.LoginPrompt:=false;
+   Cnx2.ConnectionString:=modulo2.Sistema.ConectDerConst;
+   Com1:=TADOCommand.Create(nil);
+   Com1.Connection:=Cnx2;
+   Com1.CommandText:='SPB_Expediente ' + elid
+    + ' , ' + chr(39) + AnsiReplaceStr(trim(motivo.Text),chr(39),chr(33)) + chr(39)
+    + ' ,  ' + modulo2.Usuario.UsuNro
+    + ' , ' + chr(39) + modulo2.Sistema.MyHost + chr(39)
+    + ' , ' + chr(39) + modulo2.Sistema.MyIP + chr(39);
+   Com1.Execute;
+   messagedlg('El Expedinte se ha ANULADO Correctamente!!',mtConfirmation,[mbok],0);
+   sale.Click;
+  except
+   messagedlg('ERROR al ANULAR los Datos del Expediente',mtError,[mbok],0);
+  end;
+  FreeAndNil(Com1);
+  Cnx2.Close;
+ end;
+end;
+
+procedure TAnula_General.FormActivate(Sender: TObject);
+begin
+Barra1.SimpleText:='Cant. Caracteres: ' + inttostr(MOTIVO.MaxLength);
+MOTIVO.SetFocus;
+barra1.Panels[0].Text:='Maximo de caracteres permitidos 125';
+end;
+
+procedure TAnula_General.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+//if Key = VK_ESCAPE then Close;
+end;
+
+procedure TAnula_General.saleClick(Sender: TObject);
+begin
+close;
+end;
+
+end.
